@@ -10,7 +10,7 @@ redirect_from:
 <div class="masonry">
   <div class="project">
     <div class="image-container">
-      <img src="/images/linkedFILM.jpg" alt="Project 1" class="static-image">
+      <img src="/images/WIP.jpg" alt="Project 1" class="static-image">
       <img src="/images/linkedFILM-hover.gif" alt="Project 1 GIF" class="hover-image">
     </div>
     <h3>Project 1</h3>
@@ -21,24 +21,24 @@ redirect_from:
       <img src="/images/buger.jpg" alt="Project 2" class="static-image">
       <img src="/images/burgergif.gif" alt="Project 2 GIF" class="hover-image">
     </div>
-    <h3>Burger Bots</h3>
-    <p>UBC Engineering Physics Summer Robot Compettetion  <a href="/projects/project2/">Learn More</a></p>
+    <h3>UBC Engineering Physics Summer Robot Compettetion </h3>
+    <p> Designing autonomous OverCooked robots to serve burgers <a href="/projects/project2/">Learn More</a></p>
   </div>
   <div class="project">
     <div class="image-container">
       <img src="/images/nn4.JPG" alt="Project 3" class="static-image">
       <img src="/images/realgif.gif" alt="Project 3 GIF" class="hover-image">
     </div>
-    <h3>Project 3</h3>
-    <p>Brief description of Project 3. <a href="/projects/project3/">Learn More</a></p>
+    <h3>Neural Network Based Reactive Lighting System</h3>
+    <p> PCB Design and Edge AI with ESP32 S3  <a href="/projects/project3/">Learn More</a></p>
   </div>
   <div class="project">
     <div class="image-container">
-      <img src="/images/linkedFILM.jpg" alt="Project 4" class="static-image">
+      <img src="/images/dronepic.jpg" alt="Project 4" class="static-image">
       <img src="/images/linkedFILM-hover.gif" alt="Project 4 GIF" class="hover-image">
     </div>
-    <h3>Project 4</h3>
-    <p>Brief description of Project 4. <a href="/projects/project4/">Learn More</a></p>
+    <h3>Autonomous Driving Competition</h3>
+    <p>Drone Navigation in Gazebo with ROS and CNN sign recognition  <a href="/projects/project4/">Learn More</a></p>
   </div>
 </div>
 
