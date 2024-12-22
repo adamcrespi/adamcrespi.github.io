@@ -55,7 +55,7 @@ redirect_from:
 /* Individual Project */
 .project {
   position: relative;
-  width: 300px;
+  width: 250px; /* Adjust for square layout */
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
@@ -68,13 +68,14 @@ redirect_from:
 .image-container {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 250px; /* Enforce square layout */
+  overflow: hidden;
 }
 
 .image-container img {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -105,7 +106,7 @@ redirect_from:
   opacity: 1;
 }
 
-/* Add Zoom on Hover */
+/* Add Zoom Effect on Hover */
 .image-container:hover img {
   transform: scale(1.05);
 }
