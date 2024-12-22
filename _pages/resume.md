@@ -12,7 +12,7 @@ redirect_from:
   <p>
     Below is my complete resume. You can view it directly or download it using the link below:
   </p>
-  <iframe src="/files/adam_resume_august_2025_jan.pdf" width="100%" height="800px" style="border: none;"></iframe>
+  <iframe src="/files/adam_resume_august_2025_jan.pdf" width="60%" height="800px" style="border: none;"></iframe>
   <p style="text-align: center; margin-top: 20px;">
     <a href="/files/adam_resume_august_2025_jan.pdf" target="_blank" class="btn">Download Resume (PDF)</a>
   </p>
