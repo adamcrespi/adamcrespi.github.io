@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Adam Crespi TSTT TES"
+title                    : "Adam Crespi"
 title_separator          : "-"
 name                     : &name "Adam Crespi"
 description              : &description "personal description"
