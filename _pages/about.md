@@ -9,22 +9,34 @@ redirect_from:
 
 <div class="masonry">
   <div class="project">
-    <img src="/images/linkedFILM.jpg" alt="Project 1">
+    <div class="image-container">
+      <img src="/images/linkedFILM.jpg" alt="Project 1" class="static-image">
+      <img src="/images/linkedFILM-hover.gif" alt="Project 1 GIF" class="hover-image">
+    </div>
     <h3>Project 1</h3>
     <p>Brief description of Project 1. <a href="/projects/project1/">Learn More</a></p>
   </div>
   <div class="project">
-    <img src="/images/linkedFILM.jpg" alt="Project 2">
+    <div class="image-container">
+      <img src="/images/linkedFILM.jpg" alt="Project 2" class="static-image">
+      <img src="/images/linkedFILM-hover.gif" alt="Project 2 GIF" class="hover-image">
+    </div>
     <h3>Project 2</h3>
     <p>Brief description of Project 2. <a href="/projects/project2/">Learn More</a></p>
   </div>
   <div class="project">
-    <img src="/images/linkedFILM.jpg" alt="Project 3">
+    <div class="image-container">
+      <img src="/images/linkedFILM.jpg" alt="Project 3" class="static-image">
+      <img src="/images/linkedFILM-hover.gif" alt="Project 3 GIF" class="hover-image">
+    </div>
     <h3>Project 3</h3>
     <p>Brief description of Project 3. <a href="/projects/project3/">Learn More</a></p>
   </div>
   <div class="project">
-    <img src="/images/linkedFILM.jpg" alt="Project 4">
+    <div class="image-container">
+      <img src="/images/linkedFILM.jpg" alt="Project 4" class="static-image">
+      <img src="/images/linkedFILM-hover.gif" alt="Project 4 GIF" class="hover-image">
+    </div>
     <h3>Project 4</h3>
     <p>Brief description of Project 4. <a href="/projects/project4/">Learn More</a></p>
   </div>
@@ -53,17 +65,45 @@ redirect_from:
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Project Image */
-.project img {
+/* Image Container for Hover Effect */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.image-container img {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
-/* Hover Effect */
-.project:hover img {
-  transform: scale(1.1);
+/* Show Static Image by Default */
+.static-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 1;
+}
+
+/* Hide Hover Image by Default */
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+}
+
+/* Show Hover Image on Hover */
+.image-container:hover .static-image {
+  opacity: 0;
+}
+
+.image-container:hover .hover-image {
+  opacity: 1;
 }
 
 /* Floating Animation */
