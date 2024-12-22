@@ -181,6 +181,30 @@
   }
 }
 
+.author__email {
+  display: flex; /* Aligns icon and text horizontally */
+  align-items: center; /* Vertically aligns icon and text */
+  font-size: $type-size-6; /* Match the size of other text */
+  color: #555; /* Optional: ensure consistent color */
+  margin-bottom: 10px; /* Add spacing below the line */
+}
+
+.author__email .icon-pad-right {
+  margin-right: 8px; /* Space between the icon and email text */
+  font-size: $type-size-6; /* Match icon size with text size */
+}
+
+.author__email a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the same color as the text */
+}
+
+.author__email a:hover {
+  text-decoration: underline; /* Add underline on hover */
+  color: #007acc; /* Optional: highlight color on hover */
+}
+
+
 .author__urls {
   display: none;
   position: absolute;
