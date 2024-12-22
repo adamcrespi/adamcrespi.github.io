@@ -55,7 +55,7 @@ redirect_from:
 /* Individual Project */
 .project {
   position: relative;
-  width: 350px; /* Adjust for square layout */
+  width: 380px; /* Adjust for square layout */
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
