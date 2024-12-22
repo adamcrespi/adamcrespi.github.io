@@ -21,8 +21,8 @@ redirect_from:
       <img src="/images/buger.jpg" alt="Project 2" class="static-image">
       <img src="/images/burgergif.gif" alt="Project 2 GIF" class="hover-image">
     </div>
-    <h3>Project 2</h3>
-    <p>Brief description of Project 2. <a href="/projects/project2/">Learn More</a></p>
+    <h3>Burger Bots</h3>
+    <p>UBC Engineering Physics Summer Robot Compettetion<a href="/projects/project2/">Learn More</a></p>
   </div>
   <div class="project">
     <div class="image-container">
