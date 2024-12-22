@@ -18,8 +18,8 @@ redirect_from:
   </div>
   <div class="project">
     <div class="image-container">
-      <img src="/images/linkedFILM.jpg" alt="Project 2" class="static-image">
-      <img src="/images/linkedFILM-hover.gif" alt="Project 2 GIF" class="hover-image">
+      <img src="/images/buger.jpg" alt="Project 2" class="static-image">
+      <img src="/images/burgergif.gif" alt="Project 2 GIF" class="hover-image">
     </div>
     <h3>Project 2</h3>
     <p>Brief description of Project 2. <a href="/projects/project2/">Learn More</a></p>
