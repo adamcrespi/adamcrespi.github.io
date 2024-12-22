@@ -26,7 +26,7 @@ redirect_from:
   </div>
   <div class="project">
     <div class="image-container">
-      <img src="/images/linkedFILM.jpg" alt="Project 3" class="static-image">
+      <img src="/images/nn4.jpg" alt="Project 3" class="static-image">
       <img src="/images/linkedFILM-hover.gif" alt="Project 3 GIF" class="hover-image">
     </div>
     <h3>Project 3</h3>
