@@ -13,16 +13,16 @@ redirect_from:
       <img src="/images/WIP.jpg" alt="Project 1" class="static-image">
       <img src="/images/linkedFILM-hover.gif" alt="Project 1 GIF" class="hover-image">
     </div>
-    <h3>Project 1</h3>
-    <p>Brief description of Project 1. <a href="/projects/project1/">Learn More</a></p>
+    <h3>Jetson Orin Nano SLAM Robot</h3>
+    <p> Work in progress.....  <a href="/projects/project1/">Learn More</a></p>
   </div>
   <div class="project">
     <div class="image-container">
       <img src="/images/buger.jpg" alt="Project 2" class="static-image">
       <img src="/images/burgergif.gif" alt="Project 2 GIF" class="hover-image">
     </div>
-    <h3>UBC Engineering Physics Summer Robot Compettetion </h3>
-    <p> Designing autonomous OverCooked robots to serve burgers <a href="/projects/project2/">Learn More</a></p>
+    <h3>UBC Engineering Physics Summer Robot Competition </h3>
+    <p> Designing autonomous robots to serve burgers <a href="/projects/project2/">Learn More</a></p>
   </div>
   <div class="project">
     <div class="image-container">
