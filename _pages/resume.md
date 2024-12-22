@@ -1,20 +1,20 @@
 ---
 layout: default
-title: "CV"
-permalink: /cv/
+title: "Resume"
+permalink: /resume/
 author_profile: true
 redirect_from:
-  - /resume
+  - /cv
 ---
 
 <div class="cv-container">
-  <h1>Curriculum Vitae</h1>
+  <h1>Resume</h1>
   <p>
-    Below is my complete CV. You can view it directly or download it using the link below:
+    Below is my complete resume. You can view it directly or download it using the link below:
   </p>
   <iframe src="/files/adam_resume_august_2025_jan.pdf" width="100%" height="800px" style="border: none;"></iframe>
   <p style="text-align: center; margin-top: 20px;">
-    <a href="/files/adam_resume_august_2025_jan.pdf" target="_blank" class="btn">Download CV (PDF)</a>
+    <a href="/files/adam_resume_august_2025_jan.pdf" target="_blank" class="btn">Download Resume (PDF)</a>
   </p>
 </div>
 
