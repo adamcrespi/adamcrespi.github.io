@@ -34,10 +34,14 @@
         <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
       {% endif %}
       {% if author.email %}
-          <a href="mailto:{{ site.author.email }}">
-              {{ site.author.email }}
+        <li class="author__email">
+          <i class="fas fa-envelope icon-pad-right" aria-hidden="true"></i>
+          <a href="mailto:{{ author.email }}" class="email-link">
+            {{ author.email }}
           </a>
+        </li>
       {% endif %}
+
 
       <!-- Font Awesome and Academicons icons / Academic websites -->
       {% if author.arxiv %}
