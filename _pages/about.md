@@ -56,7 +56,6 @@ redirect_from:
 .project {
   position: relative;
   width: 300px;
-  animation: float 6s ease-in-out infinite;
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
@@ -65,7 +64,7 @@ redirect_from:
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Image Container for Hover Effect */
+/* Image Container */
 .image-container {
   position: relative;
   width: 100%;
@@ -76,7 +75,7 @@ redirect_from:
   width: 100%;
   height: auto;
   border-radius: 10px;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Show Static Image by Default */
@@ -106,13 +105,30 @@ redirect_from:
   opacity: 1;
 }
 
-/* Floating Animation */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+/* Add Zoom on Hover */
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Title and Description */
+.project h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.project p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Link Styling */
+.project a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+.project a:hover {
+  text-decoration: underline;
 }
 </style>
