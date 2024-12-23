@@ -91,18 +91,16 @@ image: /images/buger.jpg
 
 /* Section Styling */
 section {
-  padding: 10px 20px;
-  margin: 20px 0;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  
-  /* Font styling */
-  font-family: 'Arial', sans-serif;
-  font-size: 12px; /* Adjust as needed */
-  line-height: 1.6; /* Improve readability */
+  padding: 20px 0; /* Optional: Adjust spacing above and below */
+  margin: 20px 0; /* Optional: Add vertical spacing between sections */
+  font-family: 'Arial', sans-serif; /* Optional: Set font family */
+  font-size: 12px; /* Set font size */
+  line-height: 1.6; /* Improve text readability */
   color: #333; /* Text color */
+  border: none; /* Remove borders */
+  background-color: transparent; /* Remove background color */
 }
+
 
 
 section img {
