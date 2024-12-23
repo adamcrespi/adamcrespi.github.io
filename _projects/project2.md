@@ -6,8 +6,6 @@ description: "Designing autonomous robots to serve burgers."
 image: /images/buger.jpg
 ---
 
-# UBC Engineering Physics Summer Robot Competition
-
 This project involves designing autonomous robots to serve burgers as part of the UBC Engineering Physics Summer Robot Competition.
 
 ## Key Highlights
