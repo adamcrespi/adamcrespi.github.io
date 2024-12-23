@@ -12,6 +12,8 @@ image: /images/buger.jpg
     <a href="#robot-design" class="toc-item">Robot Design</a>
     <a href="#testing-and-results" class="toc-item">Testing and Results</a>
     <a href="#future-work" class="toc-item">Future Work</a>
+    <a href="#future-work" class="toc-item">five</a>
+    <a href="#future-work" class="toc-item">six</a>
   </div>
 </div>
 
@@ -40,11 +42,23 @@ image: /images/buger.jpg
   <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
+<section id="five">
+  <h2>Future Work</h2>
+  <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
+  <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+</section>
+
+<section id="six">
+  <h2>Future Work</h2>
+  <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
+  <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+</section>
+
 <style>
 /* Table of Contents Styling */
 .toc-container {
   background-color: #f4f4f4;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -77,7 +91,7 @@ image: /images/buger.jpg
 
 /* Section Styling */
 section {
-  padding: 50px 20px;
+  padding: 10px 20px;
   margin: 20px 0;
   border: 1px solid #ddd;
   border-radius: 10px;
