@@ -82,7 +82,14 @@ section {
   border: 1px solid #ddd;
   border-radius: 10px;
   background-color: #f9f9f9;
+  
+  /* Font styling */
+  font-family: 'Arial', sans-serif;
+  font-size: 12px; /* Adjust as needed */
+  line-height: 1.6; /* Improve readability */
+  color: #333; /* Text color */
 }
+
 
 section img {
   max-width: 100%;
