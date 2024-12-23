@@ -2,7 +2,7 @@
 ---
 layout: single
 title: "Project 2"
-permalink: project2/
+permalink: /projects/project2/
 description: "A detailed description of Project 2"
 date: 2024-12-22
 image: /path/to/project2-image.jpg
