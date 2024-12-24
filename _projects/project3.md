@@ -35,9 +35,7 @@ image: /images/buger.jpg
 <section id="PCB_Design">
   <h2>PCB Design</h2>
   <p>
-
-
-   
+The PCB design for the system brings together all the essential components in a compact and functional layout. Using KiCad, the design was created to fit the ESP32 S3 microcontroller, MEMS I2S microphone, power regulation circuits, and other supporting parts. The goal was to ensure the design was simple, reliable, and efficient, with clean connections and proper spacing to avoid signal issues. Power is provided via a micro USB port with another micro USB port for flashing the ESP.
   </p>
   
   <div class="image-container">
@@ -45,7 +43,7 @@ image: /images/buger.jpg
     <p class="image-label">Figure 1: PCB Layout</p>
   </div>
 
-<h2>Key Components</h2>
+<h3>Key Components</h3>
 <p>The PCB design integrates the following critical components:</p>
   <ul>
   <li>
@@ -66,7 +64,6 @@ image: /images/buger.jpg
   </li>
 </ul>
 
-  
   <div class="image-container">
     <img src="/images/allComs_page-0001.jpg" alt="Communication System Diagram" style="width: 70%; border-radius: 10px; margin-top: 10px;">
     <p class="image-label">Figure 2: Schematic</p>
