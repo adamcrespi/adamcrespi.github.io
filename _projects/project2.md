@@ -65,9 +65,13 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
 
 <section id="future-work">
   <h2>The Hardware</h2>
+  <img src="/images/topbot.jpg" alt="Testing and Results" style="width: 80%; border-radius: 10px; margin-top: 10px;">
+  <img src="/images/botbot.jpg" alt="Testing and Results" style="width: 80%; border-radius: 10px; margin-top: 10px;">
+  
   <p>
   encoders, debouncing circuits
   esp32 boards with jst connectors
+  <img src="/images/toppin.jpg" alt="Testing and Results" style="width: 100%; border-radius: 10px; margin-top: 10px;">
   hbridge pcbs
   power system and lipos 
   </p>
