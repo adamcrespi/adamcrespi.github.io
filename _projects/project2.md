@@ -38,10 +38,19 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
   We had 6 weeks to fully design and build these robots from scratch. My team spent upwards of 10 hours in the lab daily for these 6 weeks to develop 2 robots that we were proud of.
 </p>
 
+<img src="/images/robots.jpg" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+
 <section id="robot-design">
   <h2>Our Design</h2>
-<ul> <li>Implement wall-aligned navigation to simplify control logic and avoid complex centerline PID tuning.</li> <li>Utilize mecanum wheels for enhanced omnidirectional movement and precise positioning.</li> <li>Design both robots with similar hardware and software configurations to streamline development and debugging.</li> <li>Ensure robust collaboration between the two robots to effectively complete tasks in real-time.</li> <li>Incorporate modularity in design to allow for easy upgrades and adjustments during the competition.</li> <li>Focus on reliability and consistency to handle the dynamic competition environment.</li> </ul>
-  <img src="/images/robots.jpg" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+<ul> 
+  <li>Implement wall-aligned navigation to simplify control logic and avoid complex centerline PID tuning.</li> 
+  <li>Utilize mecanum wheels for enhanced omnidirectional movement and precise positioning.</li> 
+  <li>Design both robots with similar hardware and software configurations to streamline development and debugging.</li> 
+  <li>Ensure robust collaboration between the two robots to effectively complete tasks in real-time.</li> 
+  <li>Incorporate modularity in design to allow for easy upgrades and adjustments during the competition.</li> 
+  <li>Focus on reliability and consistency to handle the dynamic competition environment.</li> 
+</ul>
+  
 </section>
 
 <section id="testing-and-results">
