@@ -13,10 +13,10 @@ image: /images/buger.jpg
 
 <div class="toc-container">
   <div class="toc">
-    <a href="#overview" class="toc-item">Project Goals</a>
-    <a href="#robot-design" class="toc-item">PCB Design</a>
-    <a href="#testing-and-results" class="toc-item">PCB Assembly</a>
-    <a href="#future-work" class="toc-item">The Software</a>
+    <a href="#Project Goals" class="toc-item">Project Goals</a>
+    <a href="#PCB Design" class="toc-item">PCB Design</a>
+    <a href="#PCB Assembly" class="toc-item">PCB Assembly</a>
+    <a href="#The Software" class="toc-item">The Software</a>
   </div>
 </div>
 
