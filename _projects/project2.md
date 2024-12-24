@@ -68,7 +68,7 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
   hbridge pcbs
   power system and lipos 
   </p>
-  <img src="/images/espboard.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+  <img src="/images/espboard.jpg" alt="Future Work" style="width: 600%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="future-work2">
@@ -79,13 +79,15 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
   elevator
   gif of almost snapping the sweeper arm
   </p>
-  <img src="/images/almostbreak.gif" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+  <img src="/images/almostbreak.gif" alt="Future Work" style="width: 85%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="future-work3">
   <h2>Results and Reflection</h2>
   <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
   <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+
+  <p>See some of the news coverage on the event here</p>
 </section>
 
 <style>
