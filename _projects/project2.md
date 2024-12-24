@@ -30,7 +30,7 @@ image: /images/buger.jpg
 <section id="overview">
   <h2>The Competition</h2>
   <p>This project involves designing autonomous robots to serve burgers as part of the UBC Engineering Physics Summer Robot Competition.</p>
-  <img src="/images/robots.jpg" alt="Project Overview" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+  <img src="/images/robots.jpg" alt="Project Overview" style="width: 75%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="robot-design">
