@@ -6,6 +6,13 @@ description: "Designing autonomous robots to serve burgers."
 image: /images/buger.jpg
 ---
 
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <div style="width: 400px; height: 400px; overflow: hidden; border-radius: 10px;">
+    <img src="/images/pov.gif" alt="Project Overview" style="width: 100%; height: auto; object-fit: cover; object-position: 50% 100%;">
+  </div>
+</div>
+
+
 <div class="toc-container">
   <div class="toc">
     <a href="#overview" class="toc-item">Overview</a>
@@ -17,9 +24,7 @@ image: /images/buger.jpg
   </div>
 </div>
 
-<div style="width: 300px; height: 200px; overflow: hidden; border-radius: 10px;">
-  <img src="/images/pov.gif" alt="Project Overview" style="width: 60%; height: auto; object-fit: cover; object-position: center;">
-</div>
+
 
 <!-- Project Sections -->
 <section id="overview">
