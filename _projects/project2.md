@@ -61,7 +61,6 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
   
     
   </p>
-  <img src="/images/buger.jpg" alt="Testing and Results" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="future-work">
