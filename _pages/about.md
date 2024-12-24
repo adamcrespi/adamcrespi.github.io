@@ -22,7 +22,7 @@ redirect_from:
       <img src="/images/burgergif.gif" alt="Project 2 GIF" class="hover-image">
     </div>
     <h3>UBC Engineering Physics Summer Robot Competition </h3>
-    <p> Designing autonomous robots to serve burgers <a href="/projects/project2/">Learn More</a></p>
+    <p> <a href="/projects/project2/">Designing autonomous robots to serve burgers</a></p>
   </div>
   <div class="project">
     <div class="image-container">
