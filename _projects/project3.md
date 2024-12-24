@@ -18,13 +18,20 @@ image: /images/buger.jpg
   </div>
 </div>
 
+<p>The Neural Network-Based Reactive Lighting System is an intelligent lighting solution designed to respond to audio input and verbal commands. Using an ESP32 S3 microcontroller with FreeRTOS, the system enables concurrent audio processing and LED control. A neural network trained in TensorFlow Lite interprets verbal commands to dynamically adjust lighting settings. To optimize the system's compactness, a custom PCB was designed, integrating the ESP32 S3, an I2S microphone, and supporting components. This project showcases advanced embedded design, machine learning, and real-time task management. </p>
 
 
 <!-- Project Sections -->
 <section id="Project Goals">
   <h2>Project Goals</h2>
-  <p>This project involves designing autonomous robots to serve burgers as part of the UBC Engineering Physics Summer Robot Competition.</p>
+  <ul>
+    <li>Learn PCB design with KiCad and create a PCB with an embedded MCU</li>
+    <li>Apply digital signal processing techniques to address practical, real-world challenges</li>
+    <li>Gain experience with Edge AI and the challenges of resource constrained machine learning</li></li>
+    <li>Develop proficiency in FreeRTOS for real-time operating systems</li>
+  </ul>
 </section>
+
 
 <section id="PCB Design">
   <h2>PCB Design</h2>
