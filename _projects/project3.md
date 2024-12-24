@@ -120,10 +120,38 @@ The PCB design for the system brings together all the essential components in a 
   <p> After finishing this project, I also learned that I2S for the ESP32 S3 has Direct Memory Access(DMA). This means that pushing the data from the MEMS microphone into the circular buffer doesn't require much CPU compute, and a task just for storing the data is not really necessary. If I were to redo this, I could break up the digital signal processing into tasks to be split across cores. However, I would have to be more careful with race conditions.</p>
 
   <h3>Signal Processing</h3>
-  <p>
-   
-  </p>
+  <p> The signal processing pipeline involves several key steps to transform raw audio data into a spectrogram suitable for neural network inference. We will take a sin wave input signal to see this process.</p>
+    <div class="image-container">
+        <img src="/images/1raw.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 7: FreeRTOS I2S Capture Task</p>
+  </div>
   
+  <h4>Sampling</h4>
+  <p>  b </p>
+    <div class="image-container">
+        <img src="/images/1frame.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 7: FreeRTOS I2S Capture Task</p>
+  </div>
+  
+  <h4>Windowing</h4>
+  <p>  b </p>
+    <div class="image-container">
+        <img src="/images/1window.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 7: FreeRTOS I2S Capture Task</p>
+  </div>
+  
+  <h4>FFT</h4>
+  <p> b </p>
+    <div class="image-container">
+        <img src="/images/1fft.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 7: FreeRTOS I2S Capture Task</p>
+  </div>
+  <h4>Spectrogram</h4>
+  <p> blah </p>
+    <div class="image-container">
+        <img src="/images/1spectro.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 7: FreeRTOS I2S Capture Task</p>
+  </div>
   
   <h3>Inference</h3>
   <p>
