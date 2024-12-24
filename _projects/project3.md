@@ -72,18 +72,29 @@ The PCB design for the system brings together all the essential components in a 
 
 <section id="PCB_Assembly">
   <h2>PCB Assembly</h2>
-  <p>assisted pick and place</p>
+  <p>Components were ordered through Digikey and boards through JLCPCB. A stencil was also used for ease of assembly in applying the solder paste. The board was assembled using an assisted pick and place machine courtesy of the UBC Engineering Physics project lab. </p>
 
    <div class="image-container">
       <img src="/images/pickn.JPG" alt="Robot Design" style="width: 40%; border-radius: 10px; margin-top: 10px;">
       <img src="/images/pickn2.jpg" alt="Robot Design" style="width: 40%; border-radius: 10px; margin-top: 10px;">
     <p class="image-label">Figure 3: Assisted Pick and Place</p>
   </div>
- <p>design verification testing</p>
-     <div class="image-container">
+  
+ <p> After assembly, the board was reflowed in a reflow oven and design verification was performed. I did continuity testing across components and traces, specifically focusing on some of the resistors I accidentally bought in 400 size. </p>
+  <div class="image-container">
         <img src="/images/dv.JPG" alt="Testing and Results" style="width: 40%; border-radius: 10px; margin-top: 10px;">
     <p class="image-label">Figure 4: Design Verification</p>
   </div>
+
+<p> Talk about switches being screwed up due to incorrect footprint, shorting power supply and getting PCB hot, had to solder on a fix.</p>
+
+<p>After all this, the PCB was fully functional</p>
+
+  <div class="image-container">
+        <img src="/images/firston.jpg" alt="Testing and Results" style="width: 40%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 5: Fully functional PCB on second test</p>
+  </div>
+  
 </section>
 
 <section id="The_Software">
