@@ -99,8 +99,31 @@ The PCB design for the system brings together all the essential components in a 
 
 <section id="The_Software">
   <h2>The Software</h2>
-  <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
-  <img src="/images/softwareDiagram.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+  <p>
+   
+  </p>
+  <div class="image-container">
+        <img src="/images/softwareDiagram.jpg" alt="Testing and Results" style="width: 65%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 6: Software Diagram</p>
+  </div>
+
+  <h3>FreeRTOS</h3>
+  <p>
+   
+  </p>
+
+  <h3>Signal Processing</h3>
+  <p>
+   
+  </p>
+  
+  
+  <h3>Inference</h3>
+  <p>
+  -model was training on
+  -
+  </p>
+
 </section>
 
 <style>
