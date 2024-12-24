@@ -120,37 +120,37 @@ The PCB design for the system brings together all the essential components in a 
   <p> After finishing this project, I also learned that I2S for the ESP32 S3 has Direct Memory Access(DMA). This means that pushing the data from the MEMS microphone into the circular buffer doesn't require much CPU compute, and a task just for storing the data is not really necessary. If I were to redo this, I could break up the digital signal processing into tasks to be split across cores. However, I would have to be more careful with race conditions.</p>
 
   <h3>Signal Processing</h3>
-  <p> The signal processing pipeline involves several key steps to transform raw audio data into a spectrogram suitable for neural network inference. We will take a sin wave input signal to see this process.</p>
+  <p> The signal processing pipeline involves several key steps to transform raw audio data into a spectrogram suitable for neural network inference. We will take a sine wave input signal to see this process.</p>
     <div class="image-container">
         <img src="/images/1raw.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
-    <p class="image-label">Figure 7: FreeRTOS I2S Capture Task</p>
+    <p class="image-label">Figure 8: Raw Sine Wave Input</p>
   </div>
   
   <h4>Sampling</h4>
-  <p>  b </p>
+  <p> Sampling involves capturing raw audio data at discrete time intervals to convert the continuous signal into digital form. In this case, a sine wave is sampled at regular intervals to create a digital representation. .</p>
     <div class="image-container">
         <img src="/images/1frame.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
-    <p class="image-label">Figure 7: FreeRTOS I2S Capture Task</p>
+    <p class="image-label">Figure 8: Sampled Sine Wave</p>
   </div>
   
   <h4>Windowing</h4>
-  <p>  b </p>
+  <p> After sampling, the signal is divided into smaller frames of fixed length. These sampled frames also overlap by 50% to ensure no information is lost. I chose frames of 256 samples for compatability with the neural network. To reduce spectral leakage, each frame is multiplied by a window function (e.g., Hann window), which tapers the signal values at the edges to zero. This ensures that transitions between frames are smooth and minimizes distortion in the frequency domain.</p>
     <div class="image-container">
         <img src="/images/1window.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
-    <p class="image-label">Figure 7: FreeRTOS I2S Capture Task</p>
+    <p class="image-label">Figure 9: Windowed Sine Wave</p>
   </div>
   
   <h4>FFT</h4>
-  <p> b </p>
+  <p>Once the windowing is applied, the Fast Fourier Transform (FFT) is performed on each frame to transform the signal from the time domain to the frequency domain. The FFT breaks down the signal into its constituent frequencies, providing insight into the amplitude of each frequency component within the frame. </p>
     <div class="image-container">
         <img src="/images/1fft.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
-    <p class="image-label">Figure 7: FreeRTOS I2S Capture Task</p>
+    <p class="image-label">Figure 10: Sine Wave in the Frequency Domain</p>
   </div>
   <h4>Spectrogram</h4>
-  <p> blah </p>
+  <p> Finally, the magnitude of the FFT results is extracted to generate a spectrogram. The spectrogram is a visual representation of how the signal's frequency content changes over time, displayed as a 2D image where the x-axis represents time, the y-axis represents frequency, and the color intensity indicates amplitude. This spectrogram serves as the input for the neural network to make inferences. </p>
     <div class="image-container">
         <img src="/images/1spectro.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
-    <p class="image-label">Figure 7: FreeRTOS I2S Capture Task</p>
+    <p class="image-label">Figure 11: Final Spectrogram</p>
   </div>
   
   <h3>Inference</h3>
