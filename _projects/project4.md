@@ -8,8 +8,24 @@ image: /images/buger.jpg
 
 <!-- Project Sections -->
 <section id="The Competition">
-  <h2>Gallery</h2>
-
+  <h2 style="text-align: center;">Gallery</h2>
+  <div class="gif-bar">
+    <div class="gif-item">
+      <img src="/images/almostbreak.gif" alt="Competition Scene 1">
+    </div>
+    <div class="gif-item">
+      <img src="/images/almostbreak.gif" alt="Competition Scene 2">
+    </div>
+    <div class="gif-item">
+      <img src="/images/almostbreak.gif" alt="Competition Scene 3">
+    </div>
+    <div class="gif-item">
+      <img src="/images/almostbreak.gif" alt="Competition Scene 4">
+    </div>
+    <div class="gif-item">
+      <img src="/images/almostbreak.gif" alt="Competition Scene 5">
+    </div>
+  </div>
 </section>
 
 <section id="Final Report">
@@ -61,6 +77,35 @@ section h2 {
 /* Smooth Scroll */
 a[href^="#"] {
   text-decoration: none;
+}
+
+.gif-bar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.gif-item {
+  width: 150px; /* Adjust for desired size */
+  height: 150px; /* Adjust for desired size */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.gif-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gif-item:hover img {
+  transform: scale(1.2);
 }
 
 </style>
