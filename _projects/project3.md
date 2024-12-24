@@ -24,7 +24,6 @@ image: /images/buger.jpg
 <section id="Project Goals">
   <h2>Project Goals</h2>
   <p>This project involves designing autonomous robots to serve burgers as part of the UBC Engineering Physics Summer Robot Competition.</p>
-  <img src="/images/robots.jpg" alt="Project Overview" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="PCB Design">
