@@ -6,129 +6,139 @@ description: "Lighting"
 image: /images/buger.jpg
 ---
 
-<div class="masonry">
-  <div class="project">
-    <div class="image-container">
-      <img src="/images/WIP.jpg" alt="Project 1" class="static-image">
-      <img src="/images/linkedFILM-hover.gif" alt="Project 1 GIF" class="hover-image">
-    </div>
-    <h3> The Insect Eliminator</h3>
-    <p> <a href="/projects/project1/">SLAM-enabled navigation and CNN-driven insect detection using Jetson Orin Nano</a></p>
-  </div>
-  <div class="project">
-    <div class="image-container">
-      <img src="/images/buger.jpg" alt="Project 2" class="static-image">
-      <img src="/images/burgergif.gif" alt="Project 2 GIF" class="hover-image">
-    </div>
-    <h3>UBC Engineering Physics Summer Robot Competition </h3>
-    <p> <a href="/projects/project2/">Designing autonomous robots to serve burgers</a></p>
-  </div>
-  <div class="project">
-    <div class="image-container">
-      <img src="/images/nn4.JPG" alt="Project 3" class="static-image">
-      <img src="/images/realgif.gif" alt="Project 3 GIF" class="hover-image">
-    </div>
-    <h3>Neural Network Based Reactive Lighting System</h3>
-    <p> <a href="/projects/project3/"> Edge AI with the ESP32 S3 </a></p>
-  </div>
-  <div class="project">
-    <div class="image-container">
-      <img src="/images/dronepic.jpg" alt="Project 4" class="static-image">
-      <img src="/images/linkedFILM-hover.gif" alt="Project 4 GIF" class="hover-image">
-    </div>
-    <h3>Autonomous Driving Competition</h3>
-    <p> <a href="/projects/project4/">CNNs and Drone Control</a></p>
+<div style="display: flex; justify-content: center; align-items: center; height: 65vh;">
+  <div style="width: 400px; height: 400px; overflow: hidden; border-radius: 10px; display: flex; justify-content: center; align-items: flex-start;">
+    <img src="/images/pov.gif" alt="Project Overview" style="width: 100%; height: auto; transform: translateY(-33%);">
   </div>
 </div>
 
+
+<div class="toc-container">
+  <div class="toc">
+    <a href="#overview" class="toc-item">The Competition</a>
+    <a href="#robot-design" class="toc-item">Our Design</a>
+    <a href="#testing-and-results" class="toc-item">The Software</a>
+    <a href="#future-work" class="toc-item">The Electrical</a>
+    <a href="#future-work" class="toc-item">The Mechanical</a>
+    <a href="#future-work" class="toc-item">Results and Reflection</a>
+  </div>
+</div>
+
+
+
+<!-- Project Sections -->
+<section id="The Competition">
+  <h2>Overview</h2>
+  <p>This project involves designing autonomous robots to serve burgers as part of the UBC Engineering Physics Summer Robot Competition.</p>
+  <img src="/images/robots.jpg" alt="Project Overview" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+</section>
+
+<section id="Our Design">
+  <h2>Robot Design</h2>
+  <p>The robots were designed with custom-built navigation and object recognition systems. The design process included CAD modeling, 3D printing, and extensive prototyping.</p>
+  <img src="/images/buger.jpg" alt="Robot Design" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+</section>
+
+<section id="The Software">
+  <h2>Testing and Results</h2>
+  <p>Robust testing procedures ensured the robots performed reliably under competition conditions. Highlights include precise navigation and accurate burger-serving mechanisms.</p>
+  <img src="/images/buger.jpg" alt="Testing and Results" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+</section>
+
+<section id="The Electrical">
+  <h2>Future Work</h2>
+  <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
+  <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+</section>
+
+<section id="The Mechanical">
+  <h2>Future Work</h2>
+  <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
+  <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+</section>
+
+<section id="Results and Reflection">
+  <h2>Future Work</h2>
+  <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
+  <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+</section>
+
 <style>
-/* Masonry Layout */
-.masonry {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
-}
-
-/* Individual Project */
-.project {
-  position: relative;
-  width: 350px; /* Adjust for square layout */
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: center;
-  background-color: #f9f9f9;
+/* Table of Contents Styling */
+.toc-container {
+  background-color: #f4f4f4;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Image Container */
-.image-container {
-  position: relative;
-  width: 100%;
-  height: 250px; /* Enforce square layout */
-  overflow: hidden;
+.toc {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+.toc-item {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Show Static Image by Default */
-.static-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  opacity: 1;
-}
-
-/* Hide Hover Image by Default */
-.hover-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  opacity: 0;
-}
-
-/* Show Hover Image on Hover */
-.image-container:hover .static-image {
-  opacity: 0;
-}
-
-.image-container:hover .hover-image {
-  opacity: 1;
-}
-
-/* Add Zoom Effect on Hover */
-.image-container:hover img {
+.toc-item:hover {
+  background-color: #007acc;
+  color: #fff;
   transform: scale(1.05);
 }
 
-/* Title and Description */
-.project h3 {
-  margin: 10px 0;
-  font-size: 18px;
+/* Section Styling */
+section {
+  padding: 20px 0; /* Optional: Adjust spacing above and below */
+  margin: 20px 0; /* Optional: Add vertical spacing between sections */
+  font-family: 'Arial', sans-serif; /* Optional: Set font family */
+  font-size: 14px; /* Set font size */
+  line-height: 1.6; /* Improve text readability */
+  color: #333; /* Text color */
+  border: none; /* Remove borders */
+  background-color: transparent; /* Remove background color */
+}
+
+
+
+section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Heading Styling */
+section h2 {
+  margin-bottom: 20px;
   color: #333;
 }
 
-.project p {
-  font-size: 14px;
-  color: #666;
-}
-
-/* Link Styling */
-.project a {
-  color: #007acc;
+/* Smooth Scroll */
+a[href^="#"] {
   text-decoration: none;
 }
 
-.project a:hover {
-  text-decoration: underline;
-}
 </style>
+
+<script>
+  /* Smooth Scroll Script */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
