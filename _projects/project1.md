@@ -7,7 +7,7 @@ image: /images/buger.jpg
 ---
 
  <div class="image-container">
-    <img src="/images/orin.jpg" alt="Robot Schematic" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <img src="/images/orin.png" alt="Robot Schematic" style="width: 70%; border-radius: 10px; margin-top: 10px;">
     <p class="image-label">Figure 1: NVIDIA Jetson Orin Nano Dev Kit</p>
   </div>
 
