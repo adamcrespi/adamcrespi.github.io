@@ -47,7 +47,7 @@ image: /images/buger.jpg
 <style>
 /* Section Styling */
 section {
-  padding: 20px 0; /* Optional: Adjust spacing above and below */
+  padding: 5px 0; /* Optional: Adjust spacing above and below */
   margin: 20px 0; /* Optional: Add vertical spacing between sections */
   font-family: 'Arial', sans-serif; /* Optional: Set font family */
   font-size: 14px; /* Set font size */
@@ -102,12 +102,12 @@ a[href^="#"] {
 }
 
 .gif-item:hover {
-    transform: scale(1.5); /* Expands the GIF */
+    transform: scale(2); /* Expands the GIF */
     z-index: 10; /* Brings the hovered GIF to the front */
 }
 
 .gif-item:hover img {
-    transform: scale(1.5); /* Ensures smooth zoom of the GIF */
+    transform: scale(2); /* Ensures smooth zoom of the GIF */
 }
 
 </style>
