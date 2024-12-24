@@ -102,12 +102,12 @@ a[href^="#"] {
 }
 
 .gif-item:hover {
-    transform: scale(2); /* Expands the GIF */
+    transform: scale(1.7); /* Expands the GIF */
     z-index: 10; /* Brings the hovered GIF to the front */
 }
 
 .gif-item:hover img {
-    transform: scale(2); /* Ensures smooth zoom of the GIF */
+    transform: scale(1.7); /* Ensures smooth zoom of the GIF */
 }
 
 </style>
