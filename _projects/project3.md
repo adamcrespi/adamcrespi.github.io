@@ -8,6 +8,8 @@ image: /images/buger.jpg
 
  <img src="/images/nn3dphoto.png" alt="Project Overview" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 
+<p>The Neural Network-Based Reactive Lighting System is an intelligent lighting solution designed to respond to verbal commands. Using an ESP32 S3 microcontroller with FreeRTOS, the system enables concurrent audio processing and LED control. A neural network trained in TensorFlow Lite interprets verbal commands to dynamically adjust lighting settings. To optimize the system's compactness, a custom PCB was designed, integrating the ESP32 S3, an I2S microphone, and supporting components. </p>
+
 
 <div class="toc-container">
   <div class="toc">
@@ -18,16 +20,13 @@ image: /images/buger.jpg
   </div>
 </div>
 
-<p>The Neural Network-Based Reactive Lighting System is an intelligent lighting solution designed to respond to audio input and verbal commands. Using an ESP32 S3 microcontroller with FreeRTOS, the system enables concurrent audio processing and LED control. A neural network trained in TensorFlow Lite interprets verbal commands to dynamically adjust lighting settings. To optimize the system's compactness, a custom PCB was designed, integrating the ESP32 S3, an I2S microphone, and supporting components. This project showcases advanced embedded design, machine learning, and real-time task management. </p>
-
-
 <!-- Project Sections -->
 <section id="Project Goals">
   <h2>Project Goals</h2>
   <ul>
     <li>Learn PCB design with KiCad and create a PCB with an embedded MCU</li>
     <li>Apply digital signal processing techniques to address practical, real-world challenges</li>
-    <li>Gain experience with Edge AI and the challenges of resource constrained machine learning</li></li>
+    <li>Gain experience with Edge AI and the challenges of resource constrained machine learning</li>
     <li>Develop proficiency in FreeRTOS for real-time operating systems</li>
   </ul>
 </section>
