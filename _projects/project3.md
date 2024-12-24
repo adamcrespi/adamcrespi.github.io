@@ -34,12 +34,38 @@ image: /images/buger.jpg
 
 <section id="PCB_Design">
   <h2>PCB Design</h2>
-  <p>The robots were designed with custom-built navigation and object recognition systems. The design process included CAD modeling, 3D printing, and extensive prototyping.</p>
+  <p>
+
+
+   
+  </p>
   
   <div class="image-container">
     <img src="/images/schematic.png" alt="Robot Schematic" style="width: 70%; border-radius: 10px; margin-top: 10px;">
     <p class="image-label">Figure 1: PCB Layout</p>
   </div>
+
+<h2>Key Components</h2>
+<p>The PCB design integrates the following critical components:</p>
+  <ul>
+  <li>
+    <strong>ESP32 S3 Microcontroller</strong>: Acts as the main processor, handling neural network inference, 
+    audio signal processing, and LED control with its dual-core architecture and advanced AI capabilities.
+  </li>
+  <li>
+    <strong>MEMS I2S Microphone (SPH0645LM4H-B)</strong>: Captures high-fidelity audio input for verbal 
+    command recognition, offering digital output directly compatible with the ESP32's I2S interface.
+  </li>
+  <li>
+    <strong>LM3940 Voltage Regulator</strong>: Provides a stable 3.3V supply for the ESP32 and other onboard 
+    components, ensuring consistent operation under varying power conditions.
+  </li>
+  <li>
+    <strong>Ceramic Capacitors (CL21A106KOQNNNE)</strong>: Used for power line filtering and signal 
+    decoupling, reducing noise and improving stability.
+  </li>
+</ul>
+
   
   <div class="image-container">
     <img src="/images/allComs_page-0001.jpg" alt="Communication System Diagram" style="width: 70%; border-radius: 10px; margin-top: 10px;">
