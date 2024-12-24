@@ -11,7 +11,7 @@ redirect_from:
   <div class="project">
     <div class="image-container">
       <img src="/images/WIP.jpg" alt="Project 1" class="static-image">
-      <img src="/images/linkedFILM-hover.gif" alt="Project 1 GIF" class="hover-image">
+      <img src="/images/WIP.jpg" alt="Project 1 GIF" class="hover-image">
     </div>
     <h3> The Insect Eliminator</h3>
     <p> <a href="/projects/project1/">SLAM-enabled navigation and CNN-driven insect detection using Jetson Orin Nano</a></p>
@@ -35,7 +35,7 @@ redirect_from:
   <div class="project">
     <div class="image-container">
       <img src="/images/dronepic.jpg" alt="Project 4" class="static-image">
-      <img src="/images/linkedFILM-hover.gif" alt="Project 4 GIF" class="hover-image">
+      <img src="/images/WIP.jpg" alt="Project 4 GIF" class="hover-image">
     </div>
     <h3>Autonomous Driving Competition</h3>
     <p> <a href="/projects/project4/">CNNs and Drone Control</a></p>
