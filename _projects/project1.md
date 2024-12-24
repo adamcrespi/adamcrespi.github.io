@@ -6,12 +6,10 @@ description: "Jetson Orin Nano SLAM Robot"
 image: /images/buger.jpg
 ---
 
-<div style="display: flex; justify-content: center; align-items: center; height: 65vh;">
-  <div style="width: 400px; height: 400px; overflow: hidden; border-radius: 10px; display: flex; justify-content: center; align-items: flex-start;">
-    <img src="/images/pov.gif" alt="Project Overview" style="width: 100%; height: auto; transform: translateY(-33%);">
+ <div class="image-container">
+    <img src="/images/orin.jpg" alt="Robot Schematic" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 1: NVIDIA Jetson Orin Nano Dev Kit</p>
   </div>
-</div>
-
 
 <div class="toc-container">
   <div class="toc">
