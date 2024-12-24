@@ -86,7 +86,7 @@ The PCB design for the system brings together all the essential components in a 
     <p class="image-label">Figure 4: Design Verification</p>
   </div>
 
-<p> Talk about switches being screwed up due to incorrect footprint, shorting power supply and getting PCB hot, had to solder on a fix.</p>
+<p>After assembly, for my first test an issue arose with the switches due to an incorrect footprint in the PCB design. This error caused the switches to short the power supply, resulting in the PCB getting hot. To resolve the problem, a quick fix was implemented by manually soldering a switch to the side of the board.</p>
 
 <p>After all this, the PCB was fully functional</p>
 
