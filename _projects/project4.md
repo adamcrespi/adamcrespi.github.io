@@ -9,7 +9,7 @@ image: /images/buger.jpg
 <!-- Project Sections -->
 <section id="The Competition">
   <h2 style="text-align: center;">Gallery</h2>
-  <div class="gif-bar">
+  <div class="gif-grid">
     <div class="gif-item">
       <img src="/images/almostbreak.gif" alt="Competition Scene 1">
     </div>
@@ -21,9 +21,6 @@ image: /images/buger.jpg
     </div>
     <div class="gif-item">
       <img src="/images/almostbreak.gif" alt="Competition Scene 4">
-    </div>
-    <div class="gif-item">
-      <img src="/images/almostbreak.gif" alt="Competition Scene 5">
     </div>
   </div>
 </section>
@@ -78,34 +75,39 @@ section h2 {
 a[href^="#"] {
   text-decoration: none;
 }
-
-.gif-bar {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 20px auto;
-  padding: 10px;
+.gif-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .gif-item {
-  width: 150px; /* Adjust for desired size */
-  height: 150px; /* Adjust for desired size */
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-  position: relative;
+    width: 100%;
+    height: 150px; /* Adjust for desired size */
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, z-index 0.3s ease;
 }
 
 .gif-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gif-item:hover {
+    transform: scale(1.5); /* Expands the GIF */
+    z-index: 10; /* Brings the hovered GIF to the front */
 }
 
 .gif-item:hover img {
-  transform: scale(1.2);
+    transform: scale(1.5); /* Ensures smooth zoom of the GIF */
 }
 
 </style>
