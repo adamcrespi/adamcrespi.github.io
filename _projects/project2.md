@@ -28,37 +28,37 @@ image: /images/buger.jpg
 
 <!-- Project Sections -->
 <section id="overview">
-  <h2>Overview</h2>
+  <h2>The Competition</h2>
   <p>This project involves designing autonomous robots to serve burgers as part of the UBC Engineering Physics Summer Robot Competition.</p>
   <img src="/images/robots.jpg" alt="Project Overview" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="robot-design">
-  <h2>Robot Design</h2>
+  <h2>Our Design</h2>
   <p>The robots were designed with custom-built navigation and object recognition systems. The design process included CAD modeling, 3D printing, and extensive prototyping.</p>
   <img src="/images/buger.jpg" alt="Robot Design" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="testing-and-results">
-  <h2>Testing and Results</h2>
+  <h2>The Software</h2>
   <p>Robust testing procedures ensured the robots performed reliably under competition conditions. Highlights include precise navigation and accurate burger-serving mechanisms.</p>
   <img src="/images/buger.jpg" alt="Testing and Results" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="future-work">
-  <h2>Future Work</h2>
+  <h2>The Hardware</h2>
   <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
   <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="future-work2">
-  <h2>Future Work</h2>
+  <h2>The Mechanical</h2>
   <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
   <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="future-work3">
-  <h2>Future Work</h2>
+  <h2>Results and Reflection</h2>
   <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
   <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
