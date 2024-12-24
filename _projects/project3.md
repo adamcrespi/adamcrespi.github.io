@@ -164,6 +164,17 @@ The PCB design for the system brings together all the essential components in a 
     <p class="image-label">Figure 13: Spectrograms of Words</p>
   </div>
 
+
+
+<h3>Conclusion</h3>
+  <p> This project successfully combined AI, signal processing, and embedded systems to create a responsive solution. Using the ESP32 S3 and a custom PCB, the project achieved real-time performance and met its goals. See the final product below, responding to my stop command.  </p>
+  
+   <div class="image-container">
+        <img src="/images/realgif.gif" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 14: Final Product</p>
+  </div>
+
+
 </section>
 
 <style>
