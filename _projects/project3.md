@@ -90,7 +90,7 @@ image: /images/buger.jpg
 
 /* Section Styling */
 section {
-  padding: 20px 0; /* Optional: Adjust spacing above and below */
+  padding: 10px 0; /* Optional: Adjust spacing above and below */
   margin: 20px 0; /* Optional: Add vertical spacing between sections */
   font-family: 'Arial', sans-serif; /* Optional: Set font family */
   font-size: 14px; /* Set font size */
