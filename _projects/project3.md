@@ -6,11 +6,7 @@ description: "Lighting"
 image: /images/buger.jpg
 ---
 
-<div style="display: flex; justify-content: center; align-items: center; height: 65vh;">
-  <div style="width: 400px; height: 400px; overflow: hidden; border-radius: 10px; display: flex; justify-content: center; align-items: flex-start;">
-    <img src="/images/nn3dphoto.png" alt="Project Overview" style="width: 100%; height: auto; transform: translateY(-33%);">
-  </div>
-</div>
+ <img src="/images/nn3dphoto.png" alt="Project Overview" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 
 
 <div class="toc-container">
