@@ -17,11 +17,12 @@ image: /images/buger.jpg
   </div>
 </div>
 
+<img src="/images/pov.gif" alt="Project Overview" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 <!-- Project Sections -->
 <section id="overview">
   <h2>Overview</h2>
   <p>This project involves designing autonomous robots to serve burgers as part of the UBC Engineering Physics Summer Robot Competition.</p>
-  <img src="/images/buger.jpg" alt="Project Overview" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+  <img src="/images/robots.jpg" alt="Project Overview" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="robot-design">
