@@ -113,7 +113,7 @@ The PCB design for the system brings together all the essential components in a 
   </p>
 
   <div class="image-container">
-        <img src="/images/chatgptrtos.gif" alt="Testing and Results" style="width: 65%; border-radius: 10px; margin-top: 10px;">
+        <img src="/images/chatgptrtos.gif" alt="Testing and Results" style="width: 75%; border-radius: 10px; margin-top: 10px;">
     <p class="image-label">Figure 7: FreeRTOS with both cores visualized by OpenAI Sora</p>
   </div>
 
