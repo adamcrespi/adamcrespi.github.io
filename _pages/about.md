@@ -14,7 +14,7 @@ redirect_from:
       <img src="/images/linkedFILM-hover.gif" alt="Project 1 GIF" class="hover-image">
     </div>
     <h3>Jetson Orin Nano SLAM Robot</h3>
-    <p> Work in progress.....  <a href="/projects/project1/">Learn More</a></p>
+    <p> <a href="/projects/project1/">Work in progress..... </a></p>
   </div>
   <div class="project">
     <div class="image-container">
@@ -30,7 +30,7 @@ redirect_from:
       <img src="/images/realgif.gif" alt="Project 3 GIF" class="hover-image">
     </div>
     <h3>Neural Network Based Reactive Lighting System</h3>
-    <p> PCB Design and Edge AI with ESP32 S3  <a href="/projects/project3/">Learn More</a></p>
+    <p> <a href="/projects/project3/"> Edge AI with the ESP32 S3 </a></p>
   </div>
   <div class="project">
     <div class="image-container">
@@ -38,7 +38,7 @@ redirect_from:
       <img src="/images/linkedFILM-hover.gif" alt="Project 4 GIF" class="hover-image">
     </div>
     <h3>Autonomous Driving Competition</h3>
-    <p>Drone Navigation in Gazebo with ROS and CNN sign recognition  <a href="/projects/project4/">Learn More</a></p>
+    <p> <a href="/projects/project4/">CNNs and Drone Control</a></p>
   </div>
 </div>
 
