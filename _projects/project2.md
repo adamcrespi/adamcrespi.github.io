@@ -6,9 +6,9 @@ description: "Designing autonomous robots to serve burgers."
 image: /images/buger.jpg
 ---
 
-<div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
-  <div style="width: 400px; height: 400px; overflow: hidden; border-radius: 10px; display: flex; justify-content: center; align-items: flex-end;">
-    <img src="/images/pov.gif" alt="Project Overview" style="width: auto; height: 100%; object-fit: cover;">
+<div style="display: flex; justify-content: center; align-items: center; height: 40vh;">
+  <div style="width: 400px; height: 400px; overflow: hidden; border-radius: 10px; display: flex; justify-content: center; align-items: flex-start;">
+    <img src="/images/pov.gif" alt="Project Overview" style="width: 100%; height: 100%; object-fit: none; object-position: 0% 100%;">
   </div>
 </div>
 
