@@ -39,12 +39,19 @@ image: /images/buger.jpg
   <img src="/images/allComs_page-0001.jpg" alt="Robot Design" style="width: 60%; border-radius: 10px; margin-top: 10px;">
 </section>
 
-<section id="PCB_Assembly">
-  <h2>PCB Assembly</h2>
-  <p>Robust testing procedures ensured the robots performed reliably under competition conditions. Highlights include precise navigation and accurate burger-serving mechanisms.</p>
-  <img src="/images/pickn.JPG" alt="Robot Design" style="width: 60%; border-radius: 10px; margin-top: 10px;">
-  <img src="/images/pickn2.jpg" alt="Robot Design" style="width: 60%; border-radius: 10px; margin-top: 10px;">
-  <img src="/images/dv.JPG" alt="Testing and Results" style="width: 60%; border-radius: 10px; margin-top: 10px;">
+<section id="PCB_Design">
+  <h2>PCB Design</h2>
+  <p>The robots were designed with custom-built navigation and object recognition systems. The design process included CAD modeling, 3D printing, and extensive prototyping.</p>
+  
+  <div class="image-container">
+    <img src="/images/schematic.png" alt="Robot Schematic" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 1: PCB Layout</p>
+  </div>
+  
+  <div class="image-container">
+    <img src="/images/allComs_page-0001.jpg" alt="Communication System Diagram" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 2: Schematic</p>
+  </div>
 </section>
 
 <section id="The_Software">
@@ -117,6 +124,18 @@ section h2 {
 /* Smooth Scroll */
 a[href^="#"] {
   text-decoration: none;
+}
+
+
+.image-container {
+  text-align: center; /* Center the image and label */
+  margin-bottom: 20px; /* Add spacing between images */
+}
+
+.image-label {
+  font-size: 14px; /* Adjust font size for the label */
+  color: #666; /* Optional: Set a muted text color */
+  margin-top: 5px; /* Add spacing above the label */
 }
 
 </style>
