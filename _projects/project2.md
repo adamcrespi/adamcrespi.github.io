@@ -17,7 +17,10 @@ image: /images/buger.jpg
   </div>
 </div>
 
-<img src="/images/pov.gif" alt="Project Overview" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+<div style="width: 300px; height: 200px; overflow: hidden; border-radius: 10px;">
+  <img src="/images/pov.gif" alt="Project Overview" style="width: 60%; height: auto; object-fit: cover; object-position: center;">
+</div>
+
 <!-- Project Sections -->
 <section id="overview">
   <h2>Overview</h2>
@@ -95,7 +98,7 @@ section {
   padding: 20px 0; /* Optional: Adjust spacing above and below */
   margin: 20px 0; /* Optional: Add vertical spacing between sections */
   font-family: 'Arial', sans-serif; /* Optional: Set font family */
-  font-size: 12px; /* Set font size */
+  font-size: 14px; /* Set font size */
   line-height: 1.6; /* Improve text readability */
   color: #333; /* Text color */
   border: none; /* Remove borders */
