@@ -17,7 +17,7 @@ image: /images/buger.jpg
     <a href="#robot-design" class="toc-item">The Design</a>
     <a href="#testing-and-results" class="toc-item">SLAM</a>
     <a href="#future-work" class="toc-item">CNN Insect Recognition</a>
-    <a href="#future-work" class="toc-item">The Flamethrower</a>
+    <a href="#future-work2" class="toc-item">The Flamethrower</a>
   </div>
 </div>
 
@@ -32,6 +32,15 @@ image: /images/buger.jpg
     <li>Understand sensor fusion techniques and working with an IMU</li>
     <li>Develop familiarity with Lidar and the SLAM algorithm</li>
   </ul>
+</section>
+
+
+<section id="future-work2">
+  <h2>CNN Insect Recognition</h2>
+  <p>
+ -Differentiate between different insects (spiders vs beetles, etc) so that we only eliminate certain ones
+   
+  </p>
 </section>
 
 
