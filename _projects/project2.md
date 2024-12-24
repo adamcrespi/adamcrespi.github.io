@@ -19,8 +19,8 @@ image: /images/buger.jpg
     <a href="#robot-design" class="toc-item">Our Design</a>
     <a href="#testing-and-results" class="toc-item">The Software</a>
     <a href="#future-work" class="toc-item">The Electrical</a>
-    <a href="#future-work" class="toc-item">The Mechanical</a>
-    <a href="#future-work" class="toc-item">Results and Reflection</a>
+    <a href="#future-work2" class="toc-item">The Mechanical</a>
+    <a href="#future-work3" class="toc-item">Results and Reflection</a>
   </div>
 </div>
 
@@ -51,13 +51,13 @@ image: /images/buger.jpg
   <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
-<section id="future-work">
+<section id="future-work2">
   <h2>Future Work</h2>
   <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
   <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
-<section id="future-work">
+<section id="future-work3">
   <h2>Future Work</h2>
   <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
   <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
