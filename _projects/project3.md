@@ -113,8 +113,8 @@ The PCB design for the system brings together all the essential components in a 
   </p>
 
   <div class="image-container">
-        <img src="/images/chatgptrtos.gif" alt="Testing and Results" style="width: 75%; border-radius: 10px; margin-top: 10px;">
-    <p class="image-label">Figure 7: FreeRTOS with both cores visualized by OpenAI Sora</p>
+        <img src="/images/i2scap.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 7: FreeRTOS I2S Capture Task</p>
   </div>
 
   <p> After finishing this project, I also learned that I2S for the ESP32 S3 has Direct Memory Access(DMA). This means that pushing the data from the MEMS microphone into the circular buffer doesn't require much CPU compute, and a task just for storing the data is not really necessary. If I were to redo this, I could break up the digital signal processing into tasks to be split across cores. However, I would have to be more careful with race conditions.</p>
