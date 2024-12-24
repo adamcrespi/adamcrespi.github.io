@@ -13,15 +13,15 @@ image: /images/buger.jpg
 
 <div class="toc-container">
   <div class="toc">
-    <a href="#Project Goals" class="toc-item">Project Goals</a>
-    <a href="#PCB Design" class="toc-item">PCB Design</a>
-    <a href="#PCB Assembly" class="toc-item">PCB Assembly</a>
-    <a href="#The Software" class="toc-item">The Software</a>
+    <a href="#Project_Goals" class="toc-item">Project Goals</a>
+    <a href="#PCB_Design" class="toc-item">PCB Design</a>
+    <a href="#PCB_Assembly" class="toc-item">PCB Assembly</a>
+    <a href="#The_Software" class="toc-item">The Software</a>
   </div>
 </div>
 
 <!-- Project Sections -->
-<section id="Project Goals">
+<section id="Project_Goals">
   <h2>Project Goals</h2>
   <ul>
     <li>Learn PCB design with KiCad and create a PCB with an embedded MCU</li>
@@ -32,14 +32,14 @@ image: /images/buger.jpg
 </section>
 
 
-<section id="PCB Design">
+<section id="PCB_Design">
   <h2>PCB Design</h2>
   <p>The robots were designed with custom-built navigation and object recognition systems. The design process included CAD modeling, 3D printing, and extensive prototyping.</p>
   <img src="/images/schematic.png" alt="Robot Design" style="width: 60%; border-radius: 10px; margin-top: 10px;">
   <img src="/images/allComs_page-0001.jpg" alt="Robot Design" style="width: 60%; border-radius: 10px; margin-top: 10px;">
 </section>
 
-<section id="PCB Assembly">
+<section id="PCB_Assembly">
   <h2>PCB Assembly</h2>
   <p>Robust testing procedures ensured the robots performed reliably under competition conditions. Highlights include precise navigation and accurate burger-serving mechanisms.</p>
   <img src="/images/pickn.JPG" alt="Robot Design" style="width: 60%; border-radius: 10px; margin-top: 10px;">
@@ -47,7 +47,7 @@ image: /images/buger.jpg
   <img src="/images/dv.JPG" alt="Testing and Results" style="width: 60%; border-radius: 10px; margin-top: 10px;">
 </section>
 
-<section id="The Software">
+<section id="The_Software">
   <h2>The Software</h2>
   <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
   <img src="/images/softwareDiagram.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
