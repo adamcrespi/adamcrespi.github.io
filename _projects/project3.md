@@ -30,7 +30,8 @@ image: /images/buger.jpg
 <section id="PCB Design">
   <h2>PCB Design</h2>
   <p>The robots were designed with custom-built navigation and object recognition systems. The design process included CAD modeling, 3D printing, and extensive prototyping.</p>
-  <img src="/images/buger.jpg" alt="Robot Design" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+  <img src="/images/schematic.jpg" alt="Robot Design" style="width: 60%; border-radius: 10px; margin-top: 10px;">
+  <img src="/images/allComs_page-0001.jpg" alt="Robot Design" style="width: 60%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="PCB Assembly">
