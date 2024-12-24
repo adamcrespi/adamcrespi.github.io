@@ -49,10 +49,18 @@ image: /images/buger.jpg
 
 <section id="PCB_Assembly">
   <h2>PCB Assembly</h2>
-  <p>Robust testing procedures ensured the robots performed reliably under competition conditions. Highlights include precise navigation and accurate burger-serving mechanisms.</p>
-  <img src="/images/pickn.JPG" alt="Robot Design" style="width: 40%; border-radius: 10px; margin-top: 10px;">
-  <img src="/images/pickn2.jpg" alt="Robot Design" style="width: 40%; border-radius: 10px; margin-top: 10px;">
-  <img src="/images/dv.JPG" alt="Testing and Results" style="width: 40%; border-radius: 10px; margin-top: 10px;">
+  <p>assisted pick and place</p>
+
+   <div class="image-container">
+      <img src="/images/pickn.JPG" alt="Robot Design" style="width: 40%; border-radius: 10px; margin-top: 10px;">
+      <img src="/images/pickn2.jpg" alt="Robot Design" style="width: 40%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 3: Assisted Pick and Place</p>
+  </div>
+ <p>design verification testing</p>
+     <div class="image-container">
+        <img src="/images/dv.JPG" alt="Testing and Results" style="width: 40%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 4: Design Verification</p>
+  </div>
 </section>
 
 <section id="The_Software">
