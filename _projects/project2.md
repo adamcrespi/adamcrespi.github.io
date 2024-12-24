@@ -40,13 +40,7 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
 
 <section id="robot-design">
   <h2>Our Design</h2>
-  <p>
-    design methodology
-    -aligning robots with walls to avoid having to do pid on the centre line
-    -mechanum wheels for optimized movement
-    -two robots as similar as possible to simplify designs 
-    
-  </p>
+<ul> <li>Implement wall-aligned navigation to simplify control logic and avoid complex centerline PID tuning.</li> <li>Utilize mecanum wheels for enhanced omnidirectional movement and precise positioning.</li> <li>Design both robots with similar hardware and software configurations to streamline development and debugging.</li> <li>Ensure robust collaboration between the two robots to effectively complete tasks in real-time.</li> <li>Incorporate modularity in design to allow for easy upgrades and adjustments during the competition.</li> <li>Focus on reliability and consistency to handle the dynamic competition environment.</li> </ul>
   <img src="/images/robots.jpg" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;">
 </section>
 
