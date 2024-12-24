@@ -13,8 +13,8 @@ redirect_from:
       <img src="/images/WIP.jpg" alt="Project 1" class="static-image">
       <img src="/images/linkedFILM-hover.gif" alt="Project 1 GIF" class="hover-image">
     </div>
-    <h3>Jetson Orin Nano SLAM Robot</h3>
-    <p> <a href="/projects/project1/">Work in progress..... </a></p>
+    <h3> The Insect Eliminator</h3>
+    <p> <a href="/projects/project1/">SLAM-enabled navigation and CNN-driven insect detection using Jetson Orin Nano</a></p>
   </div>
   <div class="project">
     <div class="image-container">
