@@ -29,9 +29,14 @@ image: /images/buger.jpg
 <!-- Project Sections -->
 <section id="overview">
   <h2>The Competition</h2>
-  <p>This project involves designing autonomous robots to serve burgers as part of the UBC Engineering Physics Summer Robot Competition.</p>
+  <p>
+The UBC Engineering Physics Summer Robot Competition is a yearly event that challenges second year Engineering Physics students to create autonomous robots capable of solving complex challenges. This year, the competition was based on the video game Overcooked. For the first time, students were challenged to design and build two autonomous robots that work together to complete intricate cooking tasks. The robots must navigate between stations, picking up ingredients and assembling and plating dishes like burgers, fries, and salads, all within a tight two-minute timeframe. 
+  </p>
   <img src="/images/robots.jpg" alt="Project Overview" style="width: 75%; border-radius: 10px; margin-top: 10px;">
 </section>
+<p> 
+  We had 6 weeks to fully design and build these robots from scratch. My team spent upwards of 10 hours in the lab daily for these 6 weeks to develop 2 robots that we were proud of.
+</p>
 
 <section id="robot-design">
   <h2>Our Design</h2>
