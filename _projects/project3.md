@@ -130,34 +130,39 @@ The PCB design for the system brings together all the essential components in a 
   <p> Sampling involves capturing raw audio data at discrete time intervals to convert the continuous signal into digital form. In this case, a sine wave is sampled at regular intervals to create a digital representation. .</p>
     <div class="image-container">
         <img src="/images/1frame.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
-    <p class="image-label">Figure 8: Sampled Sine Wave</p>
+    <p class="image-label">Figure 9: Sampled Sine Wave</p>
   </div>
   
   <h4>Windowing</h4>
   <p> After sampling, the signal is divided into smaller frames of fixed length. These sampled frames also overlap by 50% to ensure no information is lost. I chose frames of 256 samples for compatability with the neural network. To reduce spectral leakage, each frame is multiplied by a window function (e.g., Hann window), which tapers the signal values at the edges to zero. This ensures that transitions between frames are smooth and minimizes distortion in the frequency domain.</p>
     <div class="image-container">
         <img src="/images/1window.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
-    <p class="image-label">Figure 9: Windowed Sine Wave</p>
+    <p class="image-label">Figure 10: Windowed Sine Wave</p>
   </div>
   
   <h4>FFT</h4>
   <p>Once the windowing is applied, the Fast Fourier Transform (FFT) is performed on each frame to transform the signal from the time domain to the frequency domain. The FFT breaks down the signal into its constituent frequencies, providing insight into the amplitude of each frequency component within the frame. </p>
     <div class="image-container">
         <img src="/images/1fft.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
-    <p class="image-label">Figure 10: Sine Wave in the Frequency Domain</p>
+    <p class="image-label">Figure 11: Sine Wave in the Frequency Domain</p>
   </div>
   <h4>Spectrogram</h4>
   <p> Finally, the magnitude of the FFT results is extracted to generate a spectrogram. The spectrogram is a visual representation of how the signal's frequency content changes over time, displayed as a 2D image where the x-axis represents time, the y-axis represents frequency, and the color intensity indicates amplitude. This spectrogram serves as the input for the neural network to make inferences. </p>
     <div class="image-container">
         <img src="/images/1spectro.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
-    <p class="image-label">Figure 11: Final Spectrogram</p>
+    <p class="image-label">Figure 12: Final Spectrogram</p>
   </div>
   
   <h3>Inference</h3>
-  <p>
-  -model was training on
-  -
-  </p>
+  <p> The inference phase involves utilizing a neural network to analyze spectrograms and classify them into one of eight predefined categories based on spoken words </p>
+  <h4> Prepping Input Tensor </h4>
+  <p> Before the spectrogram can be fed into the neural network, it needs to be preprocessed into a compatible input tensor format. The spectrogram is resized to 128x128 to match the input layer dimensions of the model. Additionally, normalization is applied to scale the data values between 0 and 1, ensuring consistency across inputs and improving the model's convergence during training. </p>
+  <h4> The Model Itself </h4>
+  <p> The model was trained using on Google Colab on a set of spectrograms from Google’s mini Speech Commands dataset. Optimization techniques like pruning and quantization were applied to reduce the model's size and adapt it for deployment onto the ESP32 S3. I managed to compress my final model down to 5MB.</p>
+    <div class="image-container">
+        <img src="/images/exampleSpecs.png" alt="Testing and Results" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 13: Spectrograms of Words</p>
+  </div>
 
 </section>
 
