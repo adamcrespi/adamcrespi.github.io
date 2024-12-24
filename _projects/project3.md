@@ -100,7 +100,7 @@ The PCB design for the system brings together all the essential components in a 
 <section id="The_Software">
   <h2>The Software</h2>
   <p>
-   
+   The software integrates audio processing, signal analysis, and machine learning. Using the ESP32 S3 microcontroller with FreeRTOS, the system handles audio data from an I2S MEMS microphone. Key steps include framing, windowing, and Fourier Transform to extract features, which are then processed by a TensorFlow Lite neural network to adjust LED patterns in real time. 
   </p>
   <div class="image-container">
         <img src="/images/softwareDiagram.jpg" alt="Testing and Results" style="width: 65%; border-radius: 10px; margin-top: 10px;">
@@ -109,8 +109,15 @@ The PCB design for the system brings together all the essential components in a 
 
   <h3>FreeRTOS</h3>
   <p>
-   
+   The system relies on FreeRTOS to handle the simultaneous tasks required for real-time audio processing. One FreeRTOS task manages the reception of I2S data from the MEMS microphone, efficiently storing the audio data into a circular buffer. This ensures smooth data flow and prevents any loss of audio frames during processing. The second core can then focus on the digital signal processing and inference. A circular buffer is used to prevent race conditions from concurrent actions to the same memory. For my implementation, I simply assigned one of the ESP32s dual cores to each task.
   </p>
+
+  <div class="image-container">
+        <img src="/images/chatgptrtos.gif" alt="Testing and Results" style="width: 65%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 7: FreeRTOS with both cores visualized by OpenAI Sora</p>
+  </div>
+
+  <p> After finishing this project, I also learned that I2S for the ESP32 S3 has Direct Memory Access(DMA). This means that pushing the data from the MEMS microphone into the circular buffer doesn't require much CPU compute, and a task just for storing the data is not really necessary. If I were to redo this, I could break up the digital signal processing into tasks to be split across cores. However, I would have to be more careful with race conditions.</p>
 
   <h3>Signal Processing</h3>
   <p>
