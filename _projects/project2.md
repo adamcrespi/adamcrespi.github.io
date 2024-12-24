@@ -32,7 +32,7 @@ image: /images/buger.jpg
   <p>
 The UBC Engineering Physics Summer Robot Competition is a yearly event that challenges second year Engineering Physics students to create autonomous robots capable of solving complex challenges. This year, the competition was based on the video game Overcooked. For the first time, students were challenged to design and build two autonomous robots that work together to complete intricate cooking tasks. The robots must navigate between stations, picking up ingredients and assembling and plating dishes like burgers, fries, and salads, all within a tight two-minute timeframe. 
   </p>
-  <img src="/images/rgifr.gif" alt="Project Overview" style="width: 65%; border-radius: 10px; margin-top: 10px;">
+  <img src="/images/rgifr.gif" alt="Project Overview" style="width: 70%; border-radius: 10px; margin-top: 10px;">
 </section>
 <p> 
   We had 6 weeks to fully design and build these robots from scratch. My team spent upwards of 10 hours in the lab daily for these 6 weeks to develop 2 robots that we were proud of.
@@ -40,26 +40,46 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
 
 <section id="robot-design">
   <h2>Our Design</h2>
-  <p>The robots were designed with custom-built navigation and object recognition systems. The design process included CAD modeling, 3D printing, and extensive prototyping.</p>
-  <img src="/images/robots.jpg" alt="Robot Design" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+  <p>
+    design methodology
+    -aligning robots with walls to avoid having to do pid on the centre line
+    -mechanum wheels for optimized movement
+    -two robots as similar as possible to simplify designs 
+    
+  </p>
+  <img src="/images/robots.jpg" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="testing-and-results">
   <h2>The Software</h2>
-  <p>Robust testing procedures ensured the robots performed reliably under competition conditions. Highlights include precise navigation and accurate burger-serving mechanisms.</p>
+  <p>
+  state machine
+  
+    
+  </p>
   <img src="/images/buger.jpg" alt="Testing and Results" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="future-work">
   <h2>The Hardware</h2>
-  <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
-  <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+  <p>
+  encoders, debouncing circuits
+  esp32 boards with jst connectors
+  hbridge pcbs
+  power system and lipos 
+  </p>
+  <img src="/images/espboard.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="future-work2">
   <h2>The Mechanical</h2>
-  <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
-  <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+  <p>
+  chassis
+  sweeper
+  elevator
+  gif of almost snapping the sweeper arm
+  </p>
+  <img src="/images/almostbreak.gif" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="future-work3">
