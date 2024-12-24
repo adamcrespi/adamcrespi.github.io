@@ -15,7 +15,7 @@ image: /images/buger.jpg
 
 <div class="toc-container">
   <div class="toc">
-    <a href="#overview" class="toc-item">My Goals</a>
+    <a href="#overview" class="toc-item">Project Goals</a>
     <a href="#robot-design" class="toc-item">The Design</a>
     <a href="#testing-and-results" class="toc-item">SLAM</a>
     <a href="#future-work" class="toc-item">CNN Insect Recognition</a>
@@ -25,11 +25,17 @@ image: /images/buger.jpg
 
 
 <!-- Project Sections -->
-<section id="The Competition">
-  <h2>Overview</h2>
-  <p>This project involves designing autonomous robots to serve burgers as part of the UBC Engineering Physics Summer Robot Competition.</p>
-  <img src="/images/robots.jpg" alt="Project Overview" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+<section id="overview">
+  <h2>Project Goals</h2>
+  <ul>
+    <li>Become familar with the NVIDIA Jetson Orin Nano</li>
+    <li>Gain experience with CNN image recognition on the Edge</li>
+    <li>Learn how to use ROS2</li>
+    <li>Understand sensor fusion techniques and working with an IMU</li>
+    <li>Develop familiarity with Lidar and the SLAM algorithm</li>
+  </ul>
 </section>
+
 
 <style>
 /* Table of Contents Styling */
