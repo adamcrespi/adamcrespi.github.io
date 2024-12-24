@@ -14,7 +14,19 @@ image: /images/buger.jpg
 
 <section id="Final Report">
   <h2>Read the final report for this project below</h2>
-
+  <div style="text-align: center; margin-top: 20px;">
+    <iframe 
+      src="/files/Adam_Jordan_353_Final_Report.pdf" 
+      width="100%" 
+      height="800px" 
+      style="border: none; border-radius: 10px;">
+    </iframe>
+    <p style="margin-top: 10px;">
+      <a href="/files/final_report.pdf" target="_blank" style="color: #007acc; text-decoration: none; font-weight: bold;">
+        Download the Full Report (PDF)
+      </a>
+    </p>
+  </div>
 </section>
 
 
