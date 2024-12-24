@@ -57,6 +57,7 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
   <h2>The Software</h2>
   <p>
   state machine
+  <img src="/images/fail.gif" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;">
   
     
   </p>
@@ -80,6 +81,8 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
 
 <section id="future-work2">
   <h2>The Mechanical</h2>
+  <img src="/images/plate.gif" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+  <img src="/images/waterjet.jpg" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;">
   <p>
   chassis
   sweeper
