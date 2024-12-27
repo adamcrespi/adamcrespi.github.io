@@ -112,15 +112,23 @@ In retrospect using an RTOS would have been a much more efficent approach, as we
 
 <section id="future-work2">
   <h2>The Mechanical</h2>
-  <img src="/images/plate.gif" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;">
-  <img src="/images/waterjet.jpg" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+  <div style="text-align: center;">
+      <img src="/images/plate.gif" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+  </div>
+
   <p>
-  chassis
-  sweeper
-  elevator
-  gif of almost snapping the sweeper arm
+    Our robot was designed in CAD and fabricated with a laser cutter for the wooden and acryllic parts, and a water jet cutter for gears and our elevator rails. Almost all of our robots mechanical design was done by our team member Heejae.
+    <div style="text-align: center;">
+       <img src="/images/waterjet.jpg" alt="Robot Design" style="width: 60%; border-radius: 10px; margin-top: 10px;">
+  </div>
+ _ Jordan and Heejae operating the waterjet cutter._ 
+ <br>
+ Apart from a few small sizing issues, our mechanical design was almost flawless. Our biggest issue was acryllic gears breaking, but we just waterjet these gears with metal to resolve this.
+    <div style="text-align: center;">
+       <img src="/images/almostbreak.gif" alt="Future Work" style="width: 85%; border-radius: 10px; margin-top: 10px;">
+  </div>
+  We had a couple near misses though.... See our rail almost snap above...
   </p>
-  <img src="/images/almostbreak.gif" alt="Future Work" style="width: 85%; border-radius: 10px; margin-top: 10px;">
 </section>
 
 <section id="future-work3">
