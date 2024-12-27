@@ -52,7 +52,7 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
     <li><b>LiPo Batteries</b> - High-density rechargeable power source</li>
     <li><b>Rotary Encoders</b> - Measure distance sweeper and elevator move</li>
     <li><b>Micro Switches</b> - Used as limit switches </li>
-    <li><b>ESP32</b> - Brain of the system /li>
+    <li><b>ESP32</b> - Brain of the system </li>
     <li><b>Reflectance Sensors</b> - For line alignment</li>
   </ul>
 
