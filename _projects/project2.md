@@ -74,19 +74,19 @@ In retrospect using an RTOS would have been a much more efficent approach, as we
 
 <section id="future-work">
   <h2>The Hardware</h2>
-  <img src="/images/topbot.jpg" alt="Testing and Results" style="width: 80%; border-radius: 10px; margin-top: 10px;">
   <img src="/images/botbot.jpg" alt="Testing and Results" style="width: 80%; border-radius: 10px; margin-top: 10px;">
   
   <p>
+  <br>
   My main contributions to our team were the hardware and system integration. I designed custom protoboards for our ESP32 microcontrollers. This board included JST connectors for modular and secure connections to peripheral devices, such as sensors, motors, and switches. We chose to use JST connectors for easy modularity. I also set up the ESP32's strapping pins to ensure the correct boot and flash modes for programming and execution. This involved configuring GPIO pins with appropriate pull-up and pull-down resistors to handle power-up states reliably.
   <img src="/images/toppin.jpg" alt="Testing and Results" style="width: 100%; border-radius: 10px; margin-top: 10px;">
-  <img src="/images/espboard.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+  <img src="/images/espboard.jpg" alt="Future Work" style="width: 60%; border-radius: 10px; margin-top: 10px;">
   
-  
+  <br>
   I also worked on the implementation of encoders to track our elevator and sweeper. I designed debouncing circuits for the mechanical encorders and used quadrature encoding for greater position accuracy.
-  <img src="/images/quad.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+  <img src="/images/quad.jpg" alt="Future Work" style="width: 80%; border-radius: 10px; margin-top: 10px;">
   
-  
+  <br>
   I also designed custom H-bridge PCBs to drive the motors efficiently, which allowed for precise control of speed and direction. The power system, based on LiPo batteries, was optimized to ensure stable voltage levels and sufficient power delivery for all components. This included voltage regulation circuits to protect sensitive electronics. My work on integrating these hardware systems was critical to the robots' performance and reliability throughout the competition.
   
   Additionally, I played a role in assembling and testing the electronics, ensuring that every subsystem functioned seamlessly with the others. This hardware foundation allowed the software team to focus on higher-level control and task execution. The combination of thoughtful hardware design and robust integration was key to our team's success.
