@@ -44,17 +44,20 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
   <h2>Our Design</h2>
   <p> To design two fully autonomous robots in just under 6 weeks, we needed to be keep time management at the forefront of our design process. We ensured that both robots should be as similar as possible to minimize new design and troubleshooting. We also chose to use the walls of the play area for alignment, rather than using PID to stay on the centre line. These two design decisions ended up being very smart project management moves, and we were one of only 5 teams to have two fully functional robots. </p>
   <p> See a list of our components below</p>
-  <ul> 
-  <li> Mechanum Wheels -  </li> 
-  <li> HBridges - </li>
-  <li> DC Motors -  </li>
-  <li> Voltage Regulators - </li>
-  <li> LiPo Batteries - </li>
-  <li> Rotary Encoders - </li>
-  <li> Micro Switches - </li>
-  <li> ESP32 - </li>
-  <li> Reflectance Sensors - </li>
-</ul>
+  <ul>
+    <li><b>Mechanum Wheels</b> - For omnidirectional movement</li>
+    <li><b>HBridges</b> - For controlling the direction and speed of motors</li>
+    <li><b>DC Motors</b> - Provide rotational power for movement</li>
+    <li><b>Voltage Regulators</b> - Ensure stable voltage supply to components</li>
+    <li><b>LiPo Batteries</b> - High-density rechargeable power source</li>
+    <li><b>Rotary Encoders</b> - Measure distance sweeper and elevator move</li>
+    <li><b>Micro Switches</b> - Used as limit switches </li>
+    <li><b>ESP32</b> - Brain of the system /li>
+    <li><b>Reflectance Sensors</b> - For line alignment</li>
+  </ul>
+
+
+
 
 </section>
 
