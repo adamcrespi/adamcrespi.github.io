@@ -171,7 +171,7 @@ section img {
 
 /* Heading Styling */
 section h2 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #333;
 }
 
