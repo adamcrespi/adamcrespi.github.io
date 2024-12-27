@@ -63,12 +63,12 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
   The software for our robots was built around a state-machine architecture, enabling precise control over the sequential tasks each robot needed to perform. This approach allowed us to handle complex behaviors such as navigating to stations, picking up ingredients, and assembling burgers.   Reflectance sensors were used for alignment, while rotary encoders tracked the distance traveled to maintain accuracy. This combination of modular software design and robust sensor integration made it possible to achieve consistent and reliable performance during the competition.
   <img src="/images/fail.gif" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;"> <br>
 
-Our state-machine architecture required a lot of trial and error to get working.... <br> <br>
+  Our state-machine architecture required a lot of trial and error to get working.... <br> <br>
 Most problems arose when trying to optimize our robot for speed. For example, when trying to extend the arm and spin between counters at the same time. Our system was fundamentally not designed to do this, and getting it to work perfectly required a lot of tweaking. <br> <br>
 In retrospect using an RTOS would have been a much more efficent approach, as we could have had a much easier time concurrently executing the tasks, and even utilized the ESP32s dual cores.
-
-  See the full codebase on github here : 
-    
+  <br>
+  <br>
+  See the full codebase on GitHub <a href="https://github.com/mcappellano/light-side" target="_blank">here</a>.
   </p>
 </section>
 
@@ -80,8 +80,11 @@ In retrospect using an RTOS would have been a much more efficent approach, as we
   <br>
   My main contributions to our team were the hardware and system integration. I designed custom protoboards for our ESP32 microcontrollers. This board included JST connectors for modular and secure connections to peripheral devices, such as sensors, motors, and switches. We chose to use JST connectors for easy modularity. I also set up the ESP32's strapping pins to ensure the correct boot and flash modes for programming and execution. This involved configuring GPIO pins with appropriate pull-up and pull-down resistors to handle power-up states reliably.
   <img src="/images/toppin.jpg" alt="Testing and Results" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+  <br>
+  See the final board below
+  <br>
   <div style="text-align: center;">
-    <img src="/images/espboard.jpg" alt="Future Work" style="width: 60%; border-radius: 10px; margin-top: 10px;">
+    <img src="/images/espboard.jpg" alt="Future Work" style="width: 50%; border-radius: 10px; margin-top: 10px;">
   </div>
 
   <br>
@@ -91,9 +94,6 @@ In retrospect using an RTOS would have been a much more efficent approach, as we
   </div>
 
   <br>
-  I also designed custom H-bridge PCBs to drive the motors efficiently, which allowed for precise control of speed and direction. The power system, based on LiPo batteries, was optimized to ensure stable voltage levels and sufficient power delivery for all components. This included voltage regulation circuits to protect sensitive electronics. My work on integrating these hardware systems was critical to the robots' performance and reliability throughout the competition.
-  
-  Additionally, I played a role in assembling and testing the electronics, ensuring that every subsystem functioned seamlessly with the others. This hardware foundation allowed the software team to focus on higher-level control and task execution. The combination of thoughtful hardware design and robust integration was key to our team's success.
   </p>
 </section>
 
