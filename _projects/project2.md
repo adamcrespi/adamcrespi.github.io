@@ -42,15 +42,20 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
 
 <section id="robot-design">
   <h2>Our Design</h2>
-<ul> 
-  <li>Implement wall-aligned navigation to simplify control logic and avoid complex centerline PID tuning.</li> 
-  <li>Utilize mecanum wheels for enhanced omnidirectional movement and precise positioning.</li> 
-  <li>Design both robots with similar hardware and software configurations to streamline development and debugging.</li> 
-  <li>Ensure robust collaboration between the two robots to effectively complete tasks in real-time.</li> 
-  <li>Incorporate modularity in design to allow for easy upgrades and adjustments during the competition.</li> 
-  <li>Focus on reliability and consistency to handle the dynamic competition environment.</li> 
+  <p> To design two fully autonomous robots in just under 6 weeks, we needed to be keep time management at the forefront of our design process. We ensured that both robots should be as similar as possible to minimize new design and troubleshooting. We also chose to use the walls of the play area for alignment, rather than using PID to stay on the centre line. These two design decisions ended up being very smart project management moves, and we were one of only 5 teams to have two fully functional robots. </p>
+  <p> See a list of our components below</p>
+  <ul> 
+  <li> Mechanum Wheels -  </li> 
+  <li> HBridges - </li>
+  <li> DC Motors -  </li>
+  <li> Voltage Regulators - </li>
+  <li> LiPo Batteries - </li>
+  <li> Rotary Encoders - </li>
+  <li> Micro Switches - </li>
+  <li> ESP32 - </li>
+  <li> Reflectance Sensors - </li>
 </ul>
-  
+
 </section>
 
 <section id="testing-and-results">
