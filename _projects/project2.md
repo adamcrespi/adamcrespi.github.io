@@ -32,13 +32,21 @@ image: /images/buger.jpg
   <p>
 The UBC Engineering Physics Summer Robot Competition is a yearly event that challenges second year Engineering Physics students to create autonomous robots capable of solving complex challenges. This year, the competition was based on the video game Overcooked. For the first time, students were challenged to design and build two autonomous robots that work together to complete intricate cooking tasks. The robots must navigate between stations, picking up ingredients and assembling and plating dishes like burgers, fries, and salads, all within a tight two-minute timeframe. 
   </p>
-  <img src="/images/rgifr.gif" alt="Project Overview" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+  
+  <div style="text-align: center;">
+    <img src="/images/rgifr.gif" alt="Project Overview" style="width: 75%; border-radius: 10px; margin-top: 10px;">
+  </div>
+
 </section>
 <p> 
   We had 6 weeks to fully design and build these robots from scratch. My team spent upwards of 10 hours in the lab daily for these 6 weeks to develop 2 robots that we were proud of.
 </p>
 
-<img src="/images/robots.jpg" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+
+  <div style="text-align: center;">
+      <img src="/images/robots.jpg" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+  </div>
+
 
 <section id="robot-design">
   <h2>Our Design</h2>
@@ -61,8 +69,10 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
   <h2>The Software</h2>
   <p>
   The software for our robots was built around a state-machine architecture, enabling precise control over the sequential tasks each robot needed to perform. This approach allowed us to handle complex behaviors such as navigating to stations, picking up ingredients, and assembling burgers.   Reflectance sensors were used for alignment, while rotary encoders tracked the distance traveled to maintain accuracy. This combination of modular software design and robust sensor integration made it possible to achieve consistent and reliable performance during the competition.
-  <img src="/images/fail.gif" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;"> <br>
-
+  <div style="text-align: center;">
+      <img src="/images/fail.gif" alt="Robot Design" style="width: 70%; border-radius: 10px; margin-top: 10px;"> 
+  </div>
+ <br>
   Our state-machine architecture required a lot of trial and error to get working.... <br> <br>
 Most problems arose when trying to optimize our robot for speed. For example, when trying to extend the arm and spin between counters at the same time. Our system was fundamentally not designed to do this, and getting it to work perfectly required a lot of tweaking. <br> <br>
 In retrospect using an RTOS would have been a much more efficent approach, as we could have had a much easier time concurrently executing the tasks, and even utilized the ESP32s dual cores.
@@ -74,7 +84,10 @@ In retrospect using an RTOS would have been a much more efficent approach, as we
 
 <section id="future-work">
   <h2>The Hardware</h2>
-  <img src="/images/botbot.jpg" alt="Testing and Results" style="width: 80%; border-radius: 10px; margin-top: 10px;">
+    <div style="text-align: center;">
+     <img src="/images/botbot.jpg" alt="Testing and Results" style="width: 80%; border-radius: 10px; margin-top: 10px;">
+  </div>
+ 
   
   <p>
   <br>
