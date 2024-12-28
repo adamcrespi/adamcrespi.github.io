@@ -61,7 +61,7 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
     <li><b>Rotary Encoders</b> - Measure distance sweeper and elevator move</li>
     <li><b>Micro Switches</b> - Used as limit switches </li>
     <li><b>ESP32</b> - Brain of the system </li>
-    <li><b>Reflectance Sensors</b> - For line alignment</li>
+    <li><b>Reflectance Sensors</b> - For aligning with different stations</li>
   </ul>
 </section>
 
@@ -74,8 +74,7 @@ The UBC Engineering Physics Summer Robot Competition is a yearly event that chal
   </div>
  <br>
   Our state-machine architecture required a lot of trial and error to get working.... <br> <br>
-Most problems arose when trying to optimize our robot for speed. For example, when trying to extend the arm and spin between counters at the same time. Our system was fundamentally not designed to do this, and getting it to work perfectly required a lot of tweaking. <br> <br>
-In retrospect using an RTOS would have been a much more efficent approach, as we could have had a much easier time concurrently executing the tasks, and even utilized the ESP32s dual cores.
+Most problems arose when trying to optimize our robot for speed. For example, when trying to extend the arm and spin between counters at the same time. Our system was fundamentally not designed to do this, and getting it to work perfectly required a lot of tweaking. In retrospect using an RTOS would have been a much more efficent approach, as we could have had a much easier time concurrently executing the tasks, and even utilized the ESP32s dual cores.
   <br>
   <br>
   See the full codebase on GitHub <a href="https://github.com/mcappellano/light-side" target="_blank">here</a>.
@@ -122,6 +121,7 @@ In retrospect using an RTOS would have been a much more efficent approach, as we
     <div style="text-align: center;">
        <img src="/images/waterjet.jpg" alt="Robot Design" style="width: 45%; border-radius: 10px; margin-top: 10px;">
   </div>
+  <br>
  Here's Jordan and Heejae operating the waterjet cutter.
  <br>
  <br>
@@ -129,6 +129,7 @@ In retrospect using an RTOS would have been a much more efficent approach, as we
     <div style="text-align: center;">
        <img src="/images/almostbreak.gif" alt="Future Work" style="width: 85%; border-radius: 10px; margin-top: 10px;">
   </div>
+  <br>
   We had a couple near misses though.... See our rail almost snap above...
   </p>
 </section>
@@ -136,7 +137,7 @@ In retrospect using an RTOS would have been a much more efficent approach, as we
 <section id="future-work3">
   <h2>Results and Reflection</h2>
   <p>
-    Our robots performed exceptionally, finishing second overall in the competition, narrowly losing by just an inch—literally. This project was a tremendous learning experience, where I gained valuable insights into hardware design and the importance of effective teamwork.
+    Our robots performed exceptionally, finishing second overall in the competition, losing by an inch—literally. This project was a tremendous learning experience, where I gained valuable insights into hardware design and the importance of effective teamwork.
   </p>
     <div style="text-align: center;">
        <img src="/images/finalgi.gif" alt="Future Work" style="width: 85%; border-radius: 10px; margin-top: 10px;">
@@ -147,7 +148,7 @@ In retrospect using an RTOS would have been a much more efficent approach, as we
     <li><a href="https://www.youtube.com/watch?v=8mijFtf3gek&t" target="_blank">YouTube - Competition Highlights</a></li>
     <li><a href="https://globalnews.ca/video/10693009/ubc-engineering-students-test-their-skills-with-burger-flipping-robots/" target="_blank">Global News - UBC Engineering Students</a></li>
     <li><a href="https://engineering.ubc.ca/news/2024/ubc-engineering-students-robots-cook-storm-annual-competition" target="_blank">UBC Engineering News - Annual Competition</a></li>
-    <li><a href="https://www.youtube.com/watch?app=desktop&v=8mijFtf3gek" target="_blank">YouTube - Mobile Version</a></li>
+    <li><a href="https://www.youtube.com/watch?app=desktop&v=8mijFtf3gek" target="_blank">YouTube - CityNews</a></li>
   </ul>
 
 </section>
