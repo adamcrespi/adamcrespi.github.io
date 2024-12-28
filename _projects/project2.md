@@ -117,6 +117,7 @@ In retrospect using an RTOS would have been a much more efficent approach, as we
   </div>
 
   <p>
+    <br>
     Our robot was designed in CAD and fabricated with a laser cutter for the wooden and acryllic parts, and a water jet cutter for gears and our elevator rails. Almost all of our robots mechanical design was done by our team member Heejae.
     <div style="text-align: center;">
        <img src="/images/waterjet.jpg" alt="Robot Design" style="width: 45%; border-radius: 10px; margin-top: 10px;">
