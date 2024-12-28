@@ -135,10 +135,21 @@ In retrospect using an RTOS would have been a much more efficent approach, as we
 
 <section id="future-work3">
   <h2>Results and Reflection</h2>
-  <p>Future improvements include refining the object classification model and enhancing the mechanical systems for faster serving times.</p>
-  <img src="/images/buger.jpg" alt="Future Work" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+  <p>
+    Our robots performed exceptionally, finishing second overall in the competition, narrowly losing by just an inch—literally. This project was a tremendous learning experience, where I gained valuable insights into hardware design and the importance of effective teamwork.
+  </p>
+    <div style="text-align: center;">
+       <img src="/images/finalgi.gif" alt="Future Work" style="width: 85%; border-radius: 10px; margin-top: 10px;">
+  </div>
+  <br>
+  <p>See some of the news coverage on the event here:</p>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=8mijFtf3gek&t" target="_blank">YouTube - Competition Highlights</a></li>
+    <li><a href="https://globalnews.ca/video/10693009/ubc-engineering-students-test-their-skills-with-burger-flipping-robots/" target="_blank">Global News - UBC Engineering Students</a></li>
+    <li><a href="https://engineering.ubc.ca/news/2024/ubc-engineering-students-robots-cook-storm-annual-competition" target="_blank">UBC Engineering News - Annual Competition</a></li>
+    <li><a href="https://www.youtube.com/watch?app=desktop&v=8mijFtf3gek" target="_blank">YouTube - Mobile Version</a></li>
+  </ul>
 
-  <p>See some of the news coverage on the event here</p>
 </section>
 
 <style>
