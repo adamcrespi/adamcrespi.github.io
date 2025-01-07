@@ -11,16 +11,16 @@ image: /images/buger.jpg
   <h2 style="text-align: center;">Gallery</h2>
   <div class="gif-grid">
     <div class="gif-item">
-      <img src="/images/WIP.jpg" alt="Competition Scene 1">
+      <img src="/images/last.gif" alt="Competition Scene 1">
     </div>
     <div class="gif-item">
-      <img src="/images/WIP.jpg" alt="Competition Scene 2">
+      <img src="/images/blackwhitesigns.gif" alt="Competition Scene 2">
     </div>
     <div class="gif-item">
-      <img src="/images/WIP.jpg" alt="Competition Scene 3">
+      <img src="/images/sign6.gif" alt="Competition Scene 3">
     </div>
     <div class="gif-item">
-      <img src="/images/WIP.jpg" alt="Competition Scene 4">
+      <img src="/images/sign5.gif" alt="Competition Scene 4">
     </div>
   </div>
 </section>
