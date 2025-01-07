@@ -14,13 +14,13 @@ image: /images/buger.jpg
       <img src="/files/last.gif" alt="Competition Scene 1">
     </div>
     <div class="gif-item">
-      <img src="/files/blackwhitesigns.gif" alt="Competition Scene 2">
+      <img src="/files/sign5.gif" alt="Competition Scene 2">
     </div>
     <div class="gif-item">
       <img src="/files/sign6.gif" alt="Competition Scene 3">
     </div>
     <div class="gif-item">
-      <img src="/files/sign5.gif" alt="Competition Scene 4">
+      <img src="/files/blackwhitesigns.gif" alt="Competition Scene 4">
     </div>
   </div>
 </section>
