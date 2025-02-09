@@ -56,3 +56,20 @@
     font-weight: 700;
   }
 }
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+  100% { transform: translateX(0); }
+}
+
+.nav-right {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 1.2em;
+  color: black; /* Adjust based on your theme */
+  animation: slide 3s infinite ease-in-out;
+}
