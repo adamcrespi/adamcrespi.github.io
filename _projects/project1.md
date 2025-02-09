@@ -44,7 +44,7 @@ image: /images/buger.jpg
     <li>Begin SLAM implementation</li>
     <li>Start implementing CNN, train CNN and test</li>
     <li>Add solenoid and supporting circuity for butane release</li>
-  </ul>
+   </ul>
 </section>
 
 
