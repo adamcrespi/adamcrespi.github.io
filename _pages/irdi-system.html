@@ -1,1 +1,161 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRDI System Internship</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external stylesheet if needed -->
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Monoton&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Table of Contents Styling */
+        .toc-container {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .toc {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .toc-item {
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .toc-item:hover {
+            background-color: #007acc;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 20px 0;
+            margin: 20px 0;
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            border: none;
+            background-color: transparent;
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Heading Styling */
+        section h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Smooth Scroll */
+        a[href^="#"] {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>IRDI System Internship</h1>
+        <p>R&D Test Engineer Intern at IRDI System</p>
+    </header>
+
+    <div class="image-container">
+        <img src="/images/irdi_lab.png" alt="IRDI Lab" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+        <p class="image-label">Figure 1: IRDI System Laboratory</p>
+    </div>
+
+    <div class="toc-container">
+        <div class="toc">
+            <a href="#overview" class="toc-item">Internship Overview</a>
+            <a href="#responsibilities" class="toc-item">Key Responsibilities</a>
+            <a href="#projects" class="toc-item">Major Projects</a>
+            <a href="#skills" class="toc-item">Skills Gained</a>
+            <a href="#future-work" class="toc-item">Takeaways & Future Applications</a>
+        </div>
+    </div>
+
+    <section id="overview">
+        <h2>Internship Overview</h2>
+        <p>During my <strong>four-month internship at IRDI System</strong>, I worked as an <strong>R&D Test Engineer Intern</strong>, focusing on firmware testing, hardware validation, and embedded system development. I collaborated with engineers on the <strong>diagnostic receiver product</strong> used for <strong>hydrogen vehicle refueling</strong> and was involved in <strong>both software and hardware optimization</strong>.</p>
+    </section>
+
+    <section id="responsibilities">
+        <h2>Key Responsibilities</h2>
+        <ul>
+            <li><strong>Firmware Testing & Validation:</strong> Conducted edge-case testing on embedded firmware using JTAG Debuggers.</li>
+            <li><strong>Hydrogen Fueling System Analysis:</strong> Designed test messages following the SAE J2799 standard.</li>
+            <li><strong>Hardware Development:</strong> Built and tested an ultra-cold freezer system for component evaluation.</li>
+            <li><strong>NFC & Embedded Software Development:</strong> Developed NDEF-compliant firmware for NFC communication.</li>
+            <li><strong>Manufacturing Process Optimization:</strong> Improved production by switching to laser engraving.</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Major Projects</h2>
+
+        <h3>🔹 Diagnostic Receiver Firmware Testing</h3>
+        <p>Created a robust testing framework for hydrogen vehicle diagnostic receivers using JTAG debugging tools.</p>
+
+        <h3>🔹 NFC Integration with Embedded Systems</h3>
+        <p>Implemented Near Field Communication (NFC) functionality using C programming, developing NDEF-compliant message formats.</p>
+
+        <h3>🔹 Ultra-Cold Freezer Development</h3>
+        <p>Designed and assembled a custom ultra-cold freezer for temperature-sensitive component testing.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills Gained</h2>
+        <ul>
+            <li>Embedded Firmware Development</li>
+            <li>Hardware Debugging & Validation</li>
+            <li>NFC & Wireless Communication</li>
+            <li>Automated Firmware Testing</li>
+            <li>Hydrogen Fueling Standards (SAE J2799)</li>
+            <li>PCB Testing & Optimization</li>
+            <li>JTAG Debugging & Low-Level Testing</li>
+        </ul>
+    </section>
+
+    <section id="future-work">
+        <h2>Takeaways & Future Applications</h2>
+        <p>This experience provided me with hands-on exposure to real-world embedded systems and firmware-hardware integration. I developed strong troubleshooting skills, learned to work with cutting-edge diagnostic tools, and optimized manufacturing processes for better efficiency.</p>
+        <p>Moving forward, these skills will directly contribute to my work in robotics, Edge AI, and real-time embedded control systems.</p>
+    </section>
+
+    <script>
+        /* Smooth Scroll Script */
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
