@@ -64,11 +64,12 @@
 }
 
 @keyframes fontChange {
-  0% { font-family: "Arial", sans-serif; }
-  25% { font-family: "Courier New", monospace; }
-  50% { font-family: "Times New Roman", serif; }
-  75% { font-family: "Verdana", sans-serif; }
-  100% { font-family: "Arial", sans-serif; }
+  0% { font-family: "Comic Sans MS", cursive, sans-serif; }
+  20% { font-family: "Impact", sans-serif; }
+  40% { font-family: "Brush Script MT", cursive; }
+  60% { font-family: "Papyrus", fantasy; }
+  80% { font-family: "Monoton", cursive; }
+  100% { font-family: "Lobster", cursive; }
 }
 
 .nav-right {
@@ -77,11 +78,10 @@
   top: 50%;
   transform: translateY(-50%);
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: black; /* Adjust based on your theme */
   animation: slide 3s infinite ease-in-out, fontChange 5s infinite alternate;
 }
-
 
 
 
