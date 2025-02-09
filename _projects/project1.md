@@ -34,14 +34,17 @@ image: /images/buger.jpg
   </ul>
 </section>
 
-
-<section id="future-work2">
-  <h2>CNN Insect Recognition</h2>
-  <p>
- -Differentiate between different insects (spiders vs beetles, etc) so that we only eliminate certain ones
-   
-  </p>
+<section id="robot-design">
+  <h2>Project Updates</h2>
+   <ul>
+    <li><del>Build chassis<del></li>
+    <li><del>Get lidar working and integrated with ROS2<del></li>
+    <li><del>Test movement and H-bridges<del></li>
+    <li>Begin SLAM implementation</li>
+    <li>Develop familiarity with Lidar and the SLAM algorithm</li>
+  </ul>
 </section>
+
 
 
 <style>
