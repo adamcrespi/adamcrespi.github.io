@@ -63,6 +63,12 @@
   100% { transform: translateX(0); }
 }
 
+@keyframes glow {
+  0% { text-shadow: 0 0 5px cyan; }
+  50% { text-shadow: 0 0 15px cyan; }
+  100% { text-shadow: 0 0 5px cyan; }
+}
+
 .nav-right {
   position: absolute;
   right: 20px;
@@ -71,5 +77,10 @@
   font-weight: bold;
   font-size: 1.2em;
   color: black; /* Adjust based on your theme */
-  animation: slide 3s infinite ease-in-out;
+  animation: slide 3s infinite ease-in-out, glow 2s infinite alternate;
 }
+
+
+
+
+
