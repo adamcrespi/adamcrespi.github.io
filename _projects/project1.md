@@ -29,6 +29,7 @@ image: /images/buger.jpg
     <li>Become familar with the NVIDIA Jetson Orin Nano</li>
     <li>Gain experience with CNN image recognition on the Edge</li>
     <li>Learn how to use ROS2</li>
+    <li>Learn Nvidia Isaac Sim</li>
     <li>Understand sensor fusion techniques and working with an IMU</li>
     <li>Develop familiarity with Lidar and the SLAM algorithm</li>
   </ul>
@@ -41,7 +42,8 @@ image: /images/buger.jpg
     <li><del>Get lidar working and integrated with ROS2<del></li>
     <li><del>Test movement and H-bridges<del></li>
     <li>Begin SLAM implementation</li>
-    <li>Develop familiarity with Lidar and the SLAM algorithm</li>
+    <li>Start implementing CNN, train CNN and test</li>
+    <li>Add solenoid and supporting circuity for butane release</li>
   </ul>
 </section>
 
