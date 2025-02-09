@@ -38,26 +38,15 @@ image: /images/buger.jpg
 <section id="robot-design">
   <h2>Project Updates</h2>
   <ul>
-    <li>
-      <input type="checkbox" checked disabled> Build chassis
-    </li>
-    <li>
-      <input type="checkbox" checked disabled> Get lidar working and integrated with ROS2
-    </li>
-    <li>
-      <input type="checkbox" checked disabled> Test movement and H-bridges
-    </li>
-    <li>
-      <input type="checkbox"> Begin SLAM implementation
-    </li>
-    <li>
-      <input type="checkbox"> Start implementing CNN, train CNN and test
-    </li>
-    <li>
-      <input type="checkbox"> Add solenoid and supporting circuitry for butane release
-    </li>
+    <li><del>Build chassis</del></li>
+    <li><del>Get lidar working and integrated with ROS2</del></li>
+    <li><del>Test movement and H-bridges</del></li>
+    <li>Begin SLAM implementation</li>
+    <li>Start implementing CNN, train CNN and test</li>
+    <li>Add solenoid and supporting circuitry for butane release</li>
   </ul>
 </section>
+
 
 
 
