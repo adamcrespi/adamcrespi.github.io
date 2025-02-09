@@ -64,9 +64,9 @@
 }
 
 @keyframes glow {
-  0% { text-shadow: 0 0 5px cyan; }
-  50% { text-shadow: 0 0 15px cyan; }
-  100% { text-shadow: 0 0 5px cyan; }
+  0% { text-shadow: 0 0 5px cyan, 0 0 10px cyan; }
+  50% { text-shadow: 0 0 15px cyan, 0 0 20px cyan; }
+  100% { text-shadow: 0 0 5px cyan, 0 0 10px cyan; }
 }
 
 .nav-right {
@@ -76,9 +76,10 @@
   transform: translateY(-50%);
   font-weight: bold;
   font-size: 1.2em;
-  color: black; /* Adjust based on your theme */
-  animation: slide 3s infinite ease-in-out, glow 2s infinite alternate;
+  color: cyan; /* Make sure the color is bright */
+  animation: slide 3s infinite ease-in-out, glow 1.5s infinite alternate;
 }
+
 
 
 
