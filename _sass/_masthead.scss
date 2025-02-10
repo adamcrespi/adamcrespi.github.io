@@ -79,7 +79,7 @@
 
 /* MILA Image Settings */
 .header-image {
-  width: 50px;  /* Reduced size */
+  width: 80px;  /* Reduced size */
   height: auto;
   border-radius: 50%; /* Optional: Circular shape */
   transition: transform 0.2s ease-in-out;
@@ -95,7 +95,7 @@
 .nav-right {
   position: absolute;
   right: 20px;
-  top: 10%; /* Adjust placement higher */
+  top: 40%; /* Adjust placement higher */
   transform: translateY(-50%);
   display: flex; /* Ensures "Adam Crespi" and the MILA image stay in the same row */
   align-items: center; /* Vertically aligns elements */
