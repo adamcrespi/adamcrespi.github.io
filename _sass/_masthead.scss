@@ -71,13 +71,7 @@
   80% { font-family: "Monoton", cursive; }
   100% { font-family: "Lobster", cursive; }
    
-}@keyframes shake {
-  0% { transform: translateX(0) scale(1.5); }
-  25% { transform: translateX(-2px) scale(1.5); }
-  50% { transform: translateX(2px) scale(1.5); }
-  75% { transform: translateX(-2px) scale(1.5); }
-  100% { transform: translateX(0) scale(1.5); }
-}
+
 
 @keyframes rotate {
   0% { transform: rotate(0deg); }
@@ -93,7 +87,7 @@
 }
 
 .header-image:hover {
-  animation: rotate 20s linear infinite, shake 1s ease-in-out infinite; /* Keeps rotation & adds shake */
+  animation: rotate 20s linear infinite; /* Keeps rotation & adds shake */
 }
 
 
