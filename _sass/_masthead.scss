@@ -70,8 +70,7 @@
   60% { font-family: "Papyrus", fantasy; }
   80% { font-family: "Monoton", cursive; }
   100% { font-family: "Lobster", cursive; }
-   
-
+}
 
 @keyframes rotate {
   0% { transform: rotate(0deg); }
@@ -79,30 +78,30 @@
 }
 
 .header-image {
-  width: 75px;  /* Adjust size */
+  width: 50px;  /* Reduce size slightly */
   height: auto;
-  border-radius: 50%; /* Optional: Makes the image circular */
+  border-radius: 50%; /* Optional: Circular shape */
   transition: transform 0.2s ease-in-out;
   animation: rotate 20s linear infinite; /* Slow continuous rotation */
 }
 
 .header-image:hover {
-  animation: rotate 20s linear infinite; /* Keeps rotation & adds shake */
+  animation: rotate 20s linear infinite; /* Keeps rotation on hover */
 }
 
-
+/* Positioning the Name and Image */
 .nav-right {
   position: absolute;
   right: 20px;
-  top: 10%;
+  top: 10%; /* Adjusts vertical placement */
   transform: translateY(-50%);
-  display: flex; /* Ensures MILA image and name are side by side */
-  align-items: center; /* Vertically aligns image and text */
-  gap: 8px; /* Adds spacing between the MILA image and name */
+  display: flex; /* Ensures "Adam Crespi" and the MILA image are in the same row */
+  align-items: center; /* Vertically aligns them */
+  gap: 8px; /* Space between name and image */
   font-weight: bold;
   font-size: 1.5em;
   color: black; /* Adjust based on your theme */
-  animation: slide 3s infinite ease-in-out, fontChange 5s infinite alternate;
+  animation: fontChange 5s infinite alternate; /* Removes side movement */
 }
 
 
