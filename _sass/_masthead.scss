@@ -72,16 +72,32 @@
   100% { font-family: "Lobster", cursive; }
 }
 
+.header-image {
+  width: 20px;  /* Reduced size (50% smaller) */
+  height: auto;
+  border-radius: 50%; /* Optional: Makes the image circular */
+  transition: transform 0.2s ease-in-out;
+}
+
+.header-image:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
 .nav-right {
   position: absolute;
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
+  display: flex; /* Ensures MILA image and name are side by side */
+  align-items: center; /* Vertically aligns image and text */
+  gap: 8px; /* Adds spacing between the MILA image and name */
   font-weight: bold;
   font-size: 1.5em;
   color: black; /* Adjust based on your theme */
   animation: slide 3s infinite ease-in-out, fontChange 5s infinite alternate;
 }
+
+
 
 
 
