@@ -77,34 +77,34 @@
   100% { transform: rotate(360deg); }
 }
 
+/* MILA Image Settings */
 .header-image {
-  width: 50px;  /* Reduce size slightly */
+  width: 50px;  /* Reduced size */
   height: auto;
   border-radius: 50%; /* Optional: Circular shape */
   transition: transform 0.2s ease-in-out;
   animation: rotate 20s linear infinite; /* Slow continuous rotation */
 }
 
+/* Keeps rotation running but stops movement */
 .header-image:hover {
-  animation: rotate 20s linear infinite; /* Keeps rotation on hover */
+  animation: rotate 20s linear infinite; /* Only rotate, no shake */
 }
 
 /* Positioning the Name and Image */
 .nav-right {
   position: absolute;
   right: 20px;
-  top: 10%; /* Adjusts vertical placement */
+  top: 10%; /* Adjust placement higher */
   transform: translateY(-50%);
-  display: flex; /* Ensures "Adam Crespi" and the MILA image are in the same row */
-  align-items: center; /* Vertically aligns them */
-  gap: 8px; /* Space between name and image */
+  display: flex; /* Ensures "Adam Crespi" and the MILA image stay in the same row */
+  align-items: center; /* Vertically aligns elements */
+  gap: 8px; /* Adds spacing between name and image */
   font-weight: bold;
   font-size: 1.5em;
   color: black; /* Adjust based on your theme */
-  animation: fontChange 5s infinite alternate; /* Removes side movement */
+  animation: fontChange 5s infinite alternate; /* Keeps font change effect */
 }
-
-
 
 
 
