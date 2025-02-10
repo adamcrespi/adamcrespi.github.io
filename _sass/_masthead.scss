@@ -70,8 +70,8 @@
   60% { font-family: "Papyrus", fantasy; }
   80% { font-family: "Monoton", cursive; }
   100% { font-family: "Lobster", cursive; }
-}
-@keyframes shake {
+   
+}@keyframes shake {
   0% { transform: translateX(0) scale(1.5); }
   25% { transform: translateX(-2px) scale(1.5); }
   50% { transform: translateX(2px) scale(1.5); }
@@ -89,18 +89,18 @@
   height: auto;
   border-radius: 50%; /* Optional: Makes the image circular */
   transition: transform 0.2s ease-in-out;
-  animation: rotate 10s linear infinite; /* Slow continuous rotation */
+  animation: rotate 20s linear infinite; /* Slow continuous rotation */
 }
 
 .header-image:hover {
-  animation: shake 1s ease-in-out infinite, rotate 10s linear infinite; /* Slower shake on hover + keep rotation */
+  animation: rotate 20s linear infinite, shake 1s ease-in-out infinite; /* Keeps rotation & adds shake */
 }
 
 
 .nav-right {
   position: absolute;
   right: 20px;
-  top: 25%;
+  top: 10%;
   transform: translateY(-50%);
   display: flex; /* Ensures MILA image and name are side by side */
   align-items: center; /* Vertically aligns image and text */
