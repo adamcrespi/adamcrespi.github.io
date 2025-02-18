@@ -56,7 +56,7 @@ image: /images/buger.jpg
    Diving further into this, apparently NVIDIA requires you to generate a pinmux file for the bootloader, specific to the pins you want to control. This all seems like a crazy amount of work to simply toggle a GPIO pin, and has changed my opinion as a developer on NVIDIA in a negative way. It doesn't seem like the Jetson Orin Nano is designed
    for hobbyists or individuals.
    
-   <img src="/images/jetso.png" alt="Robot Schematic" style="width: 80%; border-radius: 10px; margin-top: 10px;">
+   <img src="/images/jetso.png" alt="Robot Schematic" style="width: 95%; border-radius: 10px; margin-top: 10px;">
 
    Next steps:
    <ul>
