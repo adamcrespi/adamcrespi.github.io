@@ -46,25 +46,6 @@ image: /images/buger.jpg
     <li>Add solenoid and supporting circuitry for butane release</li>
   </ul>
 
-  <h2>February 18th Update</h2>
-  <p>
-   Over the last month, I've been slowly working on getting the movement functional. The NVIDIA Jetson Orin Nano dev kit is much more challenging to use than I anticipated. 
-
-   It turns out on the Jetpack 6 SDK I was using, there was a bug on the dev kit where it was impossible to open the JetsonIO Configuration. A pretty ridiculous bug for a NVIDIA device.
-   
-   Once Jetback 6.2 came out at the end of Janaury, I resumed trying to drive my H-bridges. I set the pin as an output on JetsonIO and wrote a python script for cycling the pin between on and off. However, scoping the pin showed no cycling or change of state.
-   Diving further into this, apparently NVIDIA requires you to generate a pinmux file for the bootloader, specific to the pins you want to control. This all seems like a crazy amount of work to simply toggle a GPIO pin, and has changed my opinion as a developer on NVIDIA in a negative way. It doesn't seem like the Jetson Orin Nano is designed
-   for hobbyists or individuals.
-   
-   <img src="/images/jetso.png" alt="Robot Schematic" style="width: 100%; border-radius: 10px; margin-top: 10px;">
-
-   Next steps:
-   <ul>
-    <li>Modify Pinmux spreadsheet and reflash Jetson SDK</li>
-    <li>Pray that I can actually write a pin high</li>
-  </ul>
-   
-  </p>
 </section>
 
 
