@@ -16,12 +16,12 @@ main:
   - title: "Portfolio"
     url: /
 
+  - title: "Research"
+    url: /research/   
+
   - title: "Rivian"
     url: /rivian/   
     
-  - title: "Research"
-    url: /research/   
-        
   - title: "IRDI System"
     url: /irdi-system/
     
