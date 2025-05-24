@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Smart BLE Gesture Ring"
-permalink: /projects/ring/
+permalink: /projects/project1/
 description: "Capacitive gesture ring with BLE, haptics, and heart rate monitoring"
 image: /images/ring_cover.jpg
 ---
