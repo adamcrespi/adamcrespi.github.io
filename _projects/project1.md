@@ -1,132 +1,71 @@
 ---
 layout: single
-title: "Jetson Orin Nano SLAM Robot"
-permalink: /projects/project1/
-description: "Jetson Orin Nano SLAM Robot"
-image: /images/buger.jpg
+title: "Smart BLE Gesture Ring"
+permalink: /projects/ring/
+description: "Capacitive gesture ring with BLE, haptics, and heart rate monitoring"
+image: /images/ring_cover.jpg
 ---
 
- <div class="image-container">
-    <img src="/images/orin.png" alt="Robot Schematic" style="width: 70%; border-radius: 10px; margin-top: 10px;">
-    <p class="image-label">Figure 1: NVIDIA Jetson Orin Nano Dev Kit</p>
-  </div>
+<!--
+<div class="image-container">
+  <img src="/images/ring_proto.jpg" alt="Ring Prototype" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+  <p class="image-label">Figure 1: First Prototype of the BLE Ring</p>
+</div>
+-->
 
 <div class="toc-container">
   <div class="toc">
     <a href="#overview" class="toc-item">Project Goals</a>
-    <a href="#robot-design" class="toc-item">The Design</a>
-    <a href="#testing-and-results" class="toc-item">SLAM</a>
-    <a href="#future-work" class="toc-item">CNN Insect Recognition</a>
-    <a href="#future-work2" class="toc-item">The Flamethrower</a>
+    <a href="#hardware" class="toc-item">Hardware Stack</a>
+    <a href="#firmware" class="toc-item">Firmware Development</a>
+    <a href="#testing" class="toc-item">Testing & Next Steps</a>
   </div>
 </div>
-
 
 <!-- Project Sections -->
 <section id="overview">
   <h2>Project Goals</h2>
   <ul>
-    <li>Become familar with the NVIDIA Jetson Orin Nano</li>
-    <li>Gain experience with CNN image recognition on the Edge</li>
-    <li>Learn how to use ROS2</li>
-    <li>Learn Nvidia Isaac Sim</li>
-    <li>Understand sensor fusion techniques and working with an IMU</li>
-    <li>Develop familiarity with Lidar and the SLAM algorithm</li>
+    <li>Design a wearable smart ring with BLE connectivity</li>
+    <li>Implement capacitive touch gesture recognition</li>
+    <li>Integrate haptic feedback via linear resonant actuator (LRA)</li>
+    <li>Stream heart rate data from an optical sensor over Bluetooth</li>
+    <li>Enable phone control (media playback, volume, etc.) via BLE HID</li>
+    <li>Optimize for ultra-low-power operation and minimal footprint</li>
   </ul>
 </section>
 
-<section id="robot-design">
-  <h2>Project Updates</h2>
+<section id="hardware">
+  <h2>Hardware Stack</h2>
   <ul>
-    <li><del>Build chassis</del></li>
-    <li><del>Get lidar working and integrated with ROS2</del></li>
-    <li>Test movement and H-bridges</li>
-    <li>Begin SLAM implementation</li>
-    <li>Start implementing CNN, train CNN and test</li>
-    <li>Add solenoid and supporting circuitry for butane release</li>
+    <li><strong>MCU:</strong> Nordic nRF52832 (BLE + low-power core)</li>
+    <li><strong>Capacitive Sensing:</strong> MPR121 controller</li>
+    <li><strong>Haptics:</strong> DRV2605L + 6mm LRA motor</li>
+    <li><strong>Heart Rate:</strong> MAX30102 optical pulse sensor</li>
+    <li><strong>Power:</strong> 3.7V LiPo cell + MCP73831 charger</li>
+    <li><strong>PCB:</strong> Custom-designed 2-layer flex prototype</li>
   </ul>
-
 </section>
 
+<section id="firmware">
+  <h2>Firmware Development</h2>
+  <ul>
+    <li>Set up peripheral drivers for I2C communication with sensors</li>
+    <li>Implemented gesture state machine with tap/double-tap/long-press detection</li>
+    <li>Used Nordic SDK and Zephyr RTOS to handle BLE stack, advertising, and HID media control</li>
+    <li>Mapped gestures to media actions (play/pause, skip, volume) on connected phone</li>
+    <li>Integrated heart rate streaming over custom BLE characteristic</li>
+    <li>Added haptic feedback loop for gesture confirmation</li>
+  </ul>
+</section>
 
-
-
-<style>
-/* Table of Contents Styling */
-.toc-container {
-  background-color: #f4f4f4;
-  padding: 10px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.toc {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.toc-item {
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.toc-item:hover {
-  background-color: #007acc;
-  color: #fff;
-  transform: scale(1.05);
-}
-
-/* Section Styling */
-section {
-  padding: 20px 0; /* Optional: Adjust spacing above and below */
-  margin: 20px 0; /* Optional: Add vertical spacing between sections */
-  font-family: 'Arial', sans-serif; /* Optional: Set font family */
-  font-size: 14px; /* Set font size */
-  line-height: 1.6; /* Improve text readability */
-  color: #333; /* Text color */
-  border: none; /* Remove borders */
-  background-color: transparent; /* Remove background color */
-}
-
-
-
-section img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Heading Styling */
-section h2 {
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* Smooth Scroll */
-a[href^="#"] {
-  text-decoration: none;
-}
-
-</style>
-
-<script>
-  /* Smooth Scroll Script */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
-</script>
+<section id="testing">
+  <h2>Testing & Next Steps</h2>
+  <ul>
+    <li>Gesture detection validated on breadboard prototype</li>
+    <li>BLE connection tested with iOS + Android using nRF Connect Mobile</li>
+    <li>Next step: route and order custom PCB with optimized layout</li>
+    <li>Begin battery life profiling and deep sleep tuning</li>
+    <li>Integrate with a mobile app or explore gesture-to-voice bridging</li>
+  </ul>
+</section>
