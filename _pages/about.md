@@ -10,7 +10,7 @@ redirect_from:
 <div class="masonry">
   <div class="project">
     <div class="image-container">
-      <img src="/images/jetso.jpg" alt="Project 1" class="static-image">
+      <img src="/images/WIP.jpg" alt="Project 1 GIF" class="hover-image">
       <img src="/images/WIP.jpg" alt="Project 1 GIF" class="hover-image">
     </div>
     <h3> SLAM Insect Detection Robot </h3>
