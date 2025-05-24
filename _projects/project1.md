@@ -47,6 +47,7 @@ image: /images/ring_cover.jpg
   </ul>
 </section>
 
+<!--
 <section id="firmware">
   <h2>Firmware Development</h2>
   <ul>
@@ -69,3 +70,4 @@ image: /images/ring_cover.jpg
     <li>Integrate with a mobile app or explore gesture-to-voice bridging</li>
   </ul>
 </section>
+-->
