@@ -13,8 +13,8 @@ redirect_from:
       <img src="/images/WIP.jpg" alt="Project 1 GIF" class="hover-image">
       <img src="/images/WIP.jpg" alt="Project 1 GIF" class="hover-image">
     </div>
-    <h3> SLAM Insect Detection Robot </h3>
-    <p> <a href="/projects/project1/">SLAM-enabled navigation and CNN-driven insect detection using Jetson Orin Nano</a></p>
+    <h3>Smart BLE Gesture Ring</h3>
+    <p><a href="/projects/project1/">Capacitive gesture ring with BLE media control, haptics, and heart rate streaming</a></p>
   </div>
   <div class="project">
     <div class="image-container">
