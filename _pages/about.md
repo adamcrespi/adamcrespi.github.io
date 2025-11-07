@@ -10,12 +10,34 @@ redirect_from:
 <div class="masonry">
   <div class="project">
     <div class="image-container">
-      <img src="/images/WIP.jpg" alt="Project 1 GIF" class="hover-image">
-      <img src="/images/WIP.jpg" alt="Project 1 GIF" class="hover-image">
+      <img src="images/vibra/headerimage.jpg" alt="Project 1 GIF" class="static-image">
+      <img src="images/vibra/headerimage.jpg" alt="Project 1 GIF" class="hover-image">
     </div>
-    <h3>Smart BLE Gesture Ring</h3>
-    <p><a href="/projects/project1/">Capacitive gesture ring with BLE media control, haptics, and heart rate streaming</a></p>
+    <h3>Very Low Latency BLE Audio</h3>
+    <p><a href="/projects/vibra/">Bare-metal, ultra-low-latency BLE audio transport built on Nordic nRF52 development kits </a></p>
   </div>
+  <div class="project">
+    <div class="image-container">
+      <img src="/images/rtos.png" alt="FreeRTOS Scheduling" class="static-image">
+      <img src="/images/rtos_sched.jpg" alt="FreeRTOS Scheduling" class="hover-image">
+    </div>
+    <h3>Kernel-Level Real-Time Scheduling in FreeRTOS</h3>
+    <p><a href="/projects/freertos-rt-sched/">
+      Implemented EDF, SRP, and CBS schedulers inside the FreeRTOS kernel for real-time experimentation.
+    </a></p>
+  </div>
+
+  <div class="project">
+    <div class="image-container">
+      <img src="/images/avax_node.jpg" alt="Low-Latency Arbitrage" class="static-image">
+      <img src="/images/avax_node.jpg" alt="Low-Latency Arbitrage" class="hover-image">
+    </div>
+    <h3>Low-Latency Blockchain Arbitrage Engine</h3>
+    <p><a href="/projects/arb-platform/">
+      Latency-tuned Avalanche node + cross-DEX graph search for real-time arbitrage execution.
+    </a></p>
+  </div>
+
   <div class="project">
     <div class="image-container">
       <img src="/images/buger.jpg" alt="Project 2" class="static-image">

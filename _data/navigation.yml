@@ -16,8 +16,8 @@ main:
   - title: "Portfolio"
     url: /
 
-  - title: "Research"
-    url: /research/   
+  # - title: "Research"
+  #   url: /research/   
 
   - title: "Rivian"
     url: /rivian/   
