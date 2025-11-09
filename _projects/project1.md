@@ -29,7 +29,7 @@ image: /images/vibra_cover.jpg
   </a>
   </h3>
   <div style="text-align: center;">
-      <img src="/images/vibra/dk.png" alt="devkit" style="width: 90%; border-radius: 10px; margin-top: 10px;">
+      <img src="/images/vibra/dk1.png" alt="devkit" style="width: 90%; border-radius: 10px; margin-top: 10px;">
   </div>
 
   <!-- <h3>Objectives</h3>
@@ -61,7 +61,7 @@ image: /images/vibra_cover.jpg
 
 <section id="background">
   <details>
-    <summary class="collapsible-summary"><strong>Background / Theory</strong></summary>
+    <summary class="collapsible-summary"><strong>BLE Stack Architecture</strong></summary>
 
     <h2>Background / Theory</h2>
 
@@ -100,6 +100,14 @@ image: /images/vibra_cover.jpg
       PDUs, manages attribute handles, and decides when/how those PDUs should be sent
       over an active BLE connection.
     </p>
+    <div style="text-align: center;">
+      <img src="/images/vibra/gatt_code.png" 
+          alt="hardware" 
+          style="width: 65%; border-radius: 10px; margin-top: 10px;">
+      <p style="font-size: 0.9rem; color: #666; margin-top: 8px;">
+        Zephyr GATT characteristic struct – the bt_gatt_chrc definition that VIBRA uses to describe each BLE characteristic’s UUID, value handle, and properties (read/write/notify). Inside /zephyr/bluetooth/gatt.h
+      </p>
+    </div>
 
     <h3>Controller / Link Layer</h3>
     <p>
@@ -158,6 +166,10 @@ image: /images/vibra_cover.jpg
       <li>Bit <code>1</code> → carrier frequency shifted by <code>+Δf</code></li>
       <li>Bit <code>0</code> → carrier frequency shifted by <code>−Δf</code></li>
     </ul>
+    <div style="text-align: center;">
+      <img src="/images/vibra/gfsk.png" alt="gfsk" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    </div>
+    
 
     <h3>Radio Timer, DMA, and State Machine</h3>
     <p>
@@ -196,54 +208,115 @@ image: /images/vibra_cover.jpg
       <li><strong>Antenna:</strong> Radiates and receives the 2.4&nbsp;GHz electromagnetic
           waves that carry our packets.</li>
     </ul>
-
+     <div style="text-align: center;">
+      <img src="/images/vibra/hardware.png" 
+          alt="hardware" 
+          style="width: 85%; border-radius: 10px; margin-top: 10px;">
+      <p style="font-size: 0.9rem; color: #666; margin-top: 8px;">
+        RF front-end of the nRF52832 on the PCA10040 board, showing the matching network (C3/L1/C15),
+        test connector (J1, Murata MM8130-2600), and PCB antenna feed. Note that our PA, switch and Balun are internal to the nrf52 ic.
+      </p>
+    </div>
     <hr>
 
-    <h3>Key Terms (Dictionary)</h3>
-    <dl>
-      <dt>GATT (Generic Attribute Profile)</dt>
-      <dd>High-level API and schema for exposing data over BLE as attributes
-          (services, characteristics, descriptors) that can be read, written, or
-          notified.</dd>
-
-      <dt>ATT (Attribute Protocol)</dt>
-      <dd>Low-level protocol that defines how individual attributes are addressed and
-          how PDUs for read, write, and notify are formatted and handled.</dd>
-
-      <dt>L2CAP (Logical Link Control and Adaptation Protocol)</dt>
-      <dd>Multiplexes multiple logical channels over a single BLE link, handles
-          segmentation and reassembly of larger PDUs, and provides basic flow control.</dd>
-
-      <dt>HCI (Host Controller Interface)</dt>
-      <dd>Standardized command/event interface between the host stack and the
-          controller, used to configure the radio and exchange data.</dd>
-
-      <dt>PHY (Physical Layer)</dt>
-      <dd>The layer that converts digital packets into RF waveforms on a given
-          frequency band using an agreed modulation scheme (GFSK for BLE).</dd>
-
-      <dt>GFSK (Gaussian Frequency Shift Keying)</dt>
-      <dd>A modulation scheme where bits are encoded as small frequency shifts on a
-          carrier, with a Gaussian filter applied to smooth transitions.</dd>
-
-      <dt>Access Address</dt>
-      <dd>A 32-bit field that identifies a particular BLE connection or advertising
-          train and helps receivers lock onto the right packets.</dd>
-
-      <dt>PDU (Protocol Data Unit)</dt>
-      <dd>The basic unit of data exchanged at a given protocol layer, such as link
-          layer PDUs or ATT PDUs.</dd>
-    </dl>
-
-    <h3>Planned Modifications</h3>
-    <p>
+    <details>
+      <summary class="collapsible-summary"><strong>Key Terms (Dictionary)</strong></summary>
       
-    </p>
-    <ul>
-      <li><!-- Add planned modifications as bullet points here. --></li>
-    </ul>
+      <h3>Key Terms (Dictionary)</h3>
+      <dl>
+        <dt>GATT (Generic Attribute Profile)</dt>
+        <dd>High-level API and schema for exposing data over BLE as attributes
+            (services, characteristics, descriptors) that can be read, written, or
+            notified.</dd>
 
-    <hr>
+        <dt>ATT (Attribute Protocol)</dt>
+        <dd>Low-level protocol that defines how individual attributes are addressed and
+            how PDUs for read, write, and notify are formatted and handled.</dd>
+
+        <dt>L2CAP (Logical Link Control and Adaptation Protocol)</dt>
+        <dd>Multiplexes multiple logical channels over a single BLE link, handles
+            segmentation and reassembly of larger PDUs, and provides basic flow control.</dd>
+
+        <dt>HCI (Host Controller Interface)</dt>
+        <dd>Standardized command/event interface between the host stack and the
+            controller, used to configure the radio and exchange data.</dd>
+
+        <dt>PHY (Physical Layer)</dt>
+        <dd>The layer that converts digital packets into RF waveforms on a given
+            frequency band using an agreed modulation scheme (GFSK for BLE).</dd>
+
+        <dt>GFSK (Gaussian Frequency Shift Keying)</dt>
+        <dd>A modulation scheme where bits are encoded as small frequency shifts on a
+            carrier, with a Gaussian filter applied to smooth transitions.</dd>
+
+        <dt>Access Address</dt>
+        <dd>A 32-bit field that identifies a particular BLE connection or advertising
+            train and helps receivers lock onto the right packets.</dd>
+
+        <dt>PDU (Protocol Data Unit)</dt>
+        <dd>The basic unit of data exchanged at a given protocol layer, such as link
+            layer PDUs or ATT PDUs.</dd>
+      </dl>
+    </details>
+
+
+    <div style="margin-top: 50px;"></div>
+    <h2>Planned Modifications</h2>
+    <p>
+      Most of the optimizations for this project will occur at the application layer, but I hope to dive deeper into the hardware to truly push the limits of my optimization.
+    </p>
+
+    <h3>1. Application Layer – From Test Packets to Audio Frames</h3>
+    <p>
+      The first goal is to replace the current fixed <code>PING</code> test payloads with real audio data frames.
+      These frames will originate from an <strong>ADC-driven input</strong> on the transmitter board.
+      At this layer, VIBRA will handle framing, compression, sequencing, and pacing —
+      effectively building a custom, application-defined <strong>GATT audio service</strong> on top of the Bluetooth stack.
+    </p>
+
+    <h3>2. Audio Sampling and DMA Integration</h3>
+    <p>
+      On the transmitter, the nRF52’s 12-bit ADC will be triggered by a hardware timer and serviced by <strong>double-buffered DMA</strong>.
+      Each buffer holds a few milliseconds of samples, allowing one buffer to fill while the other is encoded.
+      This design guarantees continuous capture at ~8–10 kHz with no CPU latency jitter
+      concepts discussed in the BLE architecture section.
+    </p>
+
+    <h3>3. Lightweight Audio Encoding</h3>
+    <p>
+      The captured PCM data will be compressed using a simple <strong>ADPCM or μ-law codec</strong>,
+      reducing the bandwidth requirement enough to fit a single audio frame inside one BLE notification packet (≤ 20 bytes).
+      This compression step sits entirely in software at the Application Layer, but directly influences how efficiently the
+      <strong>L2CAP and ATT layers</strong> below can deliver data within each connection event.
+    </p>
+
+    <h3>4. Controlled BLE Transmission</h3>
+    <p>
+      Each encoded frame will be queued and sent during the next BLE connection event using <strong>bt_nus_client_send()</strong>.
+      A hardware timer will align frame transmission precisely with the connection interval (e.g. 7.5 ms),
+      minimizing inter-packet jitter.
+    </p>
+
+    <h3>5. Receiver Path – Jitter Buffer and Playback Control</h3>
+    <p>
+      The receiver will maintain a small <strong>jitter-adaptive FIFO</strong> to absorb packet arrival variance,
+      tracking sequence numbers and timestamps attached to each frame.
+      This buffer forms the interface between the BLE transport and the audio output subsystem,
+      ensuring steady playback even when RF conditions fluctuate.
+    </p>
+
+    <h3>6. Audio Output and Hardware Synchronization</h3>
+    <p>
+      Decoded audio samples will be played through either <strong>PWM output</strong> or an external <strong>I²S DAC</strong>.
+      Like the ADC, the playback engine will be fully DMA-driven and clocked by a hardware timer, closing the loop between capture and output.
+    </p>
+    <h3>7. Future Stack-Level Experiments</h3>
+    <p>
+      With the audio path stable, later experiments will target the lower layers again — exploring
+      <strong>PHY mode switching (1M ↔ 2M)</strong>, <strong>connection interval negotiation</strong>,
+      and <strong>custom GATT services</strong> for telemetry and command control. This will probably be hard
+    </p>
+
 
   </details>
 </section>
