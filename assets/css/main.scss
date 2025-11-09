@@ -39,3 +39,14 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+// -----------------------
+// Custom styles
+// -----------------------
+
+summary.collapsible-summary {
+  font-size: 1.25rem;   // tweak this size to taste
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0.25rem 0;
+}
