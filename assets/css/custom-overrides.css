@@ -1,0 +1,41 @@
+/* Keep polygons visible to the side; place solid white background behind content (no blur) */
+
+/* Move particles to the right on non-home pages so they don't sit behind text */
+.not-home #particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(180px); /* nudge particles to the right; tweak as needed */
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: -1 !important;
+}
+
+/* Solid white card for page content — no backdrop-filter/blur */
+.not-home main,
+.not-home .site-main,
+.not-home .page-content,
+.not-home .post-content,
+.not-home .content,
+.not-home article,
+.not-home .project,
+.not-home .project-content {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;    /* solid white behind text */
+  padding: 1.5rem 2rem;   /* keep some inner spacing so particles show at edges */
+  max-width: 1000px;      /* limits width so particles remain visible on wide screens */
+  margin: 2rem auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06); /* subtle separation — optional */
+}
+
+/* If your page wrappers use a different selector, add it above. */
+/* Mobile: reduce particle offset so edges aren't cut off */
+@media (max-width: 900px) {
+  .not-home #particles-js { transform: translateX(90px); }
+  .not-home main,
+  .not-home .site-main,
+  .not-home .page-content { padding: 1rem; margin: 1rem; }
+}

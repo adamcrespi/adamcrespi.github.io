@@ -61,7 +61,7 @@ image: /images/vibra_cover.jpg
 
 <section id="background">
   <details>
-    <summary class="collapsible-summary"><strong>BLE Stack Architecture</strong></summary>
+    <summary class="collapsible-summary"><strong>BLE Architecture</strong></summary>
 
     <h2>Background / Theory</h2>
 
@@ -169,6 +169,36 @@ image: /images/vibra_cover.jpg
     <div style="text-align: center;">
       <img src="/images/vibra/gfsk.png" alt="gfsk" style="width: 70%; border-radius: 10px; margin-top: 10px;">
     </div>
+    <details>
+      <summary class="collapsible-summary"><strong>Mathematical Basis of GFSK</strong></summary>
+      <p>
+        Gaussian Frequency Shift Keying (GFSK) is a continuous-phase form of frequency modulation that encodes binary data 
+        as small deviations in carrier frequency. Each bit modifies the instantaneous phase 
+        <code>φ(t)</code> of the transmitted signal:
+        <code>s(t) = A · cos(ω<sub>c</sub>t + φ(t))</code>.
+        The phase evolves according to the cumulative integral of the modulated frequency:
+        <code>φ(t) = hπ ∫ Σ a<sub>i</sub>γ(t − iT) dt</code>,
+        where <code>a<sub>i</sub> = ±1</code> represents bit values, <code>T</code> is the symbol period, and <code>h</code> is the modulation index.
+      </p>
+      <p>
+        In pure FSK, <code>γ(t)</code> would be rectangular—switching instantly between <code>+Δf</code> and <code>−Δf</code>—but GFSK applies a Gaussian filter
+        <code>g(t) = (1 / √(2πσ²)) · e^(−t² / (2σ²))</code> to smooth these transitions.
+        This reduces spectral splatter by limiting the rate of phase change and makes the waveform more bandwidth-efficient.
+      </p>
+      <p style="font-size: 0.9em; color: #555;">
+        <em>Reference:</em> Sabih H. Gerez, “Implementation of Digital Signal Processing: Some Background on GFSK Modulation,” University of Twente, March 2016.
+      </p>
+      <p>
+        Work from the University of Twente (<em>Lopez, 2023</em>) points out an interesting asymmetry in GFSK systems: 
+        encoding is simple and mostly limited by the symbol rate and Gaussian filtering, while decoding is where 
+        hardware limitations really show up. The receiver has to estimate phase or frequency, apply filters, and make 
+        bit decisions in real time — all of which introduce a few microseconds of unavoidable delay, even on optimized FPGA designs. 
+        In other words, while transmission speed is defined by the modulation itself, it’s the efficiency of the 
+        demodulation hardware that ultimately caps how low the end-to-end latency can go.
+      </p>
+    </details>
+
+
     
 
     <h3>Radio Timer, DMA, and State Machine</h3>
@@ -312,11 +342,150 @@ image: /images/vibra_cover.jpg
     </p>
     <h3>7. Future Stack-Level Experiments</h3>
     <p>
-      With the audio path stable, later experiments will target the lower layers again — exploring
-      <strong>PHY mode switching (1M ↔ 2M)</strong>, <strong>connection interval negotiation</strong>,
-      and <strong>custom GATT services</strong> for telemetry and command control. This will probably be hard
+      With the audio path stable, later experiments will target the lower layers again, exploring
+      PHY mode switching (1M ↔ 2M), connection interval negotiation,
+      and custom GATT services. This will probably be hard..
     </p>
 
+
+  </details>
+</section>
+
+<section id="implementation">
+  <details>
+    <summary class="collapsible-summary"><strong>My Implementation</strong></summary>
+    <div style="text-align: center;">
+      <img src="/images/vibra/tx_data_path.drawio.png" 
+          alt="system_diagram" 
+          style="width: 90%; border-radius: 5px; margin-top: 5px;">
+    </div>
+    <div style="margin-top: 40px;"></div>
+    <div style="text-align: center;">
+      <img src="/images/vibra/rx_data.drawio.png" 
+          alt="system_diagram" 
+          style="width: 90%; border-radius: 5px; margin-top: 5px;">
+    </div>
+    
+    <h2>Where the Latency Actually Comes From</h2>
+    <p>
+      VIBRA is a tightly controlled pipeline from GPIO edge on TX to GPIO edge on RX. 
+      The total one-way latency is the sum of:
+    </p>
+    <ul>
+      <li>How long audio samples are buffered before sending,</li>
+      <li>How often the BLE link wakes up (connection interval),</li>
+      <li>How quickly the Zephyr host stack and controller move a PDU over the air, and</li>
+      <li>How much buffering and scheduling occurs on the receiver before playback.</li>
+    </ul>
+
+    <h3>1. TX Side – From Samples to BLE Packets</h3>
+    <p>
+      On the transmitter, the audio path is designed so that the CPU never “chases” the data:
+    </p>
+    <ul>
+      <li>
+        A hardware <strong>TIMER</strong> drives the ADC at a fixed sample rate (~8–10 kHz).
+        Each tick triggers a conversion so sampling jitter is tied to hardware, not software.
+      </li>
+      <li>
+        <strong>EasyDMA</strong> with double buffering moves samples into two alternating RAM
+        buffers. While DMA fills buffer A, the application encodes buffer B.
+      </li>
+      <li>
+        Once a buffer holds a few milliseconds of PCM, a lightweight
+        ADPCM or μ-law encoder compresses it into a payload that fits (≤ 20 bytes)
+        inside a BLE notification.
+      </li>
+    </ul>
+    <p>
+      Each frame is tagged with a sequence number and timestamp, ready for transmission.
+    </p>
+
+    <h3>2. BLE Transport – Riding the Connection Interval</h3>
+    <p>
+      Zephyr’s Nordic UART Service is used as the transport layer. Under the hood:
+    </p>
+    <ul>
+      <li>
+        The TX thread calls <code>bt_nus_client_send()</code> as soon as a frame is encoded,
+        which becomes one or more ATT Write or GATT Notify PDUs on an L2CAP channel.
+      </li>
+      <li>
+        The connection interval is set to the BLE minimum (7.5 ms), so latency quantizes
+        to this timing window.
+      </li>
+      <li>
+        One audio frame is sent per connection event to keep host-side queue depth low
+        and avoid unnecessary buffering.
+      </li>
+    </ul>
+    <p>
+      Although the Nordic controller handles link scheduling, transmission pacing,
+      payload size, and queue depth are fully under application control.
+    </p>
+
+    <h3>3. RX Side – Jitter Buffer and Playback</h3>
+    <p>
+      The receiver turns a slightly jittery BLE packet stream into a steady audio stream:
+    </p>
+    <ul>
+      <li>
+        The NUS receive callback fires when a notification arrives, placing the frame
+        into a small jitter buffer (FIFO of a few frames).
+      </li>
+      <li>
+        A playback thread, clocked by a hardware timer, pulls frames out of the buffer
+        at a constant rate, decodes them, and feeds them to a PWM or I²S DMA output.
+      </li>
+      <li>
+        The buffer depth is kept extremely small (one or two frames) to balance
+        smooth playback with minimal delay.
+      </li>
+    </ul>
+    <p>
+      More buffer means smoother audio but higher latency; less buffer means lower latency
+      but greater sensitivity to timing variance. VIBRA operates near the minimal stable
+      point.
+    </p>
+
+    <h3>4. Instrumentation – Measuring Latency</h3>
+    <p>
+      GPIO pins are toggled at key stages to measure timing:
+    </p>
+    <ul>
+      <li>
+        TX toggles a latency pin just before calling <code>bt_nus_client_send()</code>.
+      </li>
+      <li>
+        RX toggles one pin inside the receive callback (for link latency) and another
+        before playback DMA starts (for end-to-end latency).
+      </li>
+      <li>
+        The Analog Discovery 2 samples both pins at 10&nbsp;MHz and triggers on the TX rising edge.
+      </li>
+    </ul>
+    <p>
+      The time difference between edges gives the one-way latency.
+    </p>
+
+    <h3>5. What’s Controlled vs. Fixed</h3>
+    <p>
+      The system distinguishes between controllable and fixed latency sources:
+    </p>
+    <ul>
+      <li>
+        <strong>Controlled:</strong> frame size, buffer depth, encoding time, 
+        packet pacing, DMA scheduling.
+      </li>
+      <li>
+        <strong>Fixed:</strong> link-layer scheduling, RF collisions, retransmissions,
+        and internal controller timing.
+      </li>
+    </ul>
+    <p>
+      The low latency comes from minimizing and quantifying all controllable delays,
+      then characterizing the rest with actual measurements instead of assumptions.
+    </p>
 
   </details>
 </section>
@@ -331,6 +500,15 @@ image: /images/vibra_cover.jpg
     <p>
       This is a rolling log of work sessions. New entries are appended at the top.
     </p>
+
+    <h3>2025-11-11 – Automated Latency Measurement Script</h3>
+    <ul>
+      <li><strong>Python + AD2 automation:</strong> Wrote a Python script using <code>dwfpy</code> to automatically capture and compute BLE link latency from the Analog Discovery 2’s digital inputs (TX and RX lines).</li>
+      <li>The script samples at 100&nbsp;kHz and detects the short TX low pulse as a start marker, then measures time to the first RX edge.</li>
+      <li>Collected 20 valid measurements from 600 captures; mean latency ≈ <strong>10.10&nbsp;ms</strong> after adding a 5&nbsp;ms intentional delay for validation.</li>
+      <li>Output includes per-capture logs, timing statistics, and a CSV for plotting latency histograms in later analysis.</li>
+    </ul>
+
 
     <hr>
 

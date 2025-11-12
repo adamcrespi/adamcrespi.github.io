@@ -19,7 +19,7 @@ redirect_from:
   <div class="project">
     <div class="image-container">
       <img src="/images/rtos.png" alt="FreeRTOS Scheduling" class="static-image">
-      <img src="/images/rtos_sched.jpg" alt="FreeRTOS Scheduling" class="hover-image">
+      <img src="/images/rtos.png" alt="FreeRTOS Scheduling" class="hover-image">
     </div>
     <h3>Kernel-Level Real-Time Scheduling in FreeRTOS</h3>
     <p><a href="/projects/freertos-rt-sched/">
@@ -29,8 +29,8 @@ redirect_from:
 
   <div class="project">
     <div class="image-container">
-      <img src="/images/avax_node.jpg" alt="Low-Latency Arbitrage" class="static-image">
-      <img src="/images/avax_node.jpg" alt="Low-Latency Arbitrage" class="hover-image">
+      <img src="/images/avax.png" alt="Low-Latency Arbitrage" class="static-image">
+      <img src="/images/avax.png" alt="Low-Latency Arbitrage" class="hover-image">
     </div>
     <h3>Low-Latency Blockchain Arbitrage Engine</h3>
     <p><a href="/projects/arb-platform/">

@@ -25,9 +25,10 @@ layout: compress
         left: 0;
       }
     </style>
+    <link rel="stylesheet" href="{{ '/assets/css/custom-overrides.css' | relative_url }}">
   </head>
 
-  <body>
+  <body class="{% if page.url == '/' or page.permalink == '/' %}home{% else %}not-home{% endif %}">
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
