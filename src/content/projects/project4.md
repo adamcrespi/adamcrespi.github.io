@@ -7,29 +7,70 @@ cover: "/images/dronepic.jpg"
 order: 1
 ---
 
-A machine learning system for autonomous drone navigation using convolutional neural networks to classify road signs and direct flight control in real time.
+<section id="The Competition">
+  <h2 style="text-align: center;">Gallery</h2>
+  <div class="gif-grid">
+    <div class="gif-item">
+      <img src="/files/last.gif" alt="Competition Scene 1">
+    </div>
+    <div class="gif-item">
+      <img src="/files/sign5.gif" alt="Competition Scene 2">
+    </div>
+    <div class="gif-item">
+      <img src="/files/sign6.gif" alt="Competition Scene 3">
+    </div>
+    <div class="gif-item">
+      <img src="/files/blackwhitesigns.gif" alt="Competition Scene 4">
+    </div>
+  </div>
+</section>
 
-## Gallery
+<section id="Final Report">
+  <h2>Read the final report for this project below</h2>
+  <div style="text-align: center; margin-top: 20px;">
+    <iframe
+      src="/files/Adam_Jordan_353_Final_Report.pdf"
+      width="100%"
+      height="800px"
+      style="border: none; border-radius: 10px;">
+    </iframe>
+    <p style="margin-top: 10px;">
+      <a href="/files/Adam_Jordan_353_Final_Report.pdf" target="_blank" style="color: #007acc; text-decoration: none; font-weight: bold;">
+        Download the Full Report (PDF)
+      </a>
+    </p>
+  </div>
+</section>
 
-![Competition scene](/files/last.gif)
-![Sign recognition](/files/sign5.gif)
-![Sign recognition 2](/files/sign6.gif)
-![Black and white signs](/files/blackwhitesigns.gif)
-
-## Overview
-
-The system uses a CNN trained to classify directional signs from a downward-facing camera, translating predictions into flight commands for a quadrotor. The drone follows a course marked with signs, making turn decisions based on the classifier output.
-
-## Approach
-
-**Dataset:** Training images were collected from the physical competition course and augmented with rotations, crops, and brightness jitter to improve robustness to viewing angle variation and lighting changes.
-
-**Model:** A lightweight CNN designed to run inference fast enough for real-time control. The architecture trades depth for throughput — inference runs in under 50 ms on the onboard compute, leaving headroom for the flight controller loop.
-
-**Control interface:** Classifier output is mapped to velocity commands sent over the drone's SDK API. A state machine handles the sign sequence and timeouts for cases where the classifier is uncertain.
-
-## Results
-
-The system navigated the competition course autonomously, correctly responding to sign sequences. The main failure mode was ambiguous sign orientation at steep approach angles — an augmentation problem addressable with a larger dataset.
-
-[Read the full report (PDF)](/files/Adam_Jordan_353_Final_Report.pdf)
+<style>
+.gif-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.gif-item {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, z-index 0.3s ease;
+}
+.gif-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.gif-item:hover {
+  transform: scale(1.7);
+  z-index: 10;
+}
+.gif-item:hover img {
+  transform: scale(1.7);
+}
+</style>

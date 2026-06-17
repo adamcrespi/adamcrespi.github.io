@@ -7,35 +7,175 @@ cover: "/images/nn3dphoto.png"
 order: 1
 ---
 
-An intelligent lighting system that responds to verbal commands using an ESP32-S3 microcontroller and a TensorFlow Lite neural network — all running on a custom-designed PCB.
+<img src="/images/nn3dphoto.png" alt="Project Overview" style="width: 100%; border-radius: 10px; margin-top: 10px;">
 
-![3D render of the custom PCB](/images/nn3dphoto.png)
+<p>The Neural Network-Based Reactive Lighting System is an intelligent lighting solution designed to respond to verbal commands. Using an ESP32 S3 microcontroller with FreeRTOS, the system enables concurrent audio processing and LED control. A neural network trained in TensorFlow Lite interprets verbal commands to dynamically adjust lighting settings. To optimize the system's compactness, a custom PCB was designed, integrating the ESP32 S3, an I2S microphone, and supporting components.</p>
 
-## Overview
+<div class="toc-container">
+  <div class="toc">
+    <a href="#Project_Goals" class="toc-item">Project Goals</a>
+    <a href="#PCB_Design" class="toc-item">PCB Design</a>
+    <a href="#PCB_Assembly" class="toc-item">PCB Assembly</a>
+    <a href="#The_Software" class="toc-item">The Software</a>
+  </div>
+</div>
 
-The system runs concurrent audio processing and LED control under FreeRTOS. A neural network trained in TensorFlow Lite interprets spoken commands to dynamically adjust lighting settings. To keep the design compact, all components were integrated onto a custom PCB: the ESP32-S3, an I²S MEMS microphone, power regulation, and LED driver circuitry.
+<section id="Project_Goals">
+  <h2>Project Goals</h2>
+  <ul>
+    <li>Learn PCB design with KiCad and create a PCB with an embedded MCU</li>
+    <li>Apply digital signal processing techniques to address practical, real-world challenges</li>
+    <li>Gain experience with Edge AI and the challenges of resource constrained machine learning</li>
+    <li>Develop proficiency in FreeRTOS for real-time operating systems</li>
+  </ul>
+</section>
 
-## PCB Design
+<section id="PCB_Design">
+  <h2>PCB Design</h2>
+  <p>The PCB design for the system brings together all the essential components in a compact and functional layout. Using KiCad, the design was created to fit the ESP32 S3 microcontroller, MEMS I2S microphone, power regulation circuits, and other supporting parts. The goal was to ensure the design was simple, reliable, and efficient, with clean connections and proper spacing to avoid signal issues. Power is provided via a micro USB port with another micro USB port for flashing the ESP.</p>
 
-![PCB schematic](/images/schematic.png)
+  <div class="image-container">
+    <img src="/images/schematic.png" alt="PCB Layout" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 1: PCB Layout</p>
+  </div>
 
-The PCB was designed in KiCad. Key decisions:
+  <h3>Key Components</h3>
+  <p>The PCB design integrates the following critical components:</p>
+  <ul>
+    <li><strong>ESP32 S3 Microcontroller</strong>: Acts as the main processor, handling neural network inference, audio signal processing, and LED control with its dual-core architecture and advanced AI capabilities.</li>
+    <li><strong>MEMS I2S Microphone (SPH0645LM4H-B)</strong>: Captures high-fidelity audio input for verbal command recognition, offering digital output directly compatible with the ESP32's I2S interface.</li>
+    <li><strong>LM3940 Voltage Regulator</strong>: Provides a stable 3.3V supply for the ESP32 and other onboard components, ensuring consistent operation under varying power conditions.</li>
+    <li><strong>Ceramic Capacitors (CL21A106KOQNNNE)</strong>: Used for power line filtering and signal decoupling, reducing noise and improving stability.</li>
+  </ul>
 
-- **ESP32-S3** handles both inference and peripheral control. Its dual-core architecture lets the ML pipeline run on one core while LED output runs on the other under FreeRTOS task isolation.
-- **I²S MEMS microphone** feeds raw audio directly to the ESP32-S3 via I²S DMA, bypassing the CPU for sample capture.
-- **Two USB ports:** one for power/flashing, one for serial debug — avoids the need to reflash for monitoring.
-- Power regulation sized for the LED load, with filtering for the analog supply rail.
+  <div class="image-container">
+    <img src="/images/allComs_page-0001.jpg" alt="Schematic" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 2: Schematic</p>
+  </div>
+</section>
 
-![Assembled PCB](/images/pcb.JPG)
+<section id="PCB_Assembly">
+  <h2>PCB Assembly</h2>
+  <p>Components were ordered through Digikey and boards through JLCPCB. A stencil was also used for ease of assembly in applying the solder paste. The board was assembled using an assisted pick and place machine courtesy of the UBC Engineering Physics project lab.</p>
 
-## Software
+  <div class="image-container">
+    <img src="/images/pickn.JPG" alt="Pick and Place" style="width: 40%; border-radius: 10px; margin-top: 10px;">
+    <img src="/images/pickn2.jpg" alt="Pick and Place" style="width: 40%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 3: Assisted Pick and Place</p>
+  </div>
 
-**Audio pipeline:** Raw I²S samples stream into a ring buffer. A DSP stage applies windowing and computes a mel-frequency spectrogram frame on each 30 ms window.
+  <p>After assembly, the board was reflowed in a reflow oven and design verification was performed. I did continuity testing across components and traces, specifically focusing on some of the resistors I accidentally bought in 0400 size.</p>
 
-**Inference:** The spectrogram is fed to a keyword-spotting model converted to TensorFlow Lite. The model was trained on a custom dataset of command words and quantized to int8 for the ESP32-S3.
+  <div class="image-container">
+    <img src="/images/dv.JPG" alt="Design Verification" style="width: 40%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 4: Design Verification</p>
+  </div>
 
-**LED control:** On a recognized command, the LED task updates brightness and color parameters via a FreeRTOS queue. PWM output is handled by the LEDC peripheral.
+  <p>After assembly, for my first test an issue arose with the switches due to an incorrect footprint in the PCB design. This error caused the switches to short the power supply, resulting in the PCB getting hot. To resolve the problem, a quick fix was implemented by manually soldering a switch to the side of the board.</p>
+  <p>After all this, the PCB was fully functional.</p>
 
-## Results
+  <div class="image-container">
+    <img src="/images/firston.jpg" alt="Fully functional PCB" style="width: 40%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 5: Fully functional PCB on second test</p>
+  </div>
+</section>
 
-The system reliably recognizes command words at conversational speaking distances with latency under 200 ms from utterance to LED response. False positive rate was acceptable in a quiet lab environment; performance degrades in noisy conditions as expected for a small on-device model.
+<section id="The_Software">
+  <h2>The Software</h2>
+  <p>The software integrates audio processing, signal analysis, and machine learning. Using the ESP32 S3 microcontroller with FreeRTOS, the system handles audio data from an I2S MEMS microphone. Key steps include framing, windowing, and Fourier Transform to extract features, which are then processed by a TensorFlow Lite neural network to adjust LED patterns in real time.</p>
+
+  <div class="image-container">
+    <img src="/images/softwareDiagram.jpg" alt="Software Diagram" style="width: 65%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 6: Software Diagram</p>
+  </div>
+
+  <h3>FreeRTOS</h3>
+  <p>The system relies on FreeRTOS to handle the simultaneous tasks required for real-time audio processing. One FreeRTOS task manages the reception of I2S data from the MEMS microphone, efficiently storing the audio data into a circular buffer. This ensures smooth data flow and prevents any loss of audio frames during processing. The second core can then focus on the digital signal processing and inference. A circular buffer is used to prevent race conditions from concurrent actions to the same memory. For my implementation, I simply assigned one of the ESP32's dual cores to each task.</p>
+
+  <div class="image-container">
+    <img src="/images/i2scap.png" alt="FreeRTOS I2S Capture Task" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 7: FreeRTOS I2S Capture Task</p>
+  </div>
+
+  <p>After finishing this project, I also learned that I2S for the ESP32 S3 has Direct Memory Access (DMA). This means that pushing the data from the MEMS microphone into the circular buffer doesn't require much CPU compute, and a task just for storing the data is not really necessary. If I were to redo this, I could break up the digital signal processing into tasks to be split across cores. However, I would have to be more careful with race conditions.</p>
+
+  <h3>Signal Processing</h3>
+  <p>The signal processing pipeline involves several key steps to transform raw audio data into a spectrogram suitable for neural network inference. We will take a sine wave input signal to see this process.</p>
+
+  <div class="image-container">
+    <img src="/images/1raw.png" alt="Raw Sine Wave Input" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 8: Raw Sine Wave Input</p>
+  </div>
+
+  <h4>Sampling</h4>
+  <p>Sampling involves capturing raw audio data at discrete time intervals to convert the continuous signal into digital form. In this case, a sine wave is sampled at regular intervals to create a digital representation.</p>
+
+  <div class="image-container">
+    <img src="/images/1frame.png" alt="Sampled Sine Wave" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 9: Sampled Sine Wave</p>
+  </div>
+
+  <h4>Windowing</h4>
+  <p>After sampling, the signal is divided into smaller frames of fixed length. These sampled frames also overlap by 50% to ensure no information is lost. I chose frames of 256 samples for compatibility with the neural network. To reduce spectral leakage, each frame is multiplied by a window function (e.g., Hann window), which tapers the signal values at the edges to zero. This ensures that transitions between frames are smooth and minimizes distortion in the frequency domain.</p>
+
+  <div class="image-container">
+    <img src="/images/1window.png" alt="Windowed Sine Wave" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 10: Windowed Sine Wave</p>
+  </div>
+
+  <h4>FFT</h4>
+  <p>Once the windowing is applied, the Fast Fourier Transform (FFT) is performed on each frame to transform the signal from the time domain to the frequency domain. The FFT breaks down the signal into its constituent frequencies, providing insight into the amplitude of each frequency component within the frame.</p>
+
+  <div class="image-container">
+    <img src="/images/1fft.png" alt="Sine Wave in the Frequency Domain" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 11: Sine Wave in the Frequency Domain</p>
+  </div>
+
+  <h4>Spectrogram</h4>
+  <p>Finally, the magnitude of the FFT results is extracted to generate a spectrogram. The spectrogram is a visual representation of how the signal's frequency content changes over time, displayed as a 2D image where the x-axis represents time, the y-axis represents frequency, and the color intensity indicates amplitude. This spectrogram serves as the input for the neural network to make inferences.</p>
+
+  <div class="image-container">
+    <img src="/images/1spectro.png" alt="Final Spectrogram" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 12: Final Spectrogram</p>
+  </div>
+
+  <h3>Inference</h3>
+  <p>The inference phase involves utilizing a neural network to analyze spectrograms and classify them into one of eight predefined categories based on spoken words.</p>
+
+  <h4>Prepping Input Tensor</h4>
+  <p>Before the spectrogram can be fed into the neural network, it needs to be preprocessed into a compatible input tensor format. The spectrogram is resized to 128×128 to match the input layer dimensions of the model. Additionally, normalization is applied to scale the data values between 0 and 1, ensuring consistency across inputs and improving the model's convergence during training.</p>
+
+  <h4>The Model Itself</h4>
+  <p>The model was trained using Google Colab on a set of spectrograms from Google's mini Speech Commands dataset. Optimization techniques like pruning and quantization were applied to reduce the model's size and adapt it for deployment onto the ESP32 S3. I managed to compress my final model down to 5 MB.</p>
+
+  <div class="image-container">
+    <img src="/images/exampleSpecs.png" alt="Spectrograms of Words" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 13: Spectrograms of Words</p>
+  </div>
+
+  <h3>Conclusion</h3>
+  <p>This project successfully combined AI, signal processing, and embedded systems to create a responsive solution. Using the ESP32 S3 and a custom PCB, the project achieved real-time performance and met its goals. See the final product below, responding to my stop command.</p>
+
+  <div class="image-container">
+    <img src="/images/realgif.gif" alt="Final Product" style="width: 70%; border-radius: 10px; margin-top: 10px;">
+    <p class="image-label">Figure 14: Final Product</p>
+  </div>
+</section>
+
+<style>
+.toc-container { background-color: #f4f4f4; padding: 10px; text-align: center; margin-bottom: 20px; }
+.toc { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+.toc-item { display: inline-block; text-align: center; cursor: pointer; text-decoration: none; color: #333; font-size: 16px; padding: 10px 20px; border: 1px solid #ccc; border-radius: 5px; transition: background-color 0.3s ease, transform 0.3s ease; }
+.toc-item:hover { background-color: #007acc; color: #fff; transform: scale(1.05); }
+.image-container { text-align: center; margin-bottom: 20px; }
+.image-label { font-size: 14px; color: #666; margin-top: 5px; }
+</style>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
