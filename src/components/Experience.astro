@@ -5,7 +5,6 @@ const jobs = [
     company: 'Rivian',
     role: 'Embedded SW Intern — Platform Functional Safety',
     dates: 'May – Aug 2026',
-    location: 'Palo Alto, CA',
     spec: 'FreeRTOS · Cortex-R5F PMU · TRACE32 · CI regression · Armv7-R',
     tag: null,
     url: '/rivian-2026/',
@@ -15,7 +14,6 @@ const jobs = [
     company: 'Rivian',
     role: 'Embedded SW Intern — Platform & Middleware',
     dates: 'May – Dec 2025',
-    location: 'Vancouver, BC',
     spec: 'CAN-to-Ethernet gateway · ARP · TC397 bring-up · NVM wear-leveling · HIL',
     tag: null,
     url: '/rivian/',
@@ -25,7 +23,6 @@ const jobs = [
     company: 'IRDI System',
     role: 'R&D Test Engineer Intern',
     dates: 'Summer 2024',
-    location: 'Vancouver, BC',
     spec: 'Hydrogen vehicle diagnostics · SAE J2799 · JTAG firmware testing · NFC/NDEF · C',
     tag: null,
     url: null,
@@ -46,7 +43,7 @@ const jobs = [
                 <span class="exp-role">{j.role}</span>
                 <span class="exp-dates">{j.dates}</span>
               </div>
-              <div class="exp-spec">{j.spec} &nbsp;·&nbsp; <span class="exp-loc">{j.location}</span></div>
+              <div class="exp-spec">{j.spec}</div>
             </div>
           </a>
         )
@@ -60,7 +57,7 @@ const jobs = [
                 <span class="exp-role">{j.role}</span>
                 <span class="exp-dates">{j.dates}</span>
               </div>
-              <div class="exp-spec">{j.spec} &nbsp;·&nbsp; <span class="exp-loc">{j.location}</span></div>
+              <div class="exp-spec">{j.spec}</div>
             </div>
           </div>
         )
@@ -121,8 +118,6 @@ const jobs = [
     font-family: var(--mono); font-size: 12px;
     color: var(--faint); line-height: 1.5;
   }
-
-  .exp-loc { color: var(--faint); }
 
   @media (max-width: 480px) {
     .exp-dates { display: none; }
