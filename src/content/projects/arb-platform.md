@@ -4,7 +4,7 @@ year: 2026
 spec: "Polygon PoS · Rust · self-hosted node · atomic execution"
 summary: "Self-hosted Polygon node and Rust block indexer that replaced a third-party RPC dependency, enabling real-time arbitrage detection across DEX liquidity pools on mainnet."
 cover: "/images/arb/freezer.png"
-order: 2
+order: 1
 ---
 
 **2600 Blockchain** is a self-sponsored team running an automated arbitrage system on the Polygon proof-of-stake network. The system detects when the same token is mispriced across two or more DEX liquidity pools and captures the spread with a single atomic transaction — one that reverts automatically if the trade is unprofitable by the time it lands. The team had an existing system deployed on Berachain mainnet generating real revenue before this project began.

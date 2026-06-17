@@ -4,7 +4,7 @@ year: 2026
 spec: "EDF · SRP · CBS · multiprocessor · RP2040 · Cortex-M0+"
 summary: "Four real-time scheduling extensions implemented directly inside the FreeRTOS kernel, running on a Raspberry Pi Pico."
 cover: "/images/rtos/test2_preemption.png"
-order: 1
+order: 5
 ---
 
 As part of **UBC CPSC 538G — Real-Time System Design**, this project implements four scheduling extensions directly inside the FreeRTOS kernel, each on its own branch. The target is a **Raspberry Pi Pico (RP2040)** — a dual-core Cortex-M0+ running at 133 MHz. All extensions are gated behind `FreeRTOSConfig.h` flags so that setting them to 0 compiles out all new code and restores unmodified FreeRTOS with zero overhead.

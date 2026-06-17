@@ -4,7 +4,7 @@ year: 2024
 spec: "ESP32-S3 · edge AI · custom PCB"
 summary: "Edge AI on ESP32-S3 using TensorFlow Lite to interpret voice commands and control an LED lighting system in real time."
 cover: "/images/nn3dphoto.png"
-order: 1
+order: 2
 ---
 
 <p>The Neural Network-Based Reactive Lighting System is an intelligent lighting solution designed to respond to verbal commands. Using an ESP32 S3 microcontroller with FreeRTOS, the system enables concurrent audio processing and LED control. A neural network trained in TensorFlow Lite interprets verbal commands to dynamically adjust lighting settings. To optimize the system's compactness, a custom PCB was designed, integrating the ESP32 S3, an I2S microphone, and supporting components.</p>

@@ -1,15 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 
-const projects = (await getCollection('projects')).sort((a, b) => {
-  if (b.data.year !== a.data.year) return b.data.year - a.data.year;
-  return b.data.order - a.data.order;
-});
+const projects = (await getCollection('projects')).sort((a, b) => b.data.order - a.data.order);
 ---
 <ul class="projects">
   {projects.map((p) => (
     <li>
-      <span class="yr">{p.data.year}</span>
       <span class="pj">
         <a href={`/projects/${p.id}/`}>{p.data.title} <span class="arr">→</span></a>
         <span class="spec">{p.data.summary}</span>
@@ -25,10 +21,6 @@ const projects = (await getCollection('projects')).sort((a, b) => {
     padding:13px 0; border-bottom:1px solid var(--line);
   }
   ul.projects li:last-child{ border-bottom:0; }
-  .yr{
-    font-family:var(--serif); font-style:italic; color:var(--faint);
-    font-size:16px; width:48px; flex:0 0 48px;
-  }
   .pj{ flex:1; }
   .pj a{ color:var(--ink); font-weight:500; }
   .pj a:hover{ color:var(--accent); text-decoration:none; }
