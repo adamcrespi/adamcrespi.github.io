@@ -7,12 +7,6 @@ cover: "/images/burgergif.gif"
 order: 2
 ---
 
-<div style="display: flex; justify-content: center; align-items: center; height: 65vh;">
-  <div style="width: 400px; height: 400px; overflow: hidden; border-radius: 10px; display: flex; justify-content: center; align-items: flex-start;">
-    <img src="/images/pov.gif" alt="Project Overview" style="width: 100%; height: auto; transform: translateY(-33%);">
-  </div>
-</div>
-
 <div class="toc-container">
   <div class="toc">
     <a href="#overview" class="toc-item">The Competition</a>
