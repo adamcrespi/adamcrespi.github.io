@@ -3,7 +3,6 @@ title: "Autonomous Driving Competition"
 year: 2023
 spec: "CNNs · drone control · computer vision"
 summary: "CNN-based image classification for autonomous drone control in a sign-following competition."
-cover: "/images/dronepic.jpg"
 order: 3
 ---
 
