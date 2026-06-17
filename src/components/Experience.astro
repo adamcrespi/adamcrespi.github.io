@@ -6,9 +6,9 @@ const jobs = [
     role: 'Embedded SW Intern — Platform Functional Safety',
     dates: 'May – Aug 2026',
     location: 'Palo Alto, CA',
-    spec: 'RAI-OS · Cortex-R5F PMU · ETM/CoreSight · TRACE32 · CI regression',
-    tag: 'incoming',
-    url: '/rivian/',
+    spec: 'FreeRTOS · Cortex-R5F PMU · TRACE32 · CI regression · Armv7-R',
+    tag: null,
+    url: '/rivian-2026/',
   },
   {
     logo: '/images/logos/rivian.svg',
@@ -20,23 +20,51 @@ const jobs = [
     tag: null,
     url: '/rivian/',
   },
+  {
+    logo: '/images/irdilogo.jpg',
+    company: 'IRDI System',
+    role: 'R&D Test Engineer Intern',
+    dates: 'Summer 2024',
+    location: 'Vancouver, BC',
+    spec: 'Hydrogen vehicle diagnostics · SAE J2799 · JTAG firmware testing · NFC/NDEF · C',
+    tag: null,
+    url: null,
+  },
 ];
 ---
 <ul class="exp-list">
   {jobs.map((j) => (
     <li>
-      <a href={j.url} class="exp-row">
-        <img src={j.logo} alt={j.company + ' logo'} class="exp-logo" />
-        <div class="exp-body">
-          <div class="exp-top">
-            <span class="exp-company">{j.company}</span>
-            {j.tag && <span class="exp-tag">{j.tag}</span>}
-            <span class="exp-role">{j.role}</span>
-            <span class="exp-dates">{j.dates}</span>
+      {j.url
+        ? (
+          <a href={j.url} class="exp-row">
+            <img src={j.logo} alt={j.company + ' logo'} class="exp-logo" />
+            <div class="exp-body">
+              <div class="exp-top">
+                <span class="exp-company">{j.company}</span>
+                {j.tag && <span class="exp-tag">{j.tag}</span>}
+                <span class="exp-role">{j.role}</span>
+                <span class="exp-dates">{j.dates}</span>
+              </div>
+              <div class="exp-spec">{j.spec} &nbsp;·&nbsp; <span class="exp-loc">{j.location}</span></div>
+            </div>
+          </a>
+        )
+        : (
+          <div class="exp-row exp-static">
+            <img src={j.logo} alt={j.company + ' logo'} class="exp-logo" />
+            <div class="exp-body">
+              <div class="exp-top">
+                <span class="exp-company">{j.company}</span>
+                {j.tag && <span class="exp-tag">{j.tag}</span>}
+                <span class="exp-role">{j.role}</span>
+                <span class="exp-dates">{j.dates}</span>
+              </div>
+              <div class="exp-spec">{j.spec} &nbsp;·&nbsp; <span class="exp-loc">{j.location}</span></div>
+            </div>
           </div>
-          <div class="exp-spec">{j.spec} &nbsp;·&nbsp; <span class="exp-loc">{j.location}</span></div>
-        </div>
-      </a>
+        )
+      }
     </li>
   ))}
 </ul>
@@ -48,10 +76,10 @@ const jobs = [
     display: flex; align-items: flex-start; gap: 14px;
     padding: 12px 0; text-decoration: none; color: inherit;
     border-bottom: 1px solid var(--line);
-    transition: opacity .15s;
   }
-  .exp-row:hover { opacity: .6; }
   li:first-child .exp-row { border-top: 1px solid var(--line); }
+  a.exp-row { transition: opacity .15s; }
+  a.exp-row:hover { opacity: .6; }
 
   .exp-logo {
     width: 32px; height: 32px; border-radius: 7px;
