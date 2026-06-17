@@ -57,6 +57,11 @@ Five components form an integrated pipeline from the Polygon peer-to-peer networ
 
 Blocks arrive at the local node from the Polygon P2P network. The indexer consumes block events from the node, decodes swap logs, and updates the in-memory pool state map. The detection engine reads that map after every update, and when a profitable route is found, submits an atomic execution transaction back through the local node.
 
+<div class="fig">
+  <img src="/images/arb/systemlevel.png" alt="System-level architecture diagram" />
+  <p class="fig-caption">System-level architecture: blockchain P2P data flows into the local node, through the indexer's pool HashMap, and back out as signed execution transactions.</p>
+</div>
+
 ---
 
 ## 1. Polygon full node
@@ -105,6 +110,11 @@ Rather than re-syncing from scratch, we wrote a custom **Go application** that:
 
 Applying this patch to the corrupted block range allowed the freezer to process the historical data properly, permanently eliminating the latency spikes and stabilizing system performance.
 
+<div class="fig">
+  <img src="/images/arb/latencySpikesFreezer.png" alt="Latency spikes caused by the Bor block freezer bug" />
+  <p class="fig-caption">Block produced→received latency before the database patch. The local node (blue) shows periodic ~7,000 ms spikes on a 60-second cycle as the freezer stalls on corrupted receipts; Alchemy (orange) remains flat. After the Go patch the spikes disappear entirely.</p>
+</div>
+
 ---
 
 ## 2. AMM pool scraper
@@ -145,6 +155,11 @@ The core data structure is a `HashMap<Address, Box<dyn Pool>>` mapping each on-c
 - **`equal()`** — diagnostic method for state validation against a fresh on-chain fetch
 
 Dynamic dispatch via trait objects means all pool types live in a single collection and update through the same `handle_event()` call — no `match` arms on pool type in the hot path.
+
+<div class="fig">
+  <img src="/images/arb/indexerDiagram.png" alt="Rust indexer module diagram" />
+  <p class="fig-caption">Indexer module flow: <code>main.rs</code> awaits each block and calls <code>index_logs</code> on <code>indexer.rs</code>, which dispatches each log through <code>mod.rs</code> to the protocol-specific handler. Each handler updates its own state store — reserves for V2, sqrtP + liquidity for V3 and Algebra.</p>
+</div>
 
 ### Protocol-specific state initialization
 
@@ -192,6 +207,17 @@ By toggling a single compile-time flag, the WebSocket connection switches betwee
 
 Block reception latency dropped substantially with the local node. The `eth_getLogs` round-trip showed similar improvement. State update latency — pure Rust computation — was identical between configurations, confirming the bottleneck was always the network layer.
 
+<div class="fig fig-row">
+  <div>
+    <img src="/images/arb/block_reception_chart.png" alt="Block propagation latency: Local Node vs Alchemy RPC" />
+    <p class="fig-caption">Block propagation latency. Local mean ~530 ms vs. Alchemy mean ~780 ms; P99 is comparable since both are subject to occasional network variance.</p>
+  </div>
+  <div>
+    <img src="/images/arb/logs_latency_chart.png" alt="Event log fetch latency: Local Node vs Alchemy RPC" />
+    <p class="fig-caption">Event log fetch latency. Local mean ~88 ms vs. Alchemy mean ~194 ms; local P99 (~165 ms) is less than half Alchemy's P99 (~570 ms).</p>
+  </div>
+</div>
+
 ---
 
 ## 5. Accuracy oracle
@@ -212,7 +238,14 @@ This runs continuously in production as a live correctness signal, independent o
 
 ## 6. Arbitrage detection and execution
 
-The detection algorithm searches the in-memory pool graph for profitable multi-hop cycles after every state update. When a route is found, it constructs and submits an execution transaction.
+The detection algorithm searches the in-memory pool graph for profitable multi-hop cycles after every state update. The graph is a token-centric view: nodes are tokens, edges are pools. A profitable arbitrage is a cycle in this graph where traversing the edges in sequence yields more of the starting token than you put in.
+
+<div class="fig">
+  <img src="/images/arb/freezer.png" alt="Token graph showing arbitrage cycle routes" />
+  <p class="fig-caption">Token graph across tracked Polygon pools. Hub tokens (USDC, WETH, USDT0, WPOL) connect to most pools and anchor the majority of detected arbitrage cycles. Peripheral tokens appear only on one or two edges.</p>
+</div>
+
+When a route is found, it constructs and submits an execution transaction.
 
 The Solidity execution contracts enforce the profitability condition on-chain:
 
@@ -233,3 +266,12 @@ The dominant remaining bottleneck is propagation time between block finalization
 - **Co-location** — moving the server into the same network segment as Polygon validator infrastructure to reduce P2P propagation delay
 - **Mempool monitoring** — detecting opportunities in pending transactions before block finalization, effectively acting on state changes before they're confirmed
 - **Broader pool coverage** — extending to concentrated liquidity pool types not currently tracked
+
+<style>
+.fig { margin: 28px 0; text-align: center; }
+.fig img { max-width: 100%; border-radius: 8px; border: 1px solid var(--line); }
+.fig-caption { font-size: 13px; color: var(--faint); margin-top: 8px; line-height: 1.5; }
+.fig-row { display: flex; gap: 20px; align-items: flex-start; }
+.fig-row > div { flex: 1; }
+@media (max-width: 560px) { .fig-row { flex-direction: column; } }
+</style>
