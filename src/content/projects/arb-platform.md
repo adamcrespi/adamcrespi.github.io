@@ -3,7 +3,7 @@ title: "Indexing Blockchain Data for Arbitrage"
 year: 2026
 spec: "Polygon PoS · Rust · self-hosted node · atomic execution"
 summary: "Self-hosted Polygon node and Rust block indexer that replaced a third-party RPC dependency, enabling real-time arbitrage detection across DEX liquidity pools on mainnet."
-cover: "/images/avax.png"
+cover: "/images/arb/freezer.png"
 order: 2
 ---
 
