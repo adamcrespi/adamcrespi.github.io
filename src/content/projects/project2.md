@@ -1,5 +1,5 @@
 ---
-title: "Eng Phys Robot Competition"
+title: "Burger-Building Robots"
 year: 2023
 spec: "ENPH 253 · autonomous burger-serving robots"
 summary: "Two autonomous robots built in six weeks for UBC's Engineering Physics Robot Competition, themed on the video game Overcooked."
