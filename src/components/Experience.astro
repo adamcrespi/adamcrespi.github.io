@@ -1,0 +1,103 @@
+---
+const jobs = [
+  {
+    logo: '/images/logos/rivian.svg',
+    company: 'Rivian',
+    role: 'Embedded SW Intern — Platform Functional Safety',
+    dates: 'May – Aug 2026',
+    location: 'Palo Alto, CA',
+    spec: 'RAI-OS · Cortex-R5F PMU · ETM/CoreSight · TRACE32 · CI regression',
+    tag: 'incoming',
+    url: '/rivian/',
+  },
+  {
+    logo: '/images/logos/rivian.svg',
+    company: 'Rivian',
+    role: 'Embedded SW Intern — Platform & Middleware',
+    dates: 'May – Dec 2025',
+    location: 'Vancouver, BC',
+    spec: 'CAN-to-Ethernet gateway · ARP · TC397 bring-up · NVM wear-leveling · HIL',
+    tag: null,
+    url: '/rivian/',
+  },
+];
+---
+<ul class="exp-list">
+  {jobs.map((j) => (
+    <li>
+      <a href={j.url} class="exp-row">
+        <img src={j.logo} alt={j.company + ' logo'} class="exp-logo" />
+        <div class="exp-body">
+          <div class="exp-top">
+            <span class="exp-company">{j.company}</span>
+            {j.tag && <span class="exp-tag">{j.tag}</span>}
+            <span class="exp-role">{j.role}</span>
+            <span class="exp-dates">{j.dates}</span>
+          </div>
+          <div class="exp-spec">{j.spec} &nbsp;·&nbsp; <span class="exp-loc">{j.location}</span></div>
+        </div>
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .exp-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+
+  .exp-row {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 12px 0; text-decoration: none; color: inherit;
+    border-bottom: 1px solid var(--line);
+    transition: opacity .15s;
+  }
+  .exp-row:hover { opacity: .6; }
+  li:first-child .exp-row { border-top: 1px solid var(--line); }
+
+  .exp-logo {
+    width: 32px; height: 32px; border-radius: 7px;
+    object-fit: contain; flex-shrink: 0; margin-top: 1px;
+    border: 1px solid var(--line);
+  }
+
+  .exp-body { flex: 1; min-width: 0; }
+
+  .exp-top {
+    display: flex; align-items: baseline; flex-wrap: wrap;
+    gap: 6px; margin-bottom: 4px;
+  }
+
+  .exp-company {
+    font-family: var(--sans); font-size: 14px;
+    font-weight: 600; color: var(--ink);
+  }
+
+  .exp-tag {
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    color: #00b67a; background: #00b67a18;
+    border: 1px solid #00b67a44;
+    border-radius: 4px; padding: 1px 6px;
+    letter-spacing: .02em; text-transform: uppercase;
+  }
+
+  .exp-role {
+    font-family: var(--sans); font-size: 13.5px;
+    color: var(--soft); flex: 1;
+  }
+
+  .exp-dates {
+    font-family: var(--mono); font-size: 12px;
+    color: var(--faint); white-space: nowrap; margin-left: auto;
+  }
+
+  .exp-spec {
+    font-family: var(--mono); font-size: 12px;
+    color: var(--faint); line-height: 1.5;
+  }
+
+  .exp-loc { color: var(--faint); }
+
+  @media (max-width: 480px) {
+    .exp-dates { display: none; }
+    .exp-spec { display: none; }
+  }
+</style>
