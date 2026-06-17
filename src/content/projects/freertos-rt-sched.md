@@ -3,7 +3,7 @@ title: "Kernel-Level Real-Time Scheduling in FreeRTOS"
 year: 2026
 spec: "EDF · SRP · CBS · multiprocessor · RP2040 · Cortex-M0+"
 summary: "Four real-time scheduling extensions implemented directly inside the FreeRTOS kernel, running on a Raspberry Pi Pico. Built for UBC CPSC 538G."
-cover: "/images/rtos.png"
+cover: "/images/rtos/test2_preemption.png"
 order: 1
 ---
 
