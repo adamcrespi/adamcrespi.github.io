@@ -11,32 +11,32 @@ import Base from '../layouts/Base.astro';
     <hr class="rule" />
 
     <article class="prose">
-      <p>Returning to Rivian on the Platform Functional Safety team, working on RAI-OS — Rivian's safety-critical embedded OS built on FreeRTOS targeting Armv7-R (Cortex-R5F) microcontrollers.</p>
+      <p>Returning to Rivian on the Platform Functional Safety team, working on kernel-level infrastructure for a safety-critical embedded RTOS running on Armv7-R (Cortex-R5F) targets.</p>
 
       <h2>What I worked on</h2>
 
       <ul>
         <li>
-          <strong>Kernel measurement engine</strong> — architected a FreeRTOS-native benchmarking harness where each kernel operation is described once as an isolated setup-operation-teardown probe driven by two interchangeable runners: a fixed-window throughput counter (ops/window regression signal) and a single-shot latency sampler producing min/median/p99/max cycle distributions. Eliminates the dual-codebase burden of maintaining separate benchmark suites and attributes any version-to-version performance drift to a specific primitive rather than a blanket slowdown.
+          <strong>Kernel benchmarking infrastructure</strong> — designed and built a benchmarking harness integrated directly into the RTOS, covering the full kernel surface: context switching, semaphores, IPC/queues, heap allocation, and scheduler selection. Structured so each kernel operation is measured in isolation, with two interchangeable measurement modes — a throughput counter for regression signals and a latency sampler producing cycle distributions (min/median/p99/max).
         </li>
         <li>
-          <strong>Cortex-R5F PMU cycle counter</strong> — implemented the load-bearing timing instrument using the Armv7-R Performance Monitoring Unit for sub-nanosecond resolution and near-zero read overhead, with MIN-over-N overhead self-calibration and a cross-thread timestamping mechanism for operations that span a context switch. Implemented probes across the full kernel surface: context switch, semaphore, queue/IPC, heap allocation, and ready-queue selection, including a priority-inheritance probe covering the unbounded-priority-inversion hazard that standard suites like Thread-Metric omit — directly relevant in a safety-critical kernel.
+          <strong>Cycle-accurate timing</strong> — implemented a timing instrument over the Cortex-R5F hardware performance counters with sub-nanosecond resolution and near-zero overhead, including self-calibration and a cross-thread timestamping mechanism for operations that span context switches.
         </li>
         <li>
-          <strong>Hardware trace validation</strong> — certified the on-chip cycle-counter proxy against non-intrusive hardware trace (Lauterbach TRACE32) to quantify the interrupt-entry leg invisible to software counters. Ported the methodology from upstream Cortex-M assumptions to the Armv7-R target (VIM/GIC-pended interrupts, banked-mode context paths).
+          <strong>Hardware trace validation</strong> — validated software timing measurements against non-intrusive hardware trace (Lauterbach TRACE32) to capture execution paths invisible to software counters, porting the methodology to the Armv7-R interrupt and context-switch model.
         </li>
         <li>
-          <strong>CI regression gate</strong> — wired the harness into CI as a per-version regression gate that compares each RAI-OS build against its predecessor on pinned hardware, catching performance regressions before they reach integration.
+          <strong>CI integration</strong> — wired the benchmarking harness into CI as a per-build regression gate on pinned hardware, automatically flagging performance regressions against the previous release.
         </li>
       </ul>
 
       <h2>Skills</h2>
 
       <ul>
-        <li><strong>RTOS internals:</strong> FreeRTOS kernel modification, TCB extensions, scheduler instrumentation</li>
-        <li><strong>Hardware:</strong> Armv7-R (Cortex-R5F), PMU cycle counters, ETM/CoreSight, banked register modes</li>
-        <li><strong>Tooling:</strong> Lauterbach TRACE32, JTAG, CI integration, pinned-hardware regression testing</li>
-        <li><strong>Safety context:</strong> functional safety, priority inversion hazards, deterministic timing</li>
+        <li><strong>RTOS internals:</strong> kernel instrumentation, scheduler analysis, deterministic timing</li>
+        <li><strong>Hardware:</strong> Armv7-R (Cortex-R5F), hardware performance counters, banked register modes</li>
+        <li><strong>Tooling:</strong> Lauterbach TRACE32, JTAG, CI on pinned embedded hardware</li>
+        <li><strong>Safety context:</strong> functional safety, priority inversion hazards, safety-critical system constraints</li>
       </ul>
     </article>
 
