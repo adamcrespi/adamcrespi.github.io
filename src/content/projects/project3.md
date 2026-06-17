@@ -7,8 +7,6 @@ cover: "/images/nn3dphoto.png"
 order: 1
 ---
 
-<img src="/images/nn3dphoto.png" alt="Project Overview" style="width: 100%; border-radius: 10px; margin-top: 10px;">
-
 <p>The Neural Network-Based Reactive Lighting System is an intelligent lighting solution designed to respond to verbal commands. Using an ESP32 S3 microcontroller with FreeRTOS, the system enables concurrent audio processing and LED control. A neural network trained in TensorFlow Lite interprets verbal commands to dynamically adjust lighting settings. To optimize the system's compactness, a custom PCB was designed, integrating the ESP32 S3, an I2S microphone, and supporting components.</p>
 
 <div class="toc-container">
