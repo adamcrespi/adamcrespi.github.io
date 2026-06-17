@@ -19,15 +19,11 @@ Traditional exchanges match buyers and sellers through an order book. Decentrali
 
 The simplest is the constant-product AMM (Uniswap V2):
 
-```
-x · y = k
-```
+<p class="eq">x · y = k</p>
 
 where `x` and `y` are the reserve balances of the two tokens and `k` is a constant. A trader depositing `Δx` of token X receives `Δy` of token Y:
 
-```
-Δy = y · Δx · (1 − f) / (x + Δx · (1 − f))
-```
+<p class="eq">Δy = y · Δx · (1 − f) / (x + Δx · (1 − f))</p>
 
 where `f` is the protocol fee (typically 0.3%). The effective exchange rate at any instant is fully determined by the current reserve pair `(x, y)`. This is the key property the indexer exploits: maintaining an accurate copy of every pool's reserves is sufficient to compute all arbitrage opportunities without any additional on-chain queries at detection time.
 
@@ -37,9 +33,7 @@ Because each DEX operates its own pool for the same token pair, the same token c
 
 For a cycle A → B → C → A across three pools, the trade is profitable when the output of the final swap exceeds the initial input, net of all fees:
 
-```
-∏ [ Rᵢᵒᵘᵗ · (1 − fᵢ) / (Rᵢⁱⁿ + Δᵢ · (1 − fᵢ)) ] · Δᵢₙ > Δᵢₙ
-```
+<p class="eq">∏ [ Rᵢᵒᵘᵗ · (1 − fᵢ) / (Rᵢⁱⁿ + Δᵢ · (1 − fᵢ)) ] · Δᵢₙ > Δᵢₙ</p>
 
 where `Rᵢⁱⁿ` and `Rᵢᵒᵘᵗ` are the reserves of the input and output tokens for pool `i`, and `Δᵢ` is the trade size at each hop. The indexer's role is solely to keep reserve values current so this calculation reflects actual market state.
 
@@ -247,13 +241,7 @@ The detection algorithm searches the in-memory pool graph for profitable multi-h
 
 When a route is found, it constructs and submits an execution transaction.
 
-The Solidity execution contracts enforce the profitability condition on-chain:
-
-```solidity
-require(amountOut > amountIn, "Unprofitable");
-```
-
-If market conditions change between route detection and block inclusion — because a competing transaction consumed the same opportunity — the contract reverts automatically. The caller loses only the gas cost of the failed call. Contracts are access-restricted to the team's wallet address to prevent front-running of the execution contract itself.
+The Solidity execution contracts enforce the profitability condition on-chain with `require(amountOut > amountIn, "Unprofitable")`. If market conditions change between route detection and block inclusion — because a competing transaction consumed the same opportunity — the contract reverts automatically. The caller loses only the gas cost of the failed call. Contracts are access-restricted to the team's wallet address to prevent front-running of the execution contract itself.
 
 Transactions are submitted through the local node's `eth_sendRawTransaction` endpoint. Zero external RPC hops at the moment of submission.
 
@@ -268,6 +256,7 @@ The dominant remaining bottleneck is propagation time between block finalization
 - **Broader pool coverage** — extending to concentrated liquidity pool types not currently tracked
 
 <style>
+.eq { font-family: var(--mono); font-size: 14px; background: var(--panel); border-left: 3px solid var(--accent); padding: 10px 16px; margin: 16px 0; border-radius: 4px; overflow-x: auto; }
 .fig { margin: 28px 0; text-align: center; }
 .fig img { max-width: 100%; border-radius: 8px; border: 1px solid var(--line); }
 .fig-caption { font-size: 13px; color: var(--faint); margin-top: 8px; line-height: 1.5; }
