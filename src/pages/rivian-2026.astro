@@ -11,7 +11,7 @@ import Base from '../layouts/Base.astro';
     <hr class="rule" />
 
     <article class="prose">
-      <p>Returning to Rivian on the Platform Functional Safety team, working on kernel-level infrastructure for a safety-critical embedded RTOS running on Armv7-R (Cortex-R5F) targets.</p>
+      <p>Returning to Rivian on the Platform Functional Safety team, working on kernel-level infrastructure for a safety-critical embedded RTOS.</p>
 
       <h2>What I worked on</h2>
 
@@ -20,10 +20,10 @@ import Base from '../layouts/Base.astro';
           <strong>Kernel benchmarking infrastructure</strong> — designed and built a benchmarking harness integrated directly into the RTOS, covering the full kernel surface: context switching, semaphores, IPC/queues, heap allocation, and scheduler selection. Structured so each kernel operation is measured in isolation, with two interchangeable measurement modes — a throughput counter for regression signals and a latency sampler producing cycle distributions (min/median/p99/max).
         </li>
         <li>
-          <strong>Cycle-accurate timing</strong> — implemented a timing instrument over the Cortex-R5F hardware performance counters with sub-nanosecond resolution and near-zero overhead, including self-calibration and a cross-thread timestamping mechanism for operations that span context switches.
+          <strong>Cycle-accurate timing</strong> — implemented a timing instrument over hardware performance counters with sub-nanosecond resolution and near-zero overhead, including self-calibration and a cross-thread timestamping mechanism for operations that span context switches.
         </li>
         <li>
-          <strong>Hardware trace validation</strong> — validated software timing measurements against non-intrusive hardware trace (Lauterbach TRACE32) to capture execution paths invisible to software counters, porting the methodology to the Armv7-R interrupt and context-switch model.
+          <strong>Hardware trace validation</strong> — validated software timing measurements against non-intrusive hardware trace (Lauterbach TRACE32) to capture execution paths invisible to software counters.
         </li>
         <li>
           <strong>CI integration</strong> — wired the benchmarking harness into CI as a per-build regression gate on pinned hardware, automatically flagging performance regressions against the previous release.
@@ -34,7 +34,7 @@ import Base from '../layouts/Base.astro';
 
       <ul>
         <li><strong>RTOS internals:</strong> kernel instrumentation, scheduler analysis, deterministic timing</li>
-        <li><strong>Hardware:</strong> Armv7-R (Cortex-R5F), hardware performance counters, banked register modes</li>
+        <li><strong>Hardware:</strong> hardware performance counters, non-intrusive hardware trace</li>
         <li><strong>Tooling:</strong> Lauterbach TRACE32, JTAG, CI on pinned embedded hardware</li>
         <li><strong>Safety context:</strong> functional safety, priority inversion hazards, safety-critical system constraints</li>
       </ul>
