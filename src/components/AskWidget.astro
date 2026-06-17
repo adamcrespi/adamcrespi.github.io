@@ -1,0 +1,199 @@
+---
+import { getCollection } from 'astro:content';
+
+const about = `Adam Crespi is an Engineering Physics student at the University of British Columbia in Vancouver, BC. He focuses on real-time control, low-latency systems, and hardware/software co-design: bare-metal firmware, real-time schedulers, and latency-tuned networking. He cares about microsecond-level performance. He has worked on vehicle systems at Rivian. Contact: adamcrespi43@gmail.com.`;
+
+const projects = (await getCollection('projects')).sort((a, b) => b.data.year - a.data.year);
+const projectLines = projects
+  .map((p) => `- ${p.data.title} (${p.data.year}): ${p.data.summary}`)
+  .join('\n');
+
+const system = `You are the assistant on Adam Crespi's personal website. Answer questions about Adam using ONLY the facts below. Keep answers to 1-3 sentences. If a question isn't covered, say you don't have that info and suggest emailing adamcrespi43@gmail.com. Never invent details.
+
+ABOUT: ${about}
+
+PROJECTS:
+${projectLines}`;
+
+const MODEL = 'SmolLM2-360M-Instruct-q4f16_1-MLC';
+---
+<section class="ask">
+  <p class="label">// ask · on-device model</p>
+  <p class="askLede">
+    A small language model that runs <em>entirely in your browser</em> — nothing leaves your
+    machine, no server involved. Ask it about my work. It's tiny and a little dim, so keep it simple.
+  </p>
+
+  <div class="box">
+    <div class="head"><span class="dot" id="dot"></span><span id="headtxt">model not loaded</span></div>
+    <div class="bodyp">
+      <button id="load" data-model={MODEL}>Load model (~350 MB, cached after first time)</button>
+      <p class="muted">Runs on WebGPU. The download happens once, then it's instant.</p>
+
+      <div class="prog" id="prog">
+        <div class="bar"><i id="barfill"></i></div>
+        <div class="status" id="status">starting…</div>
+      </div>
+
+      <div class="warn" id="warn">
+        Your browser can't run this — it needs WebGPU. Try Chrome or Edge on desktop.
+        For now, just email me: <a href="mailto:adamcrespi43@gmail.com">adamcrespi43@gmail.com</a>
+      </div>
+
+      <div class="chat" id="chat">
+        <div class="log" id="log" aria-live="polite"></div>
+        <div class="chips" id="chips">
+          <button class="chip">What does Adam work on?</button>
+          <button class="chip">Tell me about the BLE audio project</button>
+          <button class="chip">What did he do at Rivian?</button>
+          <button class="chip">What's the FreeRTOS project about?</button>
+        </div>
+        <div class="askrow">
+          <label for="q" class="sr">Ask a question</label>
+          <input id="q" placeholder="ask something…" autocomplete="off" />
+          <button id="send">send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="muted">
+    Powered by <a href="https://github.com/mlc-ai/web-llm">WebLLM</a>. It will get things wrong —
+    for anything that matters, <a href="mailto:adamcrespi43@gmail.com">email me</a>.
+  </p>
+</section>
+
+<script type="application/json" id="kb-data" set:html={JSON.stringify(system)}></script>
+
+<script is:inline type="module">
+  import { CreateMLCEngine } from "https://esm.run/@mlc-ai/web-llm";
+
+  const $ = (id) => document.getElementById(id);
+  const SYSTEM = JSON.parse($("kb-data").textContent);
+  const MODEL = $("load").dataset.model;
+  let engine = null, busy = false;
+
+  function ready() {
+    $("dot").classList.add("on");
+    $("headtxt").textContent = "model loaded · running locally";
+    $("prog").classList.remove("show");
+    $("chat").classList.add("show");
+    $("q").focus();
+  }
+
+  $("load").addEventListener("click", async () => {
+    if (!navigator.gpu) { $("warn").classList.add("show"); $("load").disabled = true; return; }
+    $("load").disabled = true;
+    $("prog").classList.add("show");
+    try {
+      engine = await CreateMLCEngine(MODEL, {
+        initProgressCallback: (r) => {
+          $("status").textContent = r.text || "loading…";
+          if (typeof r.progress === "number") $("barfill").style.width = Math.round(r.progress * 100) + "%";
+        },
+      });
+      ready();
+    } catch (err) {
+      $("status").textContent = "couldn't load the model: " + (err?.message || err);
+    }
+  });
+
+  async function ask(question) {
+    if (!engine || busy || !question.trim()) return;
+    busy = true; $("send").disabled = true;
+    const log = $("log");
+    const turn = document.createElement("div"); turn.className = "turn";
+    const q = document.createElement("div"); q.className = "q"; q.textContent = question;
+    const a = document.createElement("div"); a.className = "a typing";
+    turn.append(q, a); log.append(turn); a.scrollIntoView({ block: "nearest" });
+    try {
+      const stream = await engine.chat.completions.create({
+        messages: [{ role: "system", content: SYSTEM }, { role: "user", content: question }],
+        temperature: 0.3, max_tokens: 220, stream: true,
+      });
+      let out = "";
+      for await (const chunk of stream) {
+        out += chunk.choices[0]?.delta?.content || "";
+        a.textContent = out; a.scrollIntoView({ block: "nearest" });
+      }
+    } catch (err) {
+      a.textContent = "(error generating a reply — try again)";
+    } finally {
+      a.classList.remove("typing"); busy = false; $("send").disabled = false; $("q").focus();
+    }
+  }
+
+  $("send").addEventListener("click", () => { const q = $("q"); ask(q.value); q.value = ""; });
+  $("q").addEventListener("keydown", (e) => { if (e.key === "Enter") { ask(e.target.value); e.target.value = ""; } });
+  $("chips").addEventListener("click", (e) => { if (e.target.classList.contains("chip")) ask(e.target.textContent); });
+</script>
+
+<style>
+  .ask{ margin:0; }
+  .askLede{ color:#26251f; font-size:16px; margin:0 0 22px; }
+  .askLede em{ font-family:var(--mono); font-size:14px; font-style:normal; color:var(--soft); }
+  .sr{ position:absolute; left:-9999px; }
+
+  .box{ border:1px solid var(--line); border-radius:10px; background:#fff; overflow:hidden; }
+  .head{
+    font-family:var(--mono); font-size:12px; color:var(--soft);
+    padding:10px 14px; border-bottom:1px solid var(--line); background:var(--panel);
+    display:flex; align-items:center; gap:8px;
+  }
+  .dot{ width:8px; height:8px; border-radius:50%; background:var(--faint); }
+  .dot.on{ background:#1f9d55; }
+  .bodyp{ padding:16px; }
+
+  button{
+    font-family:var(--mono); font-size:13px; cursor:pointer;
+    border:1px solid var(--ink); background:var(--ink); color:#fff;
+    padding:10px 16px; border-radius:7px; transition:opacity .2s;
+  }
+  button:hover{ opacity:.85; }
+  button:disabled{ opacity:.45; cursor:default; }
+
+  .muted{ font-family:var(--mono); font-size:12.5px; color:var(--faint); margin:10px 0 0; }
+
+  .prog{ display:none; margin-top:14px; }
+  .prog.show{ display:block; }
+  .bar{ height:6px; background:var(--line); border-radius:99px; overflow:hidden; }
+  .bar i{ display:block; height:100%; width:0%; background:var(--accent); transition:width .25s ease; }
+  .status{ font-family:var(--mono); font-size:12px; color:var(--soft); margin-top:8px; word-break:break-word; }
+
+  .chat{ display:none; }
+  .chat.show{ display:block; }
+  .log{
+    font-family:var(--mono); font-size:13.5px; line-height:1.6; min-height:60px;
+    white-space:pre-wrap; margin-bottom:14px;
+  }
+  .turn{ margin:0 0 14px; }
+  .q{ color:var(--soft); }
+  .q::before{ content:"> "; color:var(--accent); }
+  .a{ color:var(--ink); margin-top:3px; }
+  .a.typing::after{ content:"▋"; color:var(--accent); animation:blink 1s steps(1) infinite; }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 14px; }
+  .chip{
+    font-family:var(--mono); font-size:12px; color:var(--soft);
+    border:1px solid var(--line); background:var(--panel); padding:6px 10px;
+    border-radius:99px; cursor:pointer;
+  }
+  .chip:hover{ border-color:var(--accent); color:var(--accent); }
+
+  .askrow{ display:flex; gap:8px; }
+  .askrow input{
+    flex:1; font-family:var(--mono); font-size:13.5px; color:var(--ink);
+    border:1px solid var(--line); border-radius:7px; padding:10px 12px; background:#fff;
+  }
+
+  .warn{
+    display:none; font-family:var(--mono); font-size:13px; color:#8a3b1f;
+    background:#fbf0ea; border:1px solid #f0d8cc; border-radius:8px; padding:12px 14px; margin-top:14px;
+  }
+  .warn.show{ display:block; }
+
+  @media (prefers-reduced-motion:reduce){
+    .a.typing::after{ animation:none; } .bar i{ transition:none; }
+  }
+</style>

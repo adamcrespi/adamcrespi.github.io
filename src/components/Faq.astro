@@ -1,0 +1,59 @@
+---
+const faqs = [
+  {
+    q: 'How do I contact Adam?',
+    a: 'Email is best: <a href="mailto:adamcrespi43@gmail.com">adamcrespi43@gmail.com</a>. Also on <a href="https://github.com/adamcrespi">GitHub</a> and LinkedIn.',
+  },
+  {
+    q: 'Where does he study?',
+    a: 'Engineering Physics at the University of British Columbia, in Vancouver, BC.',
+  },
+  {
+    q: 'When does he graduate?',
+    a: 'Expected May 2026.',
+  },
+  {
+    q: 'Is he looking for roles?',
+    a: 'Open to new grad / internship roles in embedded systems, real-time software, or hardware-software co-design starting May 2026.',
+  },
+  {
+    q: 'Strongest project?',
+    a: 'VIBRA — bare-metal BLE audio that hits sub-10 ms end-to-end latency without an RTOS.',
+  },
+  {
+    q: 'Can I see a resume?',
+    a: '<a href="/files/adam_resume_august_2025_jan.pdf">Download resume (PDF)</a>.',
+  },
+];
+---
+<section class="faq">
+  <p class="label">// common questions <span class="hint">— scroll sideways →</span></p>
+  <div class="row">
+    {faqs.map((f) => (
+      <div class="card">
+        <p class="qq">{f.q}</p>
+        <p class="aa" set:html={f.a}></p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .faq{ margin:0; }
+  .hint{ color:var(--faint); text-transform:none; letter-spacing:0; }
+  .row{
+    display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory;
+    padding:2px 0 12px; -webkit-overflow-scrolling:touch;
+    -webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);
+            mask-image:linear-gradient(90deg,#000 92%,transparent);
+  }
+  .row::-webkit-scrollbar{ height:6px; }
+  .row::-webkit-scrollbar-thumb{ background:var(--line); border-radius:99px; }
+  .card{
+    flex:0 0 250px; scroll-snap-align:start; border:1px solid var(--line);
+    border-radius:10px; background:#fff; padding:14px 15px;
+  }
+  .qq{ font-family:var(--mono); font-size:12.5px; font-weight:500; color:var(--ink); margin:0 0 9px; }
+  .qq::before{ content:"> "; color:var(--accent); }
+  .aa{ font-size:14px; line-height:1.55; color:var(--soft); margin:0; }
+</style>

@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort((a, b) => {
+  if (b.data.year !== a.data.year) return b.data.year - a.data.year;
+  return b.data.order - a.data.order;
+});
+---
+<ul class="projects">
+  {projects.map((p) => (
+    <li>
+      <span class="yr">{p.data.year}</span>
+      <span class="pj">
+        <a href={`/projects/${p.id}/`}>{p.data.title} <span class="arr">→</span></a>
+        <span class="spec">{p.data.spec}</span>
+      </span>
+    </li>
+  ))}
+</ul>
+
+<style>
+  ul.projects{ list-style:none; margin:0; padding:0; }
+  ul.projects li{
+    display:flex; gap:20px; align-items:baseline;
+    padding:13px 0; border-bottom:1px solid var(--line);
+  }
+  ul.projects li:last-child{ border-bottom:0; }
+  .yr{
+    font-family:var(--serif); font-style:italic; color:var(--faint);
+    font-size:16px; width:48px; flex:0 0 48px;
+  }
+  .pj{ flex:1; }
+  .pj a{ color:var(--ink); font-weight:500; }
+  .pj a:hover{ color:var(--accent); text-decoration:none; }
+  .arr{
+    font-family:var(--mono); color:var(--faint); font-weight:400;
+    display:inline-block; transition:transform .25s ease;
+  }
+  .pj a:hover .arr{ transform:translateX(4px); color:var(--accent); }
+  .spec{
+    display:block; font-family:var(--mono); color:var(--faint);
+    font-size:12.5px; letter-spacing:.2px; margin-top:5px;
+  }
+  @media (prefers-reduced-motion:reduce){ .arr{ transition:none; } }
+</style>

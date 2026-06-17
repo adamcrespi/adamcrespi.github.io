@@ -1,0 +1,30 @@
+---
+const shots = [
+  { src: '/images/burgergif.gif', alt: 'Burger-serving robot in motion' },
+  { src: '/files/fkll.gif', alt: 'Drone control' },
+  { src: '/images/realgif.gif', alt: 'Reactive lighting system' },
+  { src: '/images/vibra/headerimage.jpg', alt: 'BLE audio hardware' },
+  { src: '/images/rtos.png', alt: 'FreeRTOS scheduling' },
+  { src: '/images/nn4.JPG', alt: 'Neural network rig' },
+];
+---
+<div class="grid">
+  {shots.map((s) => (
+    <figure><img src={s.src} alt={s.alt} loading="lazy" /></figure>
+  ))}
+</div>
+
+<style>
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .grid figure{
+    margin:0; aspect-ratio:1/1; overflow:hidden;
+    border-radius:6px; background:#efeee8;
+  }
+  .grid img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    transition:transform .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .grid figure:hover img{ transform:scale(1.06); }
+  @media (max-width:520px){ .grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (prefers-reduced-motion:reduce){ .grid img{ transition:none; } }
+</style>

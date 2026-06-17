@@ -1,0 +1,42 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((p) => ({ params: { slug: p.id }, props: { project: p } }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+<Base title={`${project.data.title} — Adam Crespi`} description={project.data.summary}>
+  <main>
+    <a class="back" href="/">Adam Crespi</a>
+
+    <h1 class="ptitle">{project.data.title}</h1>
+    <p class="meta">{project.data.year} · {project.data.spec}</p>
+
+    {project.data.cover && (
+      <img class="cover" src={project.data.cover} alt={project.data.title} loading="lazy" />
+    )}
+
+    <hr class="rule" />
+
+    <article class="prose">
+      <Content />
+    </article>
+
+    <hr class="rule" />
+    <a class="back" href="/">back to everything</a>
+  </main>
+</Base>
+
+<style>
+  .ptitle{ font-size:38px; margin-top:22px; }
+  .cover{
+    width:100%; border-radius:8px; margin-top:22px; display:block;
+    border:1px solid var(--line); background:#efeee8;
+  }
+  @media (max-width:520px){ .ptitle{ font-size:31px; } }
+</style>

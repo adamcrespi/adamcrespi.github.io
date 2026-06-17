@@ -1,0 +1,63 @@
+:root{
+  --bg:#fbfbf9;
+  --ink:#181815;
+  --soft:#56544d;
+  --faint:#9a988e;
+  --line:#e6e4dd;
+  --accent:#1f43d8;
+  --panel:#f3f2ec;
+  --serif:'Newsreader', Georgia, serif;
+  --sans:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --measure:620px;
+}
+
+*{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.65;
+  padding:96px 24px 140px;
+}
+main{ max-width:var(--measure); margin:0 auto; }
+
+a{ color:var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; text-underline-offset:3px; }
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline:2px solid var(--accent); outline-offset:2px; border-radius:2px;
+}
+
+h1{
+  font-family:var(--serif); font-weight:500; font-size:46px;
+  letter-spacing:-.5px; line-height:1.05; margin:0;
+}
+h2{ font-family:var(--serif); font-weight:500; font-size:28px; letter-spacing:-.3px; margin:0 0 14px; }
+
+.meta{ font-family:var(--mono); font-size:13px; color:var(--soft); letter-spacing:.2px; margin:16px 0 0; }
+.label{ font-family:var(--mono); font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--faint); margin:0 0 16px; }
+
+.rule{ height:1px; background:var(--line); border:0; margin:34px 0; }
+
+.prose p{ margin:0 0 18px; font-size:17px; line-height:1.7; color:#26251f; }
+.prose p:last-child{ margin-bottom:0; }
+.prose blockquote{
+  margin:0 0 18px; padding:10px 0 10px 16px; border-left:2px solid var(--line);
+  color:var(--soft); font-family:var(--mono); font-size:13.5px; line-height:1.6;
+}
+.prose h2,.prose h3{ font-family:var(--serif); }
+.prose ul,.prose ol{ padding-left:24px; margin:0 0 18px; }
+.prose li{ font-size:17px; line-height:1.7; color:#26251f; margin-bottom:6px; }
+.prose img{ max-width:100%; border-radius:6px; margin:16px 0; display:block; }
+.prose strong{ font-weight:500; }
+.prose a{ color:var(--accent); }
+
+.back{ font-family:var(--mono); font-size:13px; }
+.back::before{ content:"← "; }
+
+@media (max-width:520px){
+  body{ padding:64px 22px 100px; }
+  h1{ font-size:38px; }
+}
+@media (prefers-reduced-motion:reduce){
+  *{ scroll-behavior:auto !important; }
+}

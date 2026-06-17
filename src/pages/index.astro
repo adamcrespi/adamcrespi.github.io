@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectList from '../components/ProjectList.astro';
+import Gallery from '../components/Gallery.astro';
+import AskWidget from '../components/AskWidget.astro';
+import Faq from '../components/Faq.astro';
+---
+<Base title="Adam Crespi">
+  <main>
+    <h1>Adam Crespi</h1>
+    <p class="meta">Engineering Physics · Vancouver, BC · <a href="mailto:adamcrespi43@gmail.com">adamcrespi43@gmail.com</a></p>
+
+    <hr class="rule" />
+
+    <div class="prose">
+      <p>I like getting underneath abstractions — down to the clock cycles, the interrupt latency, the bytes on the wire — and figuring out why real-time systems actually miss their deadlines.</p>
+      <p>Most of what I build lives at the boundary between hardware and software: bare-metal firmware, real-time schedulers, latency-tuned networking. I care about the microseconds. Some of my work is collected below.</p>
+      <p>In the past I've worked on vehicle systems at <a href="/rivian/">Rivian</a> and competed in UBC's robotics competitions. The rest of the time I build things that have to respond in time, every time.</p>
+    </div>
+
+    <hr class="rule" />
+
+    <p class="label">Projects</p>
+    <ProjectList />
+
+    <hr class="rule" />
+
+    <AskWidget />
+
+    <div style="margin-top:30px"><Faq /></div>
+
+    <hr class="rule" />
+
+    <p class="label">In the lab</p>
+    <Gallery />
+    <p class="meta">// bench shots and clips from recent builds</p>
+
+    <hr class="rule" />
+
+    <footer class="meta">
+      <a href="mailto:adamcrespi43@gmail.com">email</a> &nbsp;·&nbsp;
+      <a href="https://github.com/adamcrespi">github</a> &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/adam-crespi/">linkedin</a>
+    </footer>
+  </main>
+</Base>
