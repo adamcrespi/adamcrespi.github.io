@@ -7,7 +7,7 @@ const projects = (await getCollection('projects')).sort((a, b) => b.data.order -
   {projects.map((p) => (
     <li>
       <span class="pj">
-        <a href={`/projects/${p.id}/`}>{p.data.title} <span class="arr">→</span></a>
+        <a href={`/projects/${p.id}/`}>{p.data.title} {p.data.tag && <span class="pj-tag">{p.data.tag}</span>} <span class="arr">→</span></a>
         <span class="spec">{p.data.summary}</span>
       </span>
     </li>
@@ -24,6 +24,14 @@ const projects = (await getCollection('projects')).sort((a, b) => b.data.order -
   .pj{ flex:1; }
   .pj a{ color:var(--ink); font-weight:500; font-size:16.5px; }
   .pj a:hover{ color:var(--accent); text-decoration:none; }
+  .pj-tag{
+    font-family:var(--mono); font-size:10px; font-weight:500;
+    color:#c47f0a; background:#c47f0a18;
+    border:1px solid #c47f0a44;
+    border-radius:4px; padding:1px 6px;
+    letter-spacing:.02em; text-transform:uppercase;
+    vertical-align:middle;
+  }
   .arr{
     font-family:var(--mono); color:var(--faint); font-weight:400;
     display:inline-block; transition:transform .25s ease;

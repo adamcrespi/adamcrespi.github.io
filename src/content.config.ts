@@ -9,6 +9,7 @@ const projects = defineCollection({
     spec: z.string(),
     summary: z.string(),
     cover: z.string().optional(),
+    tag: z.string().optional(),
     order: z.number().default(0),
   }),
 });
