@@ -48,36 +48,36 @@ Most participants access blockchain data through commercial providers such as Al
 Five components form an integrated pipeline from the Polygon peer-to-peer network to on-chain execution, closing in a loop: the execution contracts submit back through the same local node that fed the pipeline in the first place, so the round trip never leaves infrastructure the team controls.
 
 <div class="fig">
-  <svg viewBox="0 0 920 270" class="diagram-sys" role="img" aria-label="System architecture diagram: Polygon validators feed a local Bor and Heimdall node, which streams blocks to a Rust indexer maintaining pool state in memory, seeded at boot by an offline SQLite pool database. A detection engine reads that state and hands profitable routes to execution contracts, which submit signed transactions back through the same local node, closing the loop with zero external RPC hops.">
+  <svg viewBox="0 0 1080 300" class="diagram-sys" role="img" aria-label="System architecture diagram: Polygon validators feed a local Bor and Heimdall node, which streams blocks to a Rust indexer maintaining pool state in memory, seeded at boot by an offline SQLite pool database. A detection engine reads that state and hands profitable routes to execution contracts, which submit signed transactions back through the same local node, closing the loop with zero external RPC hops.">
     <defs>
       <marker id="arr-sys" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
         <path d="M0,0 L6,3 L0,6 Z" fill="currentColor"/>
       </marker>
     </defs>
-    <rect x="390" y="15" width="170" height="50" rx="6" class="box-mid"/>
-    <text x="475" y="34" class="lbl-mid"><tspan x="475" dy="0">SQLite pool DB</tspan><tspan x="475" dy="14">offline scraper</tspan></text>
-    <line x1="475" y1="65" x2="475" y2="98" class="edge" marker-end="url(#arr-sys)"/>
-    <text x="565" y="80" class="lbl-edge" text-anchor="start"><tspan x="565" dy="0">top-N active</tspan><tspan x="565" dy="12">pools at boot</tspan></text>
-    <rect x="10" y="100" width="140" height="60" rx="6" class="box-main"/>
-    <text x="80" y="134" class="lbl-main">Polygon validators</text>
-    <rect x="200" y="100" width="150" height="60" rx="6" class="box-main"/>
-    <text x="275" y="127" class="lbl-main"><tspan x="275" dy="0">Bor + Heimdall</tspan><tspan x="275" dy="16">local full node</tspan></text>
-    <rect x="400" y="100" width="150" height="60" rx="6" class="box-accent"/>
-    <text x="475" y="127" class="lbl-accent"><tspan x="475" dy="0">Rust indexer</tspan><tspan x="475" dy="16">pool HashMap</tspan></text>
-    <rect x="600" y="100" width="150" height="60" rx="6" class="box-main"/>
-    <text x="675" y="127" class="lbl-main"><tspan x="675" dy="0">Detection engine</tspan><tspan x="675" dy="16">convex optimizer</tspan></text>
-    <rect x="800" y="100" width="110" height="60" rx="6" class="box-accent"/>
-    <text x="855" y="127" class="lbl-accent"><tspan x="855" dy="0">Execution</tspan><tspan x="855" dy="16">contracts</tspan></text>
-    <line x1="150" y1="130" x2="198" y2="130" class="edge" marker-end="url(#arr-sys)"/>
-    <text x="174" y="122" class="lbl-edge" text-anchor="middle">P2P blocks</text>
-    <line x1="350" y1="130" x2="398" y2="130" class="edge" marker-end="url(#arr-sys)"/>
-    <text x="374" y="122" class="lbl-edge" text-anchor="middle">block + logs</text>
-    <line x1="550" y1="130" x2="598" y2="130" class="edge" marker-end="url(#arr-sys)"/>
-    <text x="574" y="122" class="lbl-edge" text-anchor="middle">reserves</text>
-    <line x1="750" y1="130" x2="798" y2="130" class="edge" marker-end="url(#arr-sys)"/>
-    <text x="774" y="122" class="lbl-edge" text-anchor="middle">route</text>
-    <path d="M855,160 C855,222 275,222 275,160" class="edge-loop" marker-end="url(#arr-sys)" fill="none"/>
-    <text x="565" y="245" class="lbl-loop" text-anchor="middle"><tspan x="565" dy="0">eth_sendRawTransaction — signed tx returns through the same local node</tspan><tspan x="565" dy="14">zero external RPC hop at the moment of submission</tspan></text>
+    <rect x="440" y="15" width="190" height="50" rx="6" class="box-mid"/>
+    <text x="535" y="34" class="lbl-mid"><tspan x="535" dy="0">SQLite pool DB</tspan><tspan x="535" dy="14">offline scraper</tspan></text>
+    <line x1="535" y1="65" x2="535" y2="98" class="edge" marker-end="url(#arr-sys)"/>
+    <text x="645" y="80" class="lbl-edge" text-anchor="start"><tspan x="645" dy="0">top-N active</tspan><tspan x="645" dy="13">pools at boot</tspan></text>
+    <rect x="20" y="100" width="150" height="60" rx="6" class="box-main"/>
+    <text x="95" y="134" class="lbl-main">Polygon validators</text>
+    <rect x="240" y="100" width="150" height="60" rx="6" class="box-main"/>
+    <text x="315" y="127" class="lbl-main"><tspan x="315" dy="0">Bor + Heimdall</tspan><tspan x="315" dy="16">local full node</tspan></text>
+    <rect x="460" y="100" width="150" height="60" rx="6" class="box-accent"/>
+    <text x="535" y="127" class="lbl-accent"><tspan x="535" dy="0">Rust indexer</tspan><tspan x="535" dy="16">pool HashMap</tspan></text>
+    <rect x="680" y="100" width="150" height="60" rx="6" class="box-main"/>
+    <text x="755" y="127" class="lbl-main"><tspan x="755" dy="0">Detection engine</tspan><tspan x="755" dy="16">convex optimizer</tspan></text>
+    <rect x="900" y="100" width="150" height="60" rx="6" class="box-accent"/>
+    <text x="975" y="127" class="lbl-accent"><tspan x="975" dy="0">Execution</tspan><tspan x="975" dy="16">contracts</tspan></text>
+    <line x1="170" y1="130" x2="236" y2="130" class="edge" marker-end="url(#arr-sys)"/>
+    <text x="203" y="122" class="lbl-edge" text-anchor="middle">P2P blocks</text>
+    <line x1="390" y1="130" x2="456" y2="130" class="edge" marker-end="url(#arr-sys)"/>
+    <text x="423" y="122" class="lbl-edge" text-anchor="middle">logs</text>
+    <line x1="610" y1="130" x2="676" y2="130" class="edge" marker-end="url(#arr-sys)"/>
+    <text x="643" y="122" class="lbl-edge" text-anchor="middle">pool state</text>
+    <line x1="830" y1="130" x2="896" y2="130" class="edge" marker-end="url(#arr-sys)"/>
+    <text x="863" y="122" class="lbl-edge" text-anchor="middle">route</text>
+    <path d="M975,160 C975,236 315,236 315,160" class="edge-loop" marker-end="url(#arr-sys)" fill="none"/>
+    <text x="645" y="260" class="lbl-loop" text-anchor="middle"><tspan x="645" dy="0">eth_sendRawTransaction — signed tx returns through the same local node</tspan><tspan x="645" dy="15">zero external RPC hop at the moment of submission</tspan></text>
   </svg>
   <p class="fig-caption">System-level architecture. Blocks arrive from Polygon's P2P network at the local node; the Rust indexer turns them into live pool state; the detection engine and execution contracts close the loop back through that same node.</p>
 </div>
