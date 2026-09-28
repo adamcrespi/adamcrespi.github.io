@@ -2,7 +2,7 @@
 title: "Entropy Characterization of a Ring-Oscillator TRNG"
 year: 2026
 spec: "Efinix FPGA · Verilog · ring-oscillator TRNG · NIST SP 800-90B / AIS-31"
-summary: "ENPH 479 capstone sponsored by Node Labs: design a ring-oscillator TRNG on an FPGA and measure whether its committed entropy claim actually holds — up to generating and cracking real private keys under adversarial observation."
+summary: "ENPH 479 capstone sponsored by Node Labs: design a ring-oscillator TRNG on an FPGA and measure whether its committed entropy claim actually holds."
 tag: "In Progress"
 order: 6
 ---
